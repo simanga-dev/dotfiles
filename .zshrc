@@ -18,12 +18,28 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 
+function expand-alias() {
+	zle _expand_alias
+	zle self-insert
+}
+zle -N expand-alias
+bindkey -M main ' ' expand-alias
+
+# This is NNN staff, please bare with mere here, I am still cooking
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
+# export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
-zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
+# zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 zinit ice depth=1; zinit light  hlissner/zsh-autopair
 
 

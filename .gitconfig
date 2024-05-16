@@ -1,0 +1,23 @@
+[user]
+	email = h3ndry@users.noreply.github.com
+	name = hendry
+[merge]
+	tool = nvimdiff
+[core]
+	editor = nvim
+[push]
+	default = current
+	autoSetupRemote = true
+[pull]
+	default = matching
+	rebase = true
+[branch]
+	autoSetupMerge = always
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[safe]
+	directory = /media/2CFA-18FF/Code/dwm
+	directory = /media/2CFA-18FF/Code/resume

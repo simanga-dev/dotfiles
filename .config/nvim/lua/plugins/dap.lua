@@ -1,0 +1,189 @@
+return {
+    -- dependencies = {
+    --     'mfussenegger/nvim-dap-python',
+    --     'theHamsta/nvim-dap-virtual-text',
+    --     'folke/neodev.nvim',
+    --     'jbyuki/one-small-step-for-vimkind',
+    --     'mfussenegger/nvim-dap-python',
+    --     'theHamsta/nvim-dap-virtual-text',
+    --     {
+    --         'rcarriga/nvim-dap-ui',
+    --         keys = {
+    --             {
+    --                 '<leader>de',
+    --                 function()
+    --                     -- Calling this twice to open and jump into the window.
+    --                     require('dapui').eval()
+    --                     require('dapui').eval()
+    --                 end,
+    --                 desc = 'Evaluate expression',
+    --             },
+    --         },
+    --         opts = {
+    --             icons = {
+    --                 collapsed = arrows.right,
+    --                 current_frame = arrows.right,
+    --                 expanded = arrows.down,
+    --             },
+    --             -- floating = { border = 'rounded' },
+    --             layouts = {
+    --                 {
+    --                     elements = {
+    --                         { id = 'stacks',      size = 0.30 },
+    --                         { id = 'breakpoints', size = 0.20 },
+    --                         { id = 'scopes',      size = 0.50 },
+    --                     },
+    --                     position = 'left',
+    --                     size = 50,
+    --                 },
+    --             },
+    --         },
+    --     }
+    -- },
+    -- 'mfussenegger/nvim-dap',
+    -- event  = "VeryLazy",
+    -- keys   = {
+    --     {
+    --         '<leader>dui',
+    --         function()
+    --             require('dapui').toggle()
+    --         end,
+    --         desc = 'Toggle debuger UI',
+    --     },
+    --     {
+    --         '<leader>dd',
+    --         function()
+    --             require("dap").toggle_breakpoint()
+    --         end,
+    --         desc = 'Toggle breakpoints',
+    --     },
+    --     {
+    --         '<leader>dc',
+    --         function()
+    --             require("dap").continue()
+    --         end,
+    --         desc = 'Toggle breakpoints',
+    --     },
+    --     {
+    --         '<leader>dk',
+    --         function()
+    --             require("dap.ui.widgets").hover()
+    --         end,
+    --         desc = 'Show context',
+    --     },
+    --     {
+    --         '<leader>dk',
+    --         function()
+    --             require("dap").repl.open()
+    --         end,
+    --         desc = 'Show context',
+    --     }
+    -- },
+    -- config = function()
+    --     require('dap-python').setup('/home/hendry/.virtualenvs/debugpy')
+    --     print("Hell world")
+    --
+    --     require("nvim-dap-virtual-text").setup({})
+    --     local dap = require("dap")
+    --     local widgets, dapui = require('dap.ui.widgets'), require('dapui')
+    --
+    --     -- Automatically open the UI when a new debug session is created.
+    --     dap.listeners.after.event_initialized['dapui_config'] = function()
+    --         dapui.open {}
+    --     end
+    --     dap.listeners.before.event_terminated['dapui_config'] = function()
+    --         dapui.close {}
+    --     end
+    --     dap.listeners.before.event_exited['dapui_config'] = function()
+    --         dapui.close {}
+    --     end
+    --
+    --     local wk = require("which-key")
+    --
+    --     wk.register({
+    --         d = {
+    --             s = {
+    --                 o = { dap.step_over, "debuger step over" },
+    --                 i = { dap.step_into, "debuger step in to" },
+    --             },
+    --             n = { dap.step_over, "debuger next" },
+    --             N = { dap.step_into, "debuger Next" },
+    --             p = { dap.step_out, "debuger Next" },
+    --             d = { dap.toggle_breakpoint, "debuger Next" },
+    --             r = { dap.repl.open, "open debuger repl " },
+    --             l = { dap.run_last, "open debuger repl " },
+    --             k = { widgets.hover, "open debuger repl " },
+    --         }
+    --     }, { prefix = "<leader>" })
+    --
+    --     vim.keymap.set("n", "<leader>d?", function()
+    --         widgets.centered_float(widgets.scopes)
+    --     end)
+    --
+    --     dap.adapters.coreclr = {
+    --         type = 'executable',
+    --         command = '/usr/bin/netcoredbg',
+    --         args = { '--interpreter=vscode' }
+    --     }
+    --
+    --     dap.configurations.cs = {
+    --         {
+    --             type = "coreclr",
+    --             name = "launch - netcoredbg",
+    --             request = "launch",
+    --             stopAtEntry = false,
+    --             preLaunchTask = "build",
+    --             program = function()
+    --                 return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/ConsoleApp/bin/Debug/net8.0/ConsoleApp.dll',
+    --                     'file')
+    --             end,
+    --         }
+    --     }
+    --
+    --     dap.adapters.lldb = {
+    --         type = 'executable',
+    --         command = '', -- adjust as needed, must be absolute path
+    --         name = 'lldb'
+    --     }
+    --
+    --     dap.adapters.codelldb = {
+    --         type = 'server',
+    --         port = "${port}",
+    --         executable = {
+    --             -- CHANGE THIS to your path!
+    --             command = '/usr/bin/codelldb',
+    --             args = { "--port", "${port}" },
+    --             -- On windows you may have to uncomment this:
+    --             -- detached = false,
+    --         }
+    --     }
+    --
+    --     dap.configurations.rust = {
+    --         {
+    --             name = "Launch file",
+    --             type = "codelldb",
+    --             request = "launch",
+    --             program = function()
+    --                 return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/', 'file')
+    --             end,
+    --             cwd = '${workspaceFolder}',
+    --             stopOnEntry = false,
+    --         },
+    --     }
+    --
+    --
+    --
+    --     dap.configurations.lua = {
+    --         {
+    --             type = 'nlua',
+    --             request = 'attach',
+    --             name = "Attach to running Neovim instance",
+    --         }
+    --     }
+    --
+    --     dap.adapters.nlua = function(callback, config)
+    --         callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
+    --     end
+    --
+    -- end
+}
