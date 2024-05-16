@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+nohup zsh -c 'cd "$2"; echo \"$*\"; alacritty ' &
+
+# "vim \"$*\""
+
+
+# "vim \"$*\""

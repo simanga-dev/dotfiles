@@ -1,0 +1,78 @@
+super + r; {w,s,t,f,p}
+	{whatsdesk & notify-send "Opening WhatsApp" "WhatsApp would be open in a moment at tag 8", slack & notify-send "Opening Slack" "Slack would be open in a moment at tag 8", thunderbird & notify-send "Opening Thunderbird" "Thunderbird would be open in a moment at tag 7", firefox & notify-send "Opening FireFox" "FireFox would open in a moment at tag 9", export _JAVA_AWT_WM_NONREPARENTING=1 && pycharm  & notify-send "Opening Pycharm" "Pycharm would open in a moment at tag 2"}
+
+super + r; {n,c,i,d}
+	{ ~/.local/bin/notesreader.sh, speedcrunch, insomnia & notify-send "Opening Insomia" "Insomia would open in a moment at tag 2", discord & notify-send "Opening Discord" "Discord would open in a moment at tag 8"  }
+
+super + r; {l,m}
+	{localsend & notify-send "Send: Localsend" "Localsend is about to be open in a moment",  pavucontrol}
+
+super + P
+	rofi-pass
+
+super + M
+	st -e neomutt
+
+super + n
+	~/.local/bin/notestaker.sh
+
+super + N
+	~/.local/bin/notesreader.sh
+
+super + Print
+	maim | tee ~/Pictures/Screenshots/"$(date)".png | xclip -selection clipboard -t image/png && notify-send "Screenshot has been captured" "Location: ~/pictures/screenshot"
+
+Print
+	maim --select | tee ~/Pictures/Screenshots/"$(date)".png | xclip -selection clipboard -t image/png && notify-send "Screenshot has been captured" "Location: ~/pictures/screenshot"
+
+
+shift + Print
+  ~/.local/bin/img2text.sh
+
+super + o
+  ~/.local/bin/quickmove.sh
+
+# open calculatpr
+super + I
+	clipmenu -i
+
+super + i
+	~/.local/bin/snippy.sh
+
+super + W
+	~/.local/bin/change-wallpaper.sh
+
+super + D
+	~/.local/bin/05-1440x900-res.sh
+
+super + Pause
+	pkill -USR1 -x sxhkd
+
+
+super + Home
+	~/.local/bin/toggle-monitores.sh
+
+super + c; {t, p, r}
+	{ xclip -selection clipboard -o  | quicktype --just-types -l ts | xclip -selection clipboard, xclip -selection clipboard -o | datamodel-codegen --input-file-type json | xclip -selection clipboard, zathura /home/hendry/Downloads/introduction_to_algorithms_4th_edition/introduction_to_algorithms_4th_edition.pdf}
+
+ctrl + space; {h, H}
+    { dunstctl history-pop, dunstctl close }
+
+
+# super + alt + control + {h,j,k,l} ; {0-9}
+	# bspc node @{west,south,north,east} -r 0.{0-9}
+
+# super + alt + p
+	# bspc config focus_follows_pointer {true,false}
+
+
+# # Smart resize, will grow or shrink depending on location.
+# # Will always grow for floating nodes.
+# super + ctrl + alt + {Left,Down,Up,Right}
+#   n=10; \
+#   { d1=left;   d2=right;  dx=-$n; dy=0;   \
+#   , d1=bottom; d2=top;    dx=0;   dy=$n;  \
+#   , d1=top;    d2=bottom; dx=0;   dy=-$n; \
+#   , d1=right;  d2=left;   dx=$n;  dy=0;   \
+#   } \
+#   bspc node --resize $d1 $dx $dy || bspc node --resize $d2 $dx $dy
