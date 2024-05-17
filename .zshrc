@@ -53,14 +53,12 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-# zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::command-not-found
-
-
+# zinit snippet OMZP::git
+# zinit snippet OMZP::sudo
+# zinit snippet OMZP::archlinux
+# # zinit snippet OMZP::aws
+# zinit snippet OMZP::kubectl
+# zinit snippet OMZP::command-not-found
 
 bindkey -v
 # Edit line in vim with ctrl-e:
@@ -97,41 +95,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-
-
-# source <(ng completion script)
-source /usr/share/nvm/init-nvm.sh
-
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-
-alias mpv='dwmswallow $WINDOWID & mpv'
-alias zathura='dwmswallow $WINDOWID & zathura'
-alias feh='dwmswallow $WINDOWID & feh'
-alias scrcpy='dwmswallow $WINDOWID & scrcpy'
-
-
-alias vi='nvim'
-alias config='git --git-dir=/home/hendry/.cfg/ --work-tree=/home/hendry'
-alias md='mkdir -p'
-
-# yt-dlp
-alias yta-aac="yt-dlp --extract-audio --audio-format aac "
-alias yta-best="yt-dlp --extract-audio --audio-format best "
-alias yta-flac="yt-dlp --extract-audio --audio-format flac "
-alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
-alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
-alias yta-opus="yt-dlp --extract-audio --audio-format opus "
-alias yta-vorbis="yt-dlp --extract-audio --audio-format vorbis "
-alias yta-wav="yt-dlp --extract-audio --audio-format wav "
-alias ytv-best="yt-dlp -f bestvideo+bestaudio "
-
-
-
 export PATH='/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/nvim/bin:/home/hendry/go/bin:/home/hendry/.dotnet/tools:/home/hendry/.cargo/bin:/home/hendry/.local/bin:/home/hendry/.local/share/gem/ruby/3.0.0/bin'
 
 # Load completions
@@ -140,3 +103,8 @@ eval "$(zoxide init --cmd cd zsh)"
 
 autoload -Uz compinit && compinit
 
+# source <(ng completion script)
+source /usr/share/nvm/init-nvm.sh
+source ~/.config/zsh/zsh-vi-mode.zsh
+source ~/.config/zsh/aliases.sh
+source /etc/profile.d/google-cloud-cli.sh
