@@ -46,6 +46,8 @@ zinit ice depth=1; zinit light  hlissner/zsh-autopair
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+source ~/.config/zsh/zsh-vi-mode.zsh
+
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -105,6 +107,5 @@ autoload -Uz compinit && compinit
 
 # source <(ng completion script)
 source /usr/share/nvm/init-nvm.sh
-source ~/.config/zsh/zsh-vi-mode.zsh
 source ~/.config/zsh/aliases.sh
 source /etc/profile.d/google-cloud-cli.sh
