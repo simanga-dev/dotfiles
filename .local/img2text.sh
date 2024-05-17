@@ -1,0 +1,1 @@
+bin/img2text.sh
