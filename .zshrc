@@ -46,7 +46,7 @@ zinit ice depth=1; zinit light  hlissner/zsh-autopair
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source ~/.config/zsh/zsh-vi-mode.zsh
+# source ~/.config/zsh/zsh-vi-mode.zsh
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -77,6 +77,37 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+
+zstyle ':completion:*' completer _expand_alias _complete _ignored
+function expand-alias() {
+	zle _expand_alias
+	zle self-insert
+}
+zle -N expand-alias
+bindkey -M main ' ' expand-alias
+
 # History
 HISTSIZE=10000
 HISTFILE=~/.zsh/history
@@ -105,7 +136,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 autoload -Uz compinit && compinit
 
-# source <(ng completion script)
+source <(ng completion script)
 source /usr/share/nvm/init-nvm.sh
 source ~/.config/zsh/aliases.sh
 source /etc/profile.d/google-cloud-cli.sh
