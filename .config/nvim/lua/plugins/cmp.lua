@@ -130,12 +130,12 @@ return {
       },
     })
 
-    cmp.setup.filetype({ 'sql' }, {
-      sources = cmp.config.sources {
-        { name = 'path' },
-        { name = 'vim-dadbod-completion' },
-      },
-    })
+    -- cmp.setup.filetype({ 'sql' }, {
+    --   sources = cmp.config.sources {
+    --     { name = 'path' },
+    --     { name = 'vim-dadbod-completion' },
+    --   },
+    -- })
 
     cmp.setup.cmdline('/', {
       mapping = cmp.mapping.preset.cmdline(),
