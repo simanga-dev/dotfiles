@@ -2,7 +2,7 @@ return {
   'stevearc/overseer.nvim',
   opts = {
     strategy = {
-      'toggleterm',
+      'terminal',
       auto_scroll = true,
     },
     height = 15,
