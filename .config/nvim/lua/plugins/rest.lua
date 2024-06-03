@@ -1,31 +1,3 @@
--- return {
---   'rest-nvim/rest.nvim',
---   dependencies = { 'nvim-lua/plenary.nvim' },
---   commit = '1ce984c',
---   keys = {
---     {
---       '<leader>rr',
---       function()
---         require('rest-nvim').run()
---       end,
---       desc = 'call the current line in curl',
---     },
---   },
---   config = function()
---     require('rest-nvim').setup {
---       result = {
---         show_statistics = {
---           {
---             'time_total',
---             title = 'Total Time: ',
---             type = 'time',
---           },
---         },
---       },
---     }
---   end,
--- }
-
 return {
   {
     'vhyrro/luarocks.nvim',

@@ -2,7 +2,6 @@ sw_volume: 100
 audio_device_state:1:ALSA sound card
 audio_device_state:1:Visualizer feed
 state: stop
-current: 55
 random: 0
 repeat: 0
 single: 0
@@ -11,98 +10,4 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:amapiono/2Point1 - STIMELA ft Ntate Stunna & Nthabi Sings (Official Music Video) [frBT2Jx2cvA].mp3
-1:amapiono/Al Francisco ii [7HgmF6z7r24].mp3
-2:amapiono/Amalobolo [BPzG5emdHLs].mp3
-3:amapiono/Bandros, Zee Nxumalo & ZANI Nguwe - Nguwe (Official Music Video) [NAxzdAPTNb4].mp3
-4:amapiono/Blaq Diamond, DJ Maphorisa, Tman Xpress - Izikweletu ｜ Afropop (Official Music video) [5Vj7E6R3lWo].mp3
-5:amapiono/DaBoy Kelo - Izolo (feat. Tame Tiger & Vernotile) [tx6RTXTKBPE].mp3
-6:amapiono/De Mthuda, Da Muziqal Chef, Eemoh - Sgudi Snyc (Visualizer) ft. Sipho Magudulela [za0Z1sOikYk].mp3
-7:amapiono/De Mthuda, Da Muziqal Chef, Eemoh - Sgudi Snyc ft. Sipho Magudulela [tgHDCz4U1JY].mp3
-8:amapiono/De Mthuda, Da Muziqal Chef, Kwiish SA - iThuba ft. Eemoh [D-EitiIwtv0].mp3
-9:amapiono/De Mthuda, Kabza De Small, Da Muziqal Chef - Muntu Wam ft. Sino Msolo, Murumba Pitch [6BbhoOPoEEU].mp3
-10:amapiono/DJ Lag & Mr Nation Thingz - Hade Boss (feat. K.C Driller) Visualiser [a3OPZga_Nh0].mp3
-11:amapiono/Dj Maphorisa & Visca - Shona Kwelanga (Music Video) feat. Kabza De Small, Mawhoo & Da Muziqal Chef [JsbM_sYaHkQ].mp3
-12:amapiono/DJ Stax feat. Thabie Ngethe - Ungayithi Vu [hxImW2FdYl4].mp3
-13:amapiono/DJ Stokie - Awukhuzeki (Visualizer) ft. Omit ST, Sobzeen, Zee_nhle [hl4RqqoWgNI].mp3
-14:amapiono/DJ Stokie, Eemoh - Masithokoze (Official Music Video) [A3IhjA2aMUg].mp3
-15:amapiono/DJ Stokie, Zee_nhle, Murumba Pitch - Mali (Visualizer) [kaanf3j81aE].mp3
-16:amapiono/Dj Tshegu & Focalistic feat. Sims Noreng - Tiya Mfana (Mzokwana) (Official Music Video) [D7CS652ILWs].mp3
-17:amapiono/Dlala Thukzin - iPlan ft Zaba & Sykes ｜ Official Audio [IiD7CA5TFjQ].mp3
-18:amapiono/Dubula (Music Video) HarryCane x Master KG & DJ Latimmy  (Feat.Eemoh) [X7SqQO-TU-8].mp3
-19:amapiono/Dubula (Nyusa Nyusa) HarryCane x Master KG & DJ Latimmy (Feat.Eemoh) [qQxsy_0F8Cw].mp3
-20:amapiono/Falling - Vintage Boyz ZA x MacDuran M x Mlungu Da Musiq (Exclusives Only) [PxjE0rY48Mg].mp3
-21:amapiono/Felo Le Tee & Focalistic - Ka Lekeke (Official Music Video) [P28eJafMaGE].mp3
-22:amapiono/Fire - Vintage Boyz ZA x King Toolz x Mlungu Da Musiq (Exclusives Only) [tj14-2lHiRQ].mp3
-23:amapiono/Flash Cortez - Phambili Nge War (Cover) [H7JbEsOCCG0].mp3
-24:amapiono/Focalistic, EeQue & Thama Tee - Khekheleza (Dlala Dlala) (Official Music Video) [L4e3s0PKSFI].mp3
-25:amapiono/Focalistic, EeQue & Thama Tee - Khekheleza (Dlala Dlala) (Official Visualizer) [6UIIFkicYUo].mp3
-26:amapiono/Gangnam Style [U5Kid2axHPY].mp3
-27:amapiono/Gypsy Gypsy [q5ghAoFhrNM].mp3
-28:amapiono/Hamba Juba - Lady Amar, Cici, Murumba Pitch, JL SA (Official Video) (Collaboration) [kQKb_AGIrhE].mp3
-29:amapiono/Hotspot [WtuKg5qu-U4].mp3
-30:amapiono/Ikhaya Iam [U8D7deOry04].mp3
-31:amapiono/Ka Valungu [LLn14qJA9gc].mp3
-32:amapiono/kabza de small & Dj Maphorisa - Mniki We Mali (music video) ft Mlindo the vocalist, Mashudu [UmvfFLroM8o].mp3
-33:amapiono/Kabza De Small & Mthunzi - Imithandazo FT Young Stunna, DJ Maphorisa, Sizwe Alakine & UmthakathiKush [qrTC_pBFt3o].mp3
-34:amapiono/Kamo Mphela, Khalil Harrison & Tyler ICU - Dalie [Feat Baby S.O.N] (Official Music Video) - Amapiano [hcqcy6cdCw8].mp3
-35:amapiono/Kamo Mphela, Khalil Harrison & Tyler ICU - Dalie [Feat. Baby S.O.N] (Official Audio) - Amapiano [O5Bw1dzf3sE].mp3
-36:amapiono/Kelvin Momo & Babalwa M - Maye Maye ft. Azana & Stixx (Official Audio) [fKm4GCXmIL4].mp3
-37:amapiono/Khalil Harrison & Tyler ICU - Jealousy (Official Video) ft. Leemckrazy & Ceeka RSA [7EgcG5Jy_yI].mp3
-38:amapiono/King P & Augusto Mawts - Jakalas (feat.Olley RSA) [Az1TK3rHU4A].mp3
-39:amapiono/Kunkra [DJUZUIYHcCw].mp3
-40:amapiono/LeeMckrazy & Felo Le Tee - Nazo (Official Audio) [VMgeQJg7G9I].mp3
-41:amapiono/Mali - Vintage Boyz ZA x Manandisa (Exclusives Only) [Q8Rxt7mv0C4].mp3
-42:amapiono/Mama - Vintage Boyz ZA x Busi (Exclusives Only) [UYp2LsFa_6g].mp3
-43:amapiono/MaWhoo - Ngilimele [Feat. Deep Sen, KingTalkzin and Mthunzi] (Official Audio) [P-xEtlExxXw].mp3
-44:amapiono/MAYE!!! In Too Deep _ Vintage Boyz ZA x Mlungu Da Musiq (Exclusives Only) [9AHcPrWXSfE].mp3
-45:amapiono/Megadrumz - Mjolo Pandemic ft Mazet (Official Music Video) [uzXhBhZurwE].mp3
-46:amapiono/Megadrumz & Lady Du - Tjina (Official Audio) [FbNllYON_Mo].mp3
-47:amapiono/Megadrumz & Lady Du - Tjina (Official Music Video) [gSPoY_vdjaE].mp3
-48:amapiono/Mellow & Sleazy - Chom'yam (Official Audio) ft. LeeMcKrazy, Dinho, Thebuu [ZtAiT56oKWk].mp3
-49:amapiono/Mellow & Sleazy x Thuto The Human - Google (Feat. Kmat & TheBuu) [3CPa-_6eNAk].mp3
-50:amapiono/Mellow & Sleazy, ELTEE, LeeMcKrazy - Kokotela (Official Audio) ft. Scotts Maphuma, Gipa [z1GHyfeUX-A].mp3
-51:amapiono/Mellow & Sleazy, Focalistic [feat. Makhekhe] Wang Compromisa (Official Music Video) [5chK-KzT1-s].mp3
-52:amapiono/Mellow & Sleazy, Scotts Maphuma - Nqonqozela feat. LeeMckrazy [Rsqf6B5_uAw].mp3
-53:amapiono/Mellow & Sleazy, Sjavas Da Deejay, TitoM - Imnandi lento (Official Audio) ft. Tman Xpress [iNJ2-UBp2WE].mp3
-54:amapiono/Mellow & Sleazy, Tumelo.za - Thesha (Official Audio) ft. LeeMcKrazy, TyroneDee, TitoM [i9Rhc2CtGPM].mp3
-55:amapiono/Mnike [5jh-RdF83TA].mp3
-56:amapiono/Monday Boys Holiday [9W4I4AaUtUM].mp3
-57:amapiono/Mr JazziQ - Hamba naye (Visualiser) ft. Pcee, Justin99, MaTen, Jandas [8-tzLiaOyd4].mp3
-58:amapiono/Msongi X Cici X Sir Trill Feat DotMega - Xola (Official Audio) [Sy5iuCuHSto].mp3
-59:amapiono/Myztro Ah Ah [6qOeRw2wuKg].mp3
-60:amapiono/Nandipha808 - Forgive our trespasses [Ft. Ceeka RSA, Demola] (Official Audio) [lrLVjRvf2CY].mp3
-61:amapiono/Nduma Ndumane [n5DTDzRPUts].mp3
-62:amapiono/Ngibambeni [g-MSVF7tqBM].mp3
-63:amapiono/Ngizwile (Music Video) DeejayKgosi x Baby Momo x Lington - (Feat.Zeenhle,Psalm & Phemelo saxer) [sA2IXD1cdWM].mp3
-64:amapiono/Nguwe [RK65TNsMnRs].mp3
-65:amapiono/Njelic - Izinto Zimane Zijike (Visualizer) ft. Mkeyz, Thabza Tee, Rhythm Tee [37Eb6iXVfzE].mp3
-66:amapiono/Nkosazana Daughter, ThackzinDJ & Lowsheen - Amazinyo Endoda (Official Music Video) [qim8icydfGE].mp3
-67:amapiono/Oceanbiller, Omaannn, Tskay - BHEBHA 2.0 [Official Music Video] (ft Bepa, Double D & Jazzy Avenue) [NJ1jV5i2mxc].mp3
-68:amapiono/Oscar Mbo, KG Smallz and Kabza De Small - Yes God [Feat. Dearson] (Official Audio) [_DwOUWlm3Os].mp3
-69:amapiono/Pcee - Gabriella (Official Audio) ft. Officixl RSA [pxN28w17BFU].mp3
-70:amapiono/Sam Deep, Eemoh - iMpumelelo ft. Da Muziqal Chef [NHP4bfz0FLA].mp3
-71:amapiono/Sam Deep, Njelic, Aymos - Isgubhu (Official Music Video) [rY-DSC8U6sE].mp3
-72:amapiono/Shakes & Les - Funk 99 (Official Audio) [RBujLBX9PDY].mp3
-73:amapiono/Shaunmusiq & Ftears x Daliwonga - Howa You (Official Audio) [PxulwQpeH90].mp3
-74:amapiono/Soa Mattrix & Sir Trill - Athandwe ft B33kay SA, Cnethemba Gonelo, Frank Mabeat & Tribal Soul [H_prZfbNTrk].mp3
-75:amapiono/Sol Phenduka, Anga Diago - Lonely Nights ft Ksoulrsa, Nvrth ｜ Official Music Video ｜ Amapiano [RAtent-6Nx4].mp3
-76:amapiono/SUKA [0NlLNdcnnMg].mp3
-77:amapiono/Tebza De DJ - Ka Valungu ft. DJ Nomza The King [ZXDBhD40Sv0].mp3
-78:amapiono/TitoM & Yuppe - Tshwala Bam [Feat. S.N.E & EeQue] (Official Audio) [j1n8B6J1JF8].mp3
-79:amapiono/Turn Off The Lights [GD9agsvJ0L4].mp3
-80:amapiono/Tyla - Water (Official Music Video) [XoiOOiuH8iI].mp3
-81:amapiono/Tyler ICU - Ebasini Wav.files ft. Leemckrazy, Tman Xpress, Ceeka RSA,Visca, AL Xapo, Sjavas DaDeejay [eR1HWnqn-Ok].mp3
-82:amapiono/Tyler ICU - S'dakwa Wav.files ft. CooperSA, Tumelo ZA, Ceeka RSA, Tyrone Dee and Tiiger [wQseoaVbFhQ].mp3
-83:amapiono/Tyler ICU - Thela Wav.files [MGs6rVd995E].mp3
-84:amapiono/uLazi -  Yey feat. Infinity MusiQ ｜ Official Music Video ｜ Dance Video [xOK7fhbUveA].mp3
-85:amapiono/Umoya [ERrhIsltmVw].mp3
-86:amapiono/Uncle Waffles - Peacock Revisit ft. Ice Beats Slide & Sbuda Maleather (Official Video) [KtxoEXmXQJQ].mp3
-87:amapiono/Uncle Waffles x Tony Duardo x Justin99 - Yahyuppiyah ft. Pcee, EeQue, Chley (Official Visualizer) [eqSuJyey7gk].mp3
-88:amapiono/uNonkosi [3wxDGnaNJLQ].mp3
-89:amapiono/Uthando [qcfREwCgSyg].mp3
-90:amapiono/Wanitwa Mos x Nkosazana Daughter & Master KG - Keneilwe (Feat Dalom Kids) [1wUdiwgXsS4].mp3
-91:amapiono/Wena Wa Pallwa [nopjxy2FdLM].mp3
-92:amapiono/Wetsalang [NeEOyrmInTM].mp3
-93:amapiono/Yini Ngathi (Insane) [mN2XhAA8PLY].mp3
 playlist_end
