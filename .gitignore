@@ -67,8 +67,6 @@
 .config/pypoetry/
 .config/python_keyring/
 .config/ripgrep-all/
-.config/rofi-pass/
-.config/rofi/
 .config/rstudio/
 .config/sniffnet/
 .config/snippets/
