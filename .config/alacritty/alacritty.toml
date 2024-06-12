@@ -18,15 +18,15 @@ vi_mode_style = "Block"
 size = 11.5
 
 [font.bold]
-family = "JetBrainsMono"
+family = "JetBrainsMonoNerdFont"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono"
+family = "JetBrainsMonoNerdFont"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono"
+family = "JetBrainsMonoNerdFont"
 style = "Regular"
 
 [[keyboard.bindings]]
