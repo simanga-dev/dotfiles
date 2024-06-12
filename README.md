@@ -1,6 +1,18 @@
-# My dotfiles
+# Dofiles Configuration for Arch Linux
+
+
+
+## Font confiration
+_
 
 This directory contains the dotfiles for my system
+
+
+### Window Manager configuration
+#### Requirement
+    - [slstatus](https://git.suckless.org/slstatus)
+    - [DWM](https://github.com/h3ndry/dwm/tree/master)
+    - [rofi](https://archlinux.org/packages/extra/x86_64/rofi/)
 
 ## Requirements
 
