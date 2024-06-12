@@ -1,0 +1,29 @@
+{
+	"name": "Vimium C",
+	"@time": "2024/06/12, 10:01:25",
+	"time": 1718179285470,
+	"environment": {
+		"extension": "1.99.997",
+		"platform": "linux",
+		"firefox": 126
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://leetcode.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://localhost:8888/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://localhost:8006/"
+		}
+	],
+	"grabBackFocus": true,
+	"keyupTime": 100,
+	"scrollStepSize": 300,
+	"showInIncognito": true,
+	"vimSync": true
+}
