@@ -33,7 +33,6 @@
 .config/dconf/
 .config/direnv/
 .config/discord/
-.config/dunst/
 .config/enchant/
 .config/eww/
 .config/gcloud/
