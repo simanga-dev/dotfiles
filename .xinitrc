@@ -7,7 +7,7 @@ systemctl --user start mpd &
 xautolock -time 8 -locker slock &
 xbanish &
 picom &
- lxsession &
+# lxsession &
 clipmenud &
 ./.local/bin/05-1440x900-res.sh &
 ~/.local/bin/toggle-monitores.sh &

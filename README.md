@@ -32,3 +32,12 @@ then use GNU stow to create symlinks
 ```
 $ stow .
 ```
+### NOTE: Remember this
+
+_create this directory `/etc/profile.d/open-ai.sh` he_
+
+```
+export CM_LAUNCHER=rofi
+
+```
+
