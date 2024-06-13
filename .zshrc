@@ -139,4 +139,4 @@ autoload -Uz compinit && compinit
 source <(ng completion script)
 source /usr/share/nvm/init-nvm.sh
 source ~/.config/zsh/aliases.sh
-source /etc/profile.d/google-cloud-cli.sh
+# source /etc/profile.d/google-cloud-cli.sh
