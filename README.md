@@ -53,3 +53,9 @@ export CM_LAUNCHER=rofi
 
 ```
 
+
+just so that I don't keep on googling the same thing
+
+```
+chsh -s $(which zsh)
+```
