@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-export OPENAI_API_KEY="$(cat ~/.jshi)"
-BASE='/home/hendry/'
-COMPANY='/home/hendry/'
-
+BASE='/home/simanga/'
 
 # for personal files and all that kind of staff I mess with
 items=`fd --max-depth=1 --type=d --base-directory=${BASE} . 'Code'`
@@ -18,7 +15,7 @@ items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . 'workspace/hackert
 
 items+=$'\n'
 # for a company specific projects
-items+=`fd -H -I --type=directory --base-directory=/home/hendry/workspace/kriterion -E ".github" "\.git" | sd '\.git/' '' | sd '(^\w)' 'workspace/kriterion/$1'`
+items+=`fd -H -I --type=directory --base-directory=/home/hendry/workspace/kriterion -E ".github" "\.git" | sed '\.git/' '' | sed '(^\w)' 'workspace/kriterion/$1'`
 items+=$'\n'
 
 

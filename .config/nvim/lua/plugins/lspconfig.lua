@@ -93,7 +93,7 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     -- local omnisharp_bin = '/home/hendry/.local/share/nvim/mason/bin/omnisharp'
-    local omnisharp_bin = '/home/hendry/.local/share/nvim/mason/bin/omnisharp'
+    local omnisharp_bin = '/home/simanga/.local/share/nvim/mason/bin/omnisharp'
     local pid = vim.fn.getpid()
     local servers = {
       clangd = {},

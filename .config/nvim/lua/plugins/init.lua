@@ -10,7 +10,6 @@ return {
   'cohama/lexima.vim',
   'kovetskiy/sxhkd-vim',
   'b0o/schemastore.nvim',
-  'nathom/filetype.nvim',
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
   -- 'jamespeapen/Nvim-R',
