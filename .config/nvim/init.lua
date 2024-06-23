@@ -80,7 +80,7 @@ cmd [[
     hi WinSeparator gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
 
     hi TabLineFill guifg=NONE guibg=NONE
-    hi TabLine guifg=#1d202f  guibg=NONE
+    hi TabLine guifg=#565f89  guibg=NONE
     hi TabLineSel guifg=#565f89  guibg=NONE
 
     hi NotificationInfo guifg=#565f89 guibg=NONE
