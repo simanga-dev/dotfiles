@@ -1,6 +1,6 @@
 [user]
 	email = h3ndry@users.noreply.github.com
-	name = hendry
+	name = simanga
 [merge]
 	tool = nvimdiff
 [core]
@@ -18,6 +18,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[safe]
-	directory = /media/2CFA-18FF/Code/dwm
-	directory = /media/2CFA-18FF/Code/resume
