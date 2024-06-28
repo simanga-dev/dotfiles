@@ -80,3 +80,5 @@
 .config/whatsdesk/
 .config/xfce4/
 .config/yarn/
+.local/share/
+.local/state/

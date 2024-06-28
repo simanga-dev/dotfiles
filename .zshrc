@@ -1,6 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -140,4 +141,17 @@ source <(ng completion script)
 source /usr/share/nvm/init-nvm.sh
 source ~/.config/zsh/aliases.sh
 # source /etc/profile.d/google-cloud-cli.sh
-#source /usr/share/nvm/init-nvm.sh
+
+# Check if already in a tmux session
+if [ -n "$TMUX" ]; then
+    # echo "Already in a tmux session"
+else
+    # Check if the tmux session named "default" already exists
+    if ! tmux has-session -t default 2>/dev/null; then
+        # If the session does not exist, create a new one
+        tmux new-session -d -s default
+    else
+        # If the session already exists, attach to it
+        tmux attach-session -t default
+    fi
+fi
