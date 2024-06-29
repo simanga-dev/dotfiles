@@ -128,7 +128,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-export PATH='/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/nvim/bin:/home/hendry/go/bin:/home/hendry/.dotnet/tools:/home/hendry/.cargo/bin:/home/hendry/.local/bin:/home/hendry/.local/share/gem/ruby/3.0.0/bin'
+export PATH='/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/nvim/bin:/home/simanga/go/bin:/home/simanga/.dotnet/tools:/home/simanga/.cargo/bin:/home/simanga/.local/bin:/home/simanga/.local/share/gem/ruby/3.0.0/bin'
 
 # Load completions
 eval "$(fzf --zsh)"
@@ -137,6 +137,7 @@ eval "$(zoxide init --cmd cd zsh)"
 autoload -Uz compinit && compinit
 
 source <(ng completion script)
-# source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh
 source ~/.config/zsh/aliases.sh
 # source /etc/profile.d/google-cloud-cli.sh
+#source /usr/share/nvm/init-nvm.sh
