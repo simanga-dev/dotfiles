@@ -144,7 +144,7 @@ source ~/.config/zsh/aliases.sh
 
 # Check if already in a tmux session
 if [ -n "$TMUX" ]; then
-    # echo "Already in a tmux session"
+    echo "Already in a tmux session"
 else
     # Check if the tmux session named "default" already exists
     if ! tmux has-session -t default 2>/dev/null; then
