@@ -191,7 +191,7 @@ return {
     -- Install golang specific config
     require('dap-go').setup()
 
-    require('dap-python').setup '/home/hendry/.virtualenvs/debugpy/bin/python'
+    require('dap-python').setup '/home/simanga/.virtualenvs/debugpy/bin/python'
     dap.configurations.lua = {
       {
         type = 'nlua',
@@ -206,14 +206,14 @@ return {
         name = 'launch - netcoredbg',
         request = 'launch',
         program = function()
-          return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+          return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net8.0/linux-x64/', 'file')
         end,
       },
     }
 
     dap.adapters.coreclr = {
       type = 'executable',
-      command = '/home/hendry/.local/share/nvim/mason/bin/netcoredbg',
+      command = '/home/simanga/.local/share/nvim/mason/bin/netcoredbg',
       args = { '--interpreter=vscode' },
     }
 

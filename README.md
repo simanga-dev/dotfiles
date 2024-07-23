@@ -34,6 +34,10 @@ pacman -S stow
 
 First, check out the dotfiles repo in your $HOME directory using git
 
+- [ ]  love is in the ai
+
+
+
 ```
 $ git clone git@github.com/dreamsofautonomy/dotfiles.git
 $ cd dotfiles
