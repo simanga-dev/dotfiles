@@ -82,3 +82,5 @@
 .config/yarn/
 .local/share/
 .local/state/
+.config/Postman/
+.config/xbuild/
