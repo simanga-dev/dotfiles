@@ -100,9 +100,9 @@ vim.keymap.set('t', '<C-\\><C-\\>', '<C-\\><C-n>')
 vim.keymap.set('t', '<C-\\>\\', '<C-\\><C-n>')
 vim.keymap.set('n', '<leader>.', ':e<space>**/')
 -- vim.keymap.set("n", "<leader>sT", ":tjump *")
-vim.keymap.set('n', '<leader>M', ':make <CR>')
-vim.keymap.set('n', '<leader>cr', ':!cargo run <CR>')
-vim.keymap.set('n', '<leader>ct', ':!cargo test <CR>')
+vim.keymap.set('n', '<leader>M', ':wa<CR>:make<CR>')
+vim.keymap.set('n', '<leader>cr', ':wa<CR>:!cargo run <CR>')
+vim.keymap.set('n', '<leader>ct', ':wa<CR>:!cargo test <CR>')
 
 -- Managing buffers and Windows
 vim.keymap.set('n', '<leader>B', ':bdelete!<CR>')
