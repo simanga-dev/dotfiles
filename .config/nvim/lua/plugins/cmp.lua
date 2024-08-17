@@ -14,11 +14,13 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'hrsh7th/cmp-emoji',
     'rafamadriz/friendly-snippets',
     'onsails/lspkind-nvim',
     'tamago324/cmp-zsh',
     'ray-x/cmp-treesitter',
     'hrsh7th/cmp-cmdline',
+    'kristijanhusak/vim-dadbod-completion',
     'hrsh7th/cmp-calc',
     'lukas-reineke/cmp-rg',
     'jmederosalvarado/roslyn.nvim',
@@ -80,20 +82,18 @@ return {
       window = {
         completion = {
           border = 'rounded',
-          scrollbar = '-',
+          scrollbar = true,
         },
         documentation = {
           border = 'rounded',
           scrollbar = '-',
         },
       },
-
       snippet = {
         expand = function(args)
           require('luasnip').lsp_expand(args.body)
         end,
       },
-
       sources = {
         { name = 'nvim_lsp' },
         { name = 'cmp_r' },
@@ -104,10 +104,12 @@ return {
         { name = 'calc' },
         { name = 'path' },
         { name = 'buffer' },
-        { name = 'vim-dadbod-completion' },
+        { name = 'emoji' },
       },
-      experimental = {},
+      -- experimental = {},
       formatting = {
+        fields = { 'abbr', 'kind', 'menu' },
+        expandable_indicator = false,
         format = lspkind.cmp_format {
           menu = {
             nvim_lsp = '[LSP]',
@@ -117,6 +119,7 @@ return {
             calc = '[CALC]',
             cmdline = '[CMD]',
             path = '[PATH]',
+            emoji = '[EMOJI]',
           },
         },
       },
@@ -129,6 +132,8 @@ return {
         { name = 'cmdline' },
       },
     })
+
+    cmp.setup.buffer { sources = cmp.config.sources { { name = 'vim-dadbod-completion' } } }
 
     -- cmp.setup.filetype({ 'sql' }, {
     --   sources = cmp.config.sources {

@@ -35,12 +35,14 @@ if [ -d "${BASE}${FOLDER}" ]; then
 
 	cd ${BASE}${FOLDER}
 
+    # Check if the tmux session named "default" already exists
+    if ! tmux has-session -t ${PROJECT_NAME} 2>/dev/null; then
 	tmux new-session -d -s ${PROJECT_NAME}
-
 	tmux send-keys -t ${PROJECT_NAME} "nvim ." Enter
-	tmux attach-session -t ${PROJECT_NAME}
+    fi
 
-	alacritty -T "neovim - $n" --class "NIDE"  -e tmux attach-session -t ${PROJECT_NAME}
+    alacritty -T "neovim - $n" --class "NIDE"  -e tmux attach-session -t ${PROJECT_NAME}
+
 fi
 
 # echo "$items" | fzf | xargs -I {} nvim {} --cmd 'cd {}'
