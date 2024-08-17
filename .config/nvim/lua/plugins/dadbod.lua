@@ -29,9 +29,9 @@ return {
         )
       end,
     })
-
     vim.cmd [[
             " Source is automatically added, you just need to include it in the chain complete list
+            let g:db_ui_save_location = '~/workspace/my-notes/db_ui'
             let g:completion_matching_strategy_list = ['exact', 'substring']
             let g:db_ui_execute_on_save = 0
             " g:db_ui_execute_on_save = 1
