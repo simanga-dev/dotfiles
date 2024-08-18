@@ -23,6 +23,16 @@ return {
   'brenoprata10/nvim-highlight-colors',
   'nvim-lua/lsp_extensions.nvim',
   'Hoffs/omnisharp-extended-lsp.nvim',
+  {
+    'ibhagwan/fzf-lua',
+    -- optional for icon support
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      -- calling `setup` is optional for customization
+      require('fzf-lua').setup {}
+    end,
+  },
+
   -- {
   --   'tiagovla/tokyodark.nvim',
   --   opts = {

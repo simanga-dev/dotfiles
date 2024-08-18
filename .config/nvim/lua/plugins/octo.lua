@@ -1,57 +1,19 @@
 return {
-    'pwntester/octo.nvim',
-    dependencies = {
-        'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope.nvim',
-        'nvim-tree/nvim-web-devicons',
-    },
-    event        = "VeryLazy",
-    -- branch       = "fix_429",
-    config       = function()
-        require "octo".setup()
-        local wk = require("which-key")
-
-        --       list_issues = { lhs = "<space>il", desc = "list open issues on same repo" },
-        --       reload = { lhs = "<C-r>", desc = "reload issue" },
-        --       open_in_browser = { lhs = "<C-b>", desc = "open issue in browser" },
-        --       copy_url = { lhs = "<C-y>", desc = "copy url to system clipboard" },
-        --       add_assignee = { lhs = "<space>aa", desc = "add assignee" },
-        --       remove_assignee = { lhs = "<space>ad", desc = "remove assignee" },
-        --       create_label = { lhs = "<space>lc", desc = "create label" },
-        --       add_label = { lhs = "<space>la", desc = "add label" },
-        --       remove_label = { lhs = "<space>ld", desc = "remove label" },
-        --       goto_issue = { lhs = "<space>gi", desc = "navigate to a local repo issue" },
-        --       add_comment = { lhs = "<space>ca", desc = "add comment" },
-        --       delete_comment = { lhs = "<space>cd", desc = "delete comment" },
-        --       next_comment = { lhs = "]c", desc = "go to next comment" },
-        --       prev_comment = { lhs = "[c", desc = "go to previous comment" },
-        --       react_hooray = { lhs = "<space>rp", desc = "add/remove 🎉 reaction" },
-        --       react_heart = { lhs = "<space>rh", desc = "add/remove ❤️ reaction" },
-        --       react_eyes = { lhs = "<space>re", desc = "add/remove 👀 reaction" },
-        --       react_thumbs_up = { lhs = "<space>r+", desc = "add/remove 👍 reaction" },
-        --       react_thumbs_down = { lhs = "<space>r-", desc = "add/remove 👎 reaction" },
-        --       react_rocket = { lhs = "<space>rr", desc = "add/remove 🚀 reaction" },
-        --       react_laugh = { lhs = "<space>rl", desc = "add/remove 😄 reaction" },
-        --       react_confused = { lhs = "<space>rc", desc = "add/remove 😕 reaction" },
-        --     },
-
-        wk.register({
-            i = {
-                c = { "<cmd>Octo issue close <cr>", "close issue" },
-                o = { "<cmd>Octo issue open <cr>", "reopen issue" },
-                l = { "<cmd>Octo issue list <cr>", "list open issues on same repo" },
-            },
-            pr = {
-                l = { "<cmd>Octo pr list <cr>", "list open issues on same repo" },
-            }
-
-        }, { prefix = "gh" })
-    end
-
-
-
+  'pwntester/octo.nvim',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    'nvim-tree/nvim-web-devicons',
+  },
+  keys = {
+    { 'ghic', '<cmd>Octo issue close <cr>', desc = 'close issue' },
+    { 'ghil', '<cmd>Octo issue list <cr>', desc = 'list open issues on same repo' },
+    { 'ghio', '<cmd>Octo issue open <cr>', desc = 'reopen issue' },
+    { 'ghprl', '<cmd>Octo pr list <cr>', desc = 'list open issues on same repo' },
+  },
+  event = 'VeryLazy',
+  -- branch       = "fix_429",
 }
-
 
 -- require"octo".setup({
 --   use_local_fs = false,                    -- use local files on right side of reviews

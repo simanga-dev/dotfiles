@@ -7,7 +7,7 @@ return {
       function()
         vim.cmd [[ ToggleTerm ]]
       end,
-      desc = '[T] ToggleTeam',
+      desc = ' Toggle Terminal',
     },
   },
   opts = {

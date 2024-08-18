@@ -6,6 +6,7 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'nanotee/sqls.nvim',
     'Hoffs/omnisharp-extended-lsp.nvim',
     { 'j-hui/fidget.nvim', opts = { notification = { window = { winblend = 0 } } } },
   },
@@ -110,8 +111,12 @@ return {
         cmd = {
           '/home/simanga/.local/share/nvim/mason/bin/sqls',
           '-config',
-          '/home/simanga/workspace/my-notes/db_ui/config.yml',
+          '/home/simanga/workspace/my-notes/db_ui/.sqls.yml',
         },
+        on_attach = function(client, bufnr)
+          require('sqls').on_attach(client, bufnr)
+          vim.keymap.set('n', '<leader>dB', ':SqlsSwitchDatabase<CR>')
+        end,
       },
       markdownlint = {},
       emmet_language_server = {},
