@@ -100,7 +100,6 @@ return {
       clangd = {},
       gopls = {},
       pyright = {},
-      -- sqlls = {},
       texlab = {},
       dockerls = {},
       cmake = {},
