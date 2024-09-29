@@ -30,7 +30,8 @@ bindkey -M main ' ' expand-alias
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
 # export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
-
+#
+export EDITOR=nvim
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -155,3 +156,11 @@ source ~/.config/zsh/aliases.sh
 #         tmux attach-session -t default
 #     fi
 # fi
+
+# pnpm
+export PNPM_HOME="/home/simanga/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
