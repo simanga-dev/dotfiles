@@ -15,7 +15,7 @@ return {
         typescriptreact = { 'prettierd', 'prettier', lsp_format = 'fallback' },
         html = { 'prettierd', 'prettier' },
         -- sql = { 'sqlfluff', lsp_format = 'fallback' }, when I have time to configure it the way I want to but for now pg_format is more than enough
-        sql = { 'pg_format', lsp_format = 'fallback' },
+        -- sql = { 'pg_format', lsp_format = 'fallback' },
       },
     }
 
