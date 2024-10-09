@@ -25,38 +25,30 @@ return {
   },
   keys = {
     {
-      '<leader>cx',
-      function()
-        vim.cmd [[ ChatGPTRun explain_code ]]
-      end,
-      desc = '[GPT] Explain code',
-      mode = { 'n', 'v' },
-    },
-    {
-      '<leader>ce',
+      '<leader>c',
       function()
         vim.cmd [[ ChatGPTEditWithInstruction ]]
       end,
       desc = '[GPT] Edit with instruction',
-      mode = { 'n', 'v' },
+      mode = { 'v' },
     },
     {
-      '<leader>cg',
+      '<leader>g',
       function()
         vim.cmd [[ ChatGPTRun grammar_correction ]]
       end,
       desc = '[GPT] Fix Grammar',
-      mode = { 'n', 'v' },
+      mode = { 'v' },
     },
     {
-      '<leader>cc',
+      '<leader>c',
       function()
         vim.cmd [[ ChatGPT ]]
       end,
       desc = '[GPT] Launch ChatGPT Chat',
     },
     {
-      '<leader>cC',
+      '<leader>C',
       function()
         vim.cmd [[ ChatGPTActAs ]]
       end,
