@@ -63,13 +63,6 @@ return {
       desc = 'git merge continue',
     },
     {
-      '<leader>gS',
-      function()
-        vim.cmd [[ Git stash]]
-      end,
-      desc = '[GM] Merge Tool, show file with conffilt',
-    },
-    {
       '<leader>gw',
       function()
         vim.cmd [[ Gwrite! ]]
