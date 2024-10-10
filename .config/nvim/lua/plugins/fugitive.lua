@@ -94,10 +94,10 @@ return {
       '<leader>gP',
       function()
         local branch = vim.system({ 'git', 'branch --show-current' }, { text = true }):wait()
-        print(branch)
-        local git_command = 'Git push origin ' .. branch.stdout
-        print(branch)
-        vim.cmd(git_command)
+        local git_pull = 'Git pull origin ' .. branch.stdout
+        vim.cmd(git_pull)
+        local git_push = 'Git push origin ' .. branch.stdout
+        vim.cmd(git_push)
       end,
       desc = 'Git push to current branch',
     },
