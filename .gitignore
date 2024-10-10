@@ -84,3 +84,10 @@
 .local/state/
 .config/Postman/
 .config/xbuild/
+.config/azuredatastudio/
+.config/csharp.history
+.config/freerdp/
+.config/go/
+.config/remmina/
+.config/tigervnc/
+.config/zed/
