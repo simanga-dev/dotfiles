@@ -76,13 +76,6 @@ return {
       end,
       desc = '[GM] Merge Tool, show file with conffilt',
     },
-    -- {
-    --   '<leader>gll',
-    --   function()
-    --     vim.cmd [[ Git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' ]]
-    --   end,
-    --   desc = '[GL] Show git logs',
-    -- },
     {
       '<leader>gp',
       function()
