@@ -79,6 +79,7 @@ return {
     {
       '<leader>gp',
       function()
+        vim.cmd [[ Git stash]]
         vim.cmd [[ Git pull --all --rebase ]]
       end,
       desc = 'Git pull --all',
