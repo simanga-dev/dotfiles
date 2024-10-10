@@ -62,7 +62,7 @@ return {
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = '[G] Git Status' })
-    vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = '[G] Git branches' })
+    vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = '[G] Git branches' }) -- NOTE: Make this a function, stash changes before you switch brach
     vim.keymap.set('n', '<leader>gS', builtin.git_stash, { desc = '[G] Stash Git Changes' })
 
     -- Slightly advanced example of overriding default behavior and theme
