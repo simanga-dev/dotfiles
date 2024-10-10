@@ -94,8 +94,7 @@ return {
       '<leader>gP',
       function()
         local branch = vim.system({ 'git', 'branch --show-current' }, { text = true }):wait()
-        local git_pull = 'Git pull origin ' .. branch.stdout
-        vim.cmd(git_pull)
+        vim.cmd [[ Git pull --all --rebase ]]
         local git_push = 'Git push origin ' .. branch.stdout
         vim.cmd(git_push)
       end,
