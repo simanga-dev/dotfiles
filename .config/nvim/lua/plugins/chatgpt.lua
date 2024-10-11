@@ -25,7 +25,7 @@ return {
   },
   keys = {
     {
-      '<leader>c',
+      '<leader>cc',
       function()
         vim.cmd [[ ChatGPTEditWithInstruction ]]
       end,
@@ -41,7 +41,7 @@ return {
       mode = { 'v' },
     },
     {
-      '<leader>c',
+      '<leader>cc',
       function()
         vim.cmd [[ ChatGPT ]]
       end,
