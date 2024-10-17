@@ -62,6 +62,11 @@
         "body": ["SHOW DATABASES;"],
         "description": "Show databases"
     },
+    "sel": {
+        "prefix": "sel",
+        "body": ["SELECT TOP 5 ${1:attribute(s)} FROM ${2:tableName}.dbo.${3:tableName};"],
+        "description": "Regular select"
+    },
     "select": {
         "prefix": "select",
         "body": ["SELECT ${1:attribute(s)} FROM ${2:tableName};"],
