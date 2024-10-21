@@ -33,7 +33,7 @@ return {
       mode = { 'v' },
     },
     {
-      '<leader>g',
+      '<leader>cg',
       function()
         vim.cmd [[ ChatGPTRun grammar_correction ]]
       end,
@@ -48,7 +48,7 @@ return {
       desc = '[GPT] Launch ChatGPT Chat',
     },
     {
-      '<leader>C',
+      '<leader>cC',
       function()
         vim.cmd [[ ChatGPTActAs ]]
       end,
