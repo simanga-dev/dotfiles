@@ -72,8 +72,11 @@ return {
     {
       '<leader>gp',
       function()
-        vim.cmd [[ Git stash]]
-        vim.cmd [[ Git pull --all --rebase ]]
+        local fidget = require 'fidget'
+        -- vim.cmd [[ Git stash]]
+        -- vim.cmd [[ Git stash]]
+        fidget.notify 'Hello world'
+        -- vim.cmd [[ Git pull --all --rebase ]]
       end,
       desc = 'Git pull --all',
     },
