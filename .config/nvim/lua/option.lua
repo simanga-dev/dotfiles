@@ -38,7 +38,8 @@ vim.api.nvim_create_autocmd('BufEnter', {
     if
       vim.bo.buftype == 'terminal'
       or vim.bo.filetype == 'markdown'
-      -- or vim.bo.filetype == ''
+      or vim.bo.filetype == ''
+      or vim.bo.filetype == 'gitcommit'
       or vim.bo.filetype == 'chatgpt-input'
       or vim.bo.filetype == 'oil'
       or vim.bo.filetype == 'neo-tree'
