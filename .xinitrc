@@ -1,6 +1,7 @@
 #!/bin/sh
 
 dunst &
+systemctl --user import-environment DISPLAY &
 sxhkd &
 slstatus &
 systemctl --user start mpd &
