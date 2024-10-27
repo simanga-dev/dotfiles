@@ -29,8 +29,6 @@ return {
     vim.g.db_ui_win_position = 'right'
     vim.g.db_ui_tmp_query_location = '~/workspace/my-notes/db_ui'
 
-    require('cmp').setup.buffer { sources = { { name = 'vim-dadbod-completion' } } }
-
     vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
       pattern = { '*.dbout' },
       callback = function()

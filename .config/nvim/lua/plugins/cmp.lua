@@ -13,6 +13,7 @@ return {
     },
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-nvim-lsp',
+    'ray-x/cmp-sql',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-emoji',
     'rafamadriz/friendly-snippets',
@@ -105,6 +106,7 @@ return {
         { name = 'path' },
         { name = 'buffer' },
         { name = 'emoji' },
+        { name = 'sql' },
       },
       -- experimental = {},
       formatting = {
@@ -120,41 +122,41 @@ return {
             cmdline = '[CMD]',
             path = '[PATH]',
             emoji = '[EMOJI]',
+            buffer = '[BUF]',
+            sql = '[SQL]',
           },
         },
       },
     }
 
-    cmp.setup.cmdline(':', {
-      mapping = cmp.mapping.preset.cmdline(),
+    cmp.setup.buffer {
       sources = cmp.config.sources {
+        { name = 'vim-dadbod-completion' },
+        { name = 'luasnip' },
+        { name = 'buffer' },
         { name = 'path' },
-        { name = 'cmdline' },
       },
-    })
+    }
 
-    cmp.setup.buffer { sources = cmp.config.sources { { name = 'vim-dadbod-completion' } } }
+    for _, cmd_type in ipairs { ':', '@' } do
+      cmp.setup.cmdline(cmd_type, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources {
+          { name = 'path' },
+          { name = 'zsh' },
+          { name = 'cmdline' },
+        },
+      })
+    end
 
-    -- cmp.setup.filetype({ 'sql' }, {
-    --   sources = cmp.config.sources {
-    --     { name = 'path' },
-    --     { name = 'vim-dadbod-completion' },
-    --   },
-    -- })
-
-    cmp.setup.cmdline('/', {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources {
-        { name = 'buffer' },
-      },
-    })
-
-    cmp.setup.cmdline('?', {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources {
-        { name = 'buffer' },
-      },
-    })
+    for _, cmd_type in ipairs { '/', '?' } do
+      cmp.setup.cmdline(cmd_type, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources {
+          { name = 'buffer' },
+        },
+      })
+    end
 
     require('luasnip.loaders.from_vscode').lazy_load {
       paths = { './snippets/' },
@@ -171,4 +173,3 @@ return {
     end, { silent = true })
   end,
 }
-
