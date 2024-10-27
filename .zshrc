@@ -143,18 +143,18 @@ source ~/.config/zsh/aliases.sh
 # source /etc/profile.d/google-cloud-cli.sh
 
 # Check if already in a tmux session
-if [ -n "$TMUX" ]; then
-    echo "Already in a tmux session"
-else
-    # Check if the tmux session named "default" already exists
-    if ! tmux has-session -t default 2>/dev/null; then
-        # If the session does not exist, create a new one
-        tmux new-session -s default -A
-    else
-        # If the session already exists, attach to it
-        tmux attach-session -t default
-    fi
-fi
+# if [ -n "$TMUX" ]; then
+#     echo "Already in a tmux session"
+# else
+#     # Check if the tmux session named "default" already exists
+#     if ! tmux has-session -t default 2>/dev/null; then
+#         # If the session does not exist, create a new one
+#         tmux new-session -s default -A
+#     else
+#         # If the session already exists, attach to it
+#         tmux attach-session -t default
+#     fi
+# fi
 
 # pnpm
 export PNPM_HOME="/home/simanga/.local/share/pnpm"
