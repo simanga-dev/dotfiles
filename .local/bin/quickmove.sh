@@ -5,7 +5,7 @@ BASE='/home/simanga/'
 # for personal files and all that kind of staff I mess with
 # items=`fd --max-depth=1 --type=d --base-directory=${BASE} . 'Code'`
 # items+=$'\n'
-items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . 'workspace'`
+items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . 'Workspace'`
 items+=$'\n'
 items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . '.config'`
 items+=$'\n'
