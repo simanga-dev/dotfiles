@@ -3,6 +3,7 @@ return {
   'tpope/vim-repeat',
   'tpope/vim-endwise',
   'tpope/vim-eunuch',
+  'rhysd/committia.vim',
   'monkoose/matchparen.nvim',
   'tpope/vim-capslock',
   'tpope/vim-dotenv',
