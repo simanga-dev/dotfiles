@@ -129,7 +129,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-export PATH='/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/nvim/bin:/home/simanga/go/bin:/home/simanga/.dotnet/tools:/home/simanga/.cargo/bin:/home/simanga/.local/bin:/home/simanga/.local/share/gem/ruby/3.0.0/bin'
+export PATH='/mnt/c/Windows/system32:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/nvim/bin:/home/simanga/go/bin:/home/simanga/.dotnet/tools:/home/simanga/.cargo/bin:/home/simanga/.local/bin:/home/simanga/.local/share/gem/ruby/3.0.0/bin'
 
 # Load completions
 eval "$(fzf --zsh)"
@@ -142,19 +142,19 @@ source <(ng completion script)
 source ~/.config/zsh/aliases.sh
 # source /etc/profile.d/google-cloud-cli.sh
 
-# Check if already in a tmux session
-# if [ -n "$TMUX" ]; then
-#     echo "Already in a tmux session"
-# else
-#     # Check if the tmux session named "default" already exists
-#     if ! tmux has-session -t default 2>/dev/null; then
-#         # If the session does not exist, create a new one
-#         tmux new-session -s default -A
-#     else
-#         # If the session already exists, attach to it
-#         tmux attach-session -t default
-#     fi
-# fi
+Check if already in a tmux session
+if [ -n "$TMUX" ]; then
+    echo "Already in a tmux session"
+else
+    # Check if the tmux session named "default" already exists
+    if ! tmux has-session -t default 2>/dev/null; then
+        # If the session does not exist, create a new one
+        tmux new-session -s default -A
+    else
+        # If the session already exists, attach to it
+        tmux attach-session -t default
+    fi
+fi
 
 # pnpm
 export PNPM_HOME="/home/simanga/.local/share/pnpm"

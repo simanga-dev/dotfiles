@@ -22,11 +22,25 @@ if [ ! -f $NOTE_FILE_NAME ]; then
 
 fi
 
-if  hyprctl clients 2>/dev/null | grep -q "Notes"; then
-    hyprctl dispatch focuswindow class:Notes
+
+if ! tmux has-session -t default 2>/dev/null; then
+    tmux new-session -d -s default
+fi
+
+
+if  tmux list-windows -t default  2>/dev/null | grep -q "Notes"; then
+	tmux select-window -t Notes
   else
+
+	tmux new-window -a -t default -n Notes
+
+	tmux send-keys -t default:Notes "nvim   $NOTE_FILE_NAME" Enter
+
   alacritty -T "Notes" --class "Notes" -e nvim --cmd "cd ${HOME}/Workspace/my-notes" \
        $NOTE_FILE_NAME
+
+	tmux select-window -t Notes
+
 fi
 
 

@@ -168,7 +168,7 @@ vim.opt.scrolloff = 2
 vim.opt.signcolumn = 'yes'
 vim.opt.hlsearch = true
 vim.opt.cursorline = true
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
 -- vim.opt.isfname:append("@-@")
 -- vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 

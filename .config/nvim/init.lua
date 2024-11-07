@@ -48,7 +48,9 @@ require('lazy').setup('plugins', {
 })
 
 -- " se stl:— fcs=stl:─,stlnc:—
--- se fcs=stl:─,stlnc:—
+-- " se stl:— fcs=stl:─,stlnc:—
+-- se fcs=stl:─, fcs=stl:─,stlnc:—
+
 cmd [[
     se stl:— fcs=stl:─,stlnc:—
 
