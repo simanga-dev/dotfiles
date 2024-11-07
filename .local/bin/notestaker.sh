@@ -22,6 +22,12 @@ if [ ! -f $NOTE_FILE_NAME ]; then
 
 fi
 
-alacritty -T "Notes" --class "Notes" -e nvim --cmd "cd ${HOME}/Workspace/my-notes" \
-     $NOTE_FILE_NAME
+if  hyprctl clients 2>/dev/null | grep -q "Notes"; then
+    hyprctl dispatch focuswindow class:Notes
+  else
+  alacritty -T "Notes" --class "Notes" -e nvim --cmd "cd ${HOME}/Workspace/my-notes" \
+       $NOTE_FILE_NAME
+fi
+
+
 

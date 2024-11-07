@@ -25,7 +25,10 @@ fi
 
 FOLDER=`echo "$items" | wofi --dmenu`
 
-if [ -d "${BASE}${FOLDER}" ]; then
+echo $FOLDER
+
+if [ -n "${FOLDER}" ] && [ -d "${BASE}${FOLDER}" ]; then
+
      n="$(echo ${FOLDER} | sed 's/\/$//')"
      n="$(echo ${n} | sed 's/\//->/g')"
 
