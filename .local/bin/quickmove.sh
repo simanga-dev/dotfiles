@@ -23,7 +23,7 @@ if  hyprctl activewindow 2>/dev/null | grep -q "special:special"; then
     hyprctl dispatch togglespecialworkspace special
 fi
 
-FOLDER=`echo "$items" | wofi --dmenu`
+FOLDER=`echo "$items" | fuzzel -d`
 
 echo $FOLDER
 
