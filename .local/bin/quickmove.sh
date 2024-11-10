@@ -9,7 +9,7 @@ items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . 'Workspace'`
 items+=$'\n'
 items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . '.config'`
 items+=$'\n'
-items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . '.local/share/nvim/lazy'`
+items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . '/mnt/c/Users/Smanga.Khoza/Workspace'`
 # items+=$'\n'
 # items+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . 'workspace/hackerthon'`
 
@@ -24,7 +24,10 @@ items+=$'\n'
 
 FOLDER=`echo "$items" | fzf`
 
-echo $FOLDER
+if echo $FOLDER 2>/dev/null | grep -q "/mnt/c/Users"; then
+    BASE=''
+fi
+
 
 if [ -n "${FOLDER}" ] && [ -d "${BASE}${FOLDER}" ]; then
 
