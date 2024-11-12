@@ -12,6 +12,7 @@ return {
   'b0o/schemastore.nvim',
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
+  'svampkorg/moody.nvim',
   -- 'jamespeapen/Nvim-R',
   'norcalli/nvim-colorizer.lua',
   'preservim/vim-pencil',
@@ -63,6 +64,7 @@ return {
   --   opts = {},
   -- },
   --
+
   {
     'folke/tokyonight.nvim',
     lazy = false,
