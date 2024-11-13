@@ -36,16 +36,40 @@
 )
 
 (defalias
-  cesc (tap-next-release esc lmet)
-  cret (tap-next-release ret lmet)
+  cesc (tap-next-release esc (layer-toggle arrows))
+
+  a (tap-next-release a lmet)
+  s (tap-next-release s lsft)
+  d (tap-next-release d lalt)
+  f (tap-next-release f lctl)
+
+  j (tap-next-release j rctl)
+  k (tap-next-release k ralt)
+  l (tap-next-release l rsft)
+  ; (tap-next-release ; rmet)
+
 )
 
 (deflayer qwerty
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  insert home pgup
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del    end  pgdn
-  @cesc  a    s    d    f    g    h    j    k    l    ;    '  @cret
+  @cesc  @a    @s    @d    @f    g    h    @j    @k    @l    @;    '  ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft                   up
   lalt lmet lctl            spc            rctl fn rmet  ralt             left down rght
 )
 
+
+(deflayer arrows
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  insert home pgup
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del    end  pgdn
+  caps a    s    d    f    g    bspc    down    up    -    -   '    ret
+  lsft z    x    c    v    b    n    m    left    right    /    rsft                 up
+  lctl  lmet lalt           spc            ralt fn  cmp  rctl            left down rght
+)
+
+;;(defalias
+;; num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
+;; kil  C-A-del                ;; Bind kil to a button that Ctrl-Alt-deletes
+;;)
