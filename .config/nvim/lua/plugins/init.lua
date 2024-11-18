@@ -14,6 +14,7 @@ return {
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
   -- 'jamespeapen/Nvim-R',
+  'svampkorg/moody.nvim',
   'norcalli/nvim-colorizer.lua',
   'preservim/vim-pencil',
   'amadeus/vim-convert-color-to',
