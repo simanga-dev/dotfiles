@@ -168,7 +168,25 @@ vim.opt.scrolloff = 2
 vim.opt.signcolumn = 'yes'
 vim.opt.hlsearch = true
 vim.opt.cursorline = true
--- vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
+
+if vim.fn.has 'wsl' == 1 then
+  vim.g.clipboard = {
+    name = 'WslClipboard',
+    copy = {
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
+    paste = {
+      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+  }
+end
+
+-- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+-- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- vim.opt.isfname:append("@-@")
 -- vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
