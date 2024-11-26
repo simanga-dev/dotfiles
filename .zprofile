@@ -1,5 +1,4 @@
-# startx automatically
-
-if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-exec startx
+# start hyprland when login
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    exec Hyprland >/dev/null
 fi

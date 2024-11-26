@@ -1,13 +1,18 @@
 sw_volume: 100
 audio_device_state:1:ALSA sound card
-audio_device_state:1:Visualizer feed
 state: stop
+current: 3
 random: 0
-repeat: 0
+repeat: 1
 single: 0
 consume: 0
 crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
+0:Dua Lipa - Dua Lipa (Complete Edition) (2018) Mp3 (320kbps) [Hunter]/Dua Lipa - Dua Lipa (Complete Edition)/02 Lost In Your Light (feat. Miguel).mp3
+1:Dua Lipa - Dua Lipa (Complete Edition) (2018) Mp3 (320kbps) [Hunter]/Dua Lipa - Dua Lipa (Complete Edition)/04 Be The One.mp3
+2:Dua Lipa - Dua Lipa (Complete Edition) (2018) Mp3 (320kbps) [Hunter]/Dua Lipa - Dua Lipa (Complete Edition)/07 Garden.mp3
+3:Dua Lipa - Dua Lipa (Complete Edition) (2018) Mp3 (320kbps) [Hunter]/Dua Lipa - Dua Lipa (Complete Edition)/12 Homesick.mp3
+4:Dua Lipa - Dua Lipa (Complete Edition) (2018) Mp3 (320kbps) [Hunter]/Dua Lipa - Dua Lipa (Complete Edition)/14 Room For 2.mp3
 playlist_end

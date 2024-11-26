@@ -142,7 +142,7 @@ configuration {
 
 
 
-    font: "JetBrainsMono 10";
+    font: "JetBrainsMono 12";
     sort: true;
     sorting-method: "fzf";
     auto-select: true;

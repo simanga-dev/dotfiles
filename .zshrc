@@ -29,6 +29,7 @@ bindkey -M main ' ' expand-alias
 # This is NNN staff, please bare with mere here, I am still cooking
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
+export NNN_SSHFS='sshfs -o follow_symlinks'
 # export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 #
 export EDITOR=nvim
@@ -138,7 +139,7 @@ eval "$(zoxide init --cmd cd zsh)"
 autoload -Uz compinit && compinit
 
 source <(ng completion script)
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 source ~/.config/zsh/aliases.sh
 # source /etc/profile.d/google-cloud-cli.sh
 
