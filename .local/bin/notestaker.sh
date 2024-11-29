@@ -36,9 +36,6 @@ if  tmux list-windows -t default  2>/dev/null | grep -q "Notes"; then
 
 	tmux send-keys -t default:Notes "nvim   $NOTE_FILE_NAME" Enter
 
-  alacritty -T "Notes" --class "Notes" -e nvim --cmd "cd ${HOME}/Workspace/my-notes" \
-       $NOTE_FILE_NAME
-
 	tmux select-window -t Notes
 
 fi
