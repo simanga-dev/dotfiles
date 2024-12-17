@@ -10,7 +10,8 @@ if  tmux list-windows -t default  2>/dev/null | grep -q "Music"; then
   else
 	tmux new-window -a -t default -n Music
 
-	tmux send-keys -t default:Music "mpd && ncmpcpp   $NOTE_FILE_NAME" Enter
+	tmux send-keys -t default:Music "mpd $NOTE_FILE_NAME" Enter
+	tmux send-keys -t default:Music "ncmpcpp   $NOTE_FILE_NAME" Enter
 
 	tmux select-window -t Music
 fi
