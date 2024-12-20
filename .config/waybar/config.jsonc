@@ -18,7 +18,7 @@
 
 	"modules-left": ["custom/padd","custom/l_end","custom/power","custom/cliphist","custom/wbar","custom/theme","custom/wallchange","custom/r_end","custom/l_end","wlr/taskbar","custom/spotify","custom/r_end","","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","idle_inhibitor","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","privacy","tray","battery","custom/r_end","custom/l_end","backlight","network","pulseaudio","pulseaudio#microphone","custom/keybindhint","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","privacy","tray","battery","custom/r_end","custom/l_end","backlight","network","pulseaudio","pulseaudio#microphone","custom/notifications","custom/keybindhint","custom/r_end","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
@@ -114,9 +114,11 @@
         "format": "{icon}",
         "rotate": 0,
         "format-icons": {
-            "activated": "󰥔",
-            "deactivated": ""
-        }
+            "activated": "",
+            "deactivated": "󰛊"
+        },
+        "tooltip-format-activated":"Caffeine Mode Active",
+        "tooltip-format-deactivated":"Caffeine Mode Inactive"
     },
 
     "clock": {
@@ -187,8 +189,8 @@
         "rotate": 0,
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
+        "on-scroll-up": "brightnesscontrol.sh i 1",
+        "on-scroll-down": "brightnesscontrol.sh d 1",
         "min-length": 6
     },
 
@@ -240,6 +242,35 @@
     "scroll-step": 5
 },
 
+    "custom/notifications": {
+      // "format": "{icon} {}",
+        "format": "{} {icon}", // TODO: workaround for the module not showing up // revert when fixed
+        "rotate": 0,
+        "format-icons": {
+            "email-notification": "<span foreground='white'><sup></sup></span>",
+            "chat-notification": "󱋊<span foreground='white'><sup></sup></span>",
+            "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
+            "error-notification": "󱨪<span foreground='red'><sup></sup></span>",
+            "network-notification": "󱂇<span foreground='white'><sup></sup></span>",
+            "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
+            "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
+            "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
+            "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
+            "notification": "<span foreground='white'><sup></sup></span>",
+            "dnd": "",
+            "none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which dunstctl",
+        "exec": "notifications.py",
+        "on-scroll-down": "sleep 0.1 && dunstctl history-pop",
+        "on-click": "dunstctl set-paused toggle",
+        "on-click-middle": "dunstctl history-clear",
+        "on-click-right": "dunstctl close-all",
+        "interval": 1,
+        "tooltip": true,
+        "escape": true
+    },
     "custom/keybindhint": {
         "format": " ",
         "rotate": 0,

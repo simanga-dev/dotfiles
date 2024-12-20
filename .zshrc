@@ -50,7 +50,7 @@ zinit ice depth=1; zinit light  hlissner/zsh-autopair
 
 # source ~/.config/zsh/zsh-vi-mode.zsh
 
-# Add in zsh plugins
+# n Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions

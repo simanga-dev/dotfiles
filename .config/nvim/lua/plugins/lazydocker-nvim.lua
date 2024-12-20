@@ -12,7 +12,7 @@ return {
     {
       '<leader>ld',
       function()
-        require('lazydocker').open()
+        require('lazydocker').toggle()
       end,
       desc = 'Open Lazydocker floating window',
     },

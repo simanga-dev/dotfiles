@@ -27,13 +27,13 @@
     width = 300
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = (0, 300)
 
     # Position the notification in the top right corner
     origin = top-right
 
     # Offset from the origin
-    offset = 20x20
+    offset = (20, 20)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -64,7 +64,7 @@
     progress_bar_corner_radius = 4
 
     # Corner radius for the icon image.
-    icon_corner_radius = 7
+    icon_corner_radius = 10
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -250,7 +250,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 7
+    corner_radius = 10
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -449,15 +449,15 @@
     timeout = 0
 
 [urgency_low]
-    background = "#A3658A80"
-    foreground = "#FFCCEAE6"
-    frame_color = "#A3658A03"
+    background = "#6592A380"
+    foreground = "#CCF1FFE6"
+    frame_color = "#6592A303"
     icon = "/home/simanga/.config/dunst/icons/hyprdots.svg"
     timeout = 5
 
 [urgency_normal]
-    background = "#593A6B80"
-    foreground = "#EDCCFFE6"
-    frame_color = "#593A6B03"
+    background = "#3A4A6B80"
+    foreground = "#CCDDFFE6"
+    frame_color = "#3A4A6B03"
     icon = "/home/simanga/.config/dunst/icons/hyprdots.svg"
     timeout = 5
