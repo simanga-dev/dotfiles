@@ -27,7 +27,7 @@ return {
     vim.g.db_ui_save_location = '~/Workspace/my-notes/db_ui'
     vim.g.db_ui_execute_on_save = 0
     vim.g.db_ui_win_position = 'right'
-    vim.g.db_ui_tmp_query_location = '~/workspace/my-notes/db_ui'
+    vim.g.db_ui_tmp_query_location = '~/Workspace/my-notes/db_ui'
 
     vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
       pattern = { '*.dbout' },
