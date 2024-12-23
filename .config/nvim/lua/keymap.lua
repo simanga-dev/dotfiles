@@ -18,6 +18,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+--nohlsearch
+
 vim.keymap.set('', '<Space>', '<Nop>')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -115,4 +117,15 @@ vim.keymap.set('n', '<leader>Q', ':tabc<CR>')
 vim.keymap.set('n', '<leader><CR>', ':only<CR>')
 -- vim.keymap.set("n", "<leader>O", ":unhide<CR>")
 vim.keymap.set('n', '<leader>_', ':res<CR>')
+
+-- vim.keymap.set('n', '}', function()
+--   vim.opt.hlsearch = false
+--
+--   -- vim.cmd '}/.\\+<CR>:noh<CR>'
+--   vim.opt.hlsearch = true
+-- end)
+
+vim.keymap.set('n', '}', ':nohl<CR>}/.\\+<CR>:noh<CR>')
+vim.keymap.set('n', '{', ':hol<CR>{?.\\+<CR>:noh<CR>')
+
 -- vim.keymap.set("n", "<leader>|", ":vert res<CR>")

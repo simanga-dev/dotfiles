@@ -186,7 +186,6 @@ if vim.fn.has 'wsl' == 1 then
 end
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- vim.opt.isfname:append("@-@")
 -- vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
