@@ -1,28 +1,29 @@
 sw_volume: 100
 audio_device_state:1:ALSA sound card
-state: pause
-current: 10
-time: 0.558000
-random: 0
-repeat: 1
+state: play
+current: 5
+time: 120.001000
+random: 1
+repeat: 0
 single: 0
 consume: 0
 crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/01 BLOOD..mp3
-1:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/02 DNA..mp3
-2:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/03 YAH..mp3
-3:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/04 ELEMENT..mp3
-4:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/05 FEEL..mp3
-5:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/06 LOYALTY. (FEAT. RIHANNA.).mp3
-6:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/07 PRIDE..mp3
-7:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/08 HUMBLE..mp3
-8:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/09 LUST..mp3
-9:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/10 LOVE. (FEAT. ZACARI.).mp3
-10:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/11 XXX. (FEAT. U2.).mp3
-11:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/12 FEAR..mp3
-12:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/13 GOD..mp3
-13:Kendrick Lamar - DAMN. (2017) [Mp3~320kbps]/Kendrick Lamar - DAMN. (2017)/14 DUCKWORTH..mp3
+0:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/01 - Sherane A.K.A. Master Splinters Daughter.mp3
+1:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/02 - Bitch, Dant Kill My Vibe.mp3
+2:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/03 - Backstreet Freestyle.mp3
+3:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/04 - The Art Of Peer Pressure.mp3
+4:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/05 - Money Trees (Feat. Jay Rock).mp3
+5:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/06 - Poetic Justice (Feat. Drake).mp3
+6:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/07 - Good Kid.mp3
+7:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/08 - M.A.A.D City (Feat. MC Eiht).mp3
+8:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/09 - Swimming Pools (Drank) (Extended Version).mp3
+9:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/10 - Sing About Me, Im Dying Of Thirst.mp3
+10:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/11 - Real (Feat. Anna Wise Of Sonnymoon).mp3
+11:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/12 - Compton (Feat. Dr. Dre).mp3
+12:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/13 - The Recipe (Feat. Dr Dre) (Bonus Track).mp3
+13:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/14 - Black Boy Fly (Bonus Track).mp3
+14:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/15 - Now Or Never (Feat. Mary J. Blige) (Bonus Track).mp3
 playlist_end

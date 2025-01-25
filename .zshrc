@@ -135,11 +135,12 @@ export PATH='/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/u
 # Load completions
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(direnv hook zsh)"
 
 autoload -Uz compinit && compinit
 
 source <(ng completion script)
-# source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh
 source ~/.config/zsh/aliases.sh
 # source /etc/profile.d/google-cloud-cli.sh
 
@@ -164,3 +165,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+#
+
+# bun completions
+[ -s "/home/simanga/.bun/_bun" ] && source "/home/simanga/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

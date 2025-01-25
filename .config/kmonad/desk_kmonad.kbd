@@ -27,6 +27,7 @@
   ; (tap-hold $tap-time $hold-time ; rmet)
   cpy C-S-c
   pst C-S-v
+  bak C-bspc
 )
 
 (deflayer base
@@ -36,6 +37,5 @@
 
 
 (deflayer num
-  esc @a @s @d @f bspc down up @l @;
-  f5 left rght rpt @pst @cpy
-)
+  esc @a @s @d @f @bak down up @l @;
+  f5 left rght rpt @pst @cpy)

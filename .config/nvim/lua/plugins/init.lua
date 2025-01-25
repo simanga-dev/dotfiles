@@ -8,7 +8,6 @@ return {
   'tpope/vim-capslock',
   'tpope/vim-dotenv',
   'andymass/vim-matchup',
-  'cohama/lexima.vim',
   'kovetskiy/sxhkd-vim',
   'b0o/schemastore.nvim',
   'nvim-lua/plenary.nvim',
