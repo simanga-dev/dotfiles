@@ -144,7 +144,7 @@ source <(ng completion script)
 source ~/.config/zsh/aliases.sh
 # source /etc/profile.d/google-cloud-cli.sh
 
-Check if already in a tmux session
+# Check if already in a tmux session
 if [ -n "$TMUX" ]; then
     echo "Already in a tmux session"
 else
@@ -166,3 +166,10 @@ case ":$PATH:" in
 esac
 # pnpm end
 source /usr/share/nvm/init-nvm.sh
+
+# bun completions
+[ -s "/home/simanga/.bun/_bun" ] && source "/home/simanga/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -5,6 +5,7 @@ return {
     'nvim-telescope/telescope.nvim',
     'nvim-tree/nvim-web-devicons',
   },
+  opts = {},
   keys = {
     { 'ghic', '<cmd>Octo issue close <cr>', desc = 'close issue' },
     { 'ghil', '<cmd>Octo issue list <cr>', desc = 'list open issues on same repo' },

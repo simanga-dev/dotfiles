@@ -207,4 +207,5 @@ vim.diagnostic.config {
   float = { source = 'always', border = 'rounded' },
   signs = false,
   severity_sort = true,
+  virtual_lines = true,
 }

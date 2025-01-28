@@ -3,11 +3,9 @@ return {
   'tpope/vim-repeat',
   'tpope/vim-endwise',
   'tpope/vim-eunuch',
-  'monkoose/matchparen.nvim',
   'tpope/vim-capslock',
   'tpope/vim-dotenv',
   'andymass/vim-matchup',
-  'cohama/lexima.vim',
   'kovetskiy/sxhkd-vim',
   'b0o/schemastore.nvim',
   'nvim-lua/plenary.nvim',
@@ -65,21 +63,35 @@ return {
   -- },
   --
 
+  -- {
+  --   'folke/tokyonight.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     -- style = 'night',
+  --     styles = {
+  --       sidebars = 'transparent',
+  --       floats = 'transparent',
+  --     },
+  --     transparent = true,
+  --   },
+  --   config = function(_, opts)
+  --     require('tokyonight').setup(opts)
+  --     vim.cmd [[colorscheme tokyonight]]
+  --   end,
+  -- },
+
   {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {
-      -- style = 'night',
-      styles = {
-        sidebars = 'transparent',
-        floats = 'transparent',
-      },
-      transparent = true,
-    },
+    'nyoom-engineering/oxocarbon.nvim',
+    -- Add in any other configuration;
+    --   event = foo,
+    --   config = bar
+    --   end,
     config = function(_, opts)
-      require('tokyonight').setup(opts)
-      vim.cmd [[colorscheme tokyonight]]
+      -- require('tokyonight').setup(opts)
+      -- vim.cmd [[colorscheme tokyonight]]
+      vim.opt.background = 'dark' -- set this to dark or light
+      vim.cmd.colorscheme 'oxocarbon'
     end,
   },
 

@@ -75,18 +75,18 @@ cmd [[
     hi WildMenu guibg=NONE ctermbg=NONE
     hi VertSplit ctermbg=NONE guibg=NONE
 
-    hi StatusLine gui=NONE guifg=#565f89 guibg=NONE
-    hi StatusLineNC gui=NONE guifg=#565f89 guibg=NONE
-    hi VertSplit gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
-    hi WinSeparator gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
+    hi StatusLine gui=NONE guibg=NONE
+    hi StatusLineNC gui=NONE guibg=NONE
+    hi VertSplit gui=NONE guibg=NONE cterm=NONE
+    hi WinSeparator gui=NONE guibg=NONE cterm=NONE
 
     hi TabLineFill guifg=NONE guibg=NONE
-    hi TabLine guifg=#565f89  guibg=NONE
-    hi TabLineSel guifg=#565f89  guibg=NONE
+    hi TabLine guibg=NONE
+    hi TabLineSel guibg=NONE
 
-    hi NotificationInfo guifg=#565f89 guibg=NONE
-    hi NotificationWarning guifg=#565f89 guibg=NONE
-    hi NotificationError guifg=#565f89 guibg=NONE
+    hi NotificationInfo guibg=NONE
+    hi NotificationWarning guibg=NONE
+    hi NotificationError guibg=NONE
 
     set exrc
     set secure
