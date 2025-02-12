@@ -13,3 +13,5 @@ fi
 
 tmux last-window
 
+tmux kill-window -t default:default
+

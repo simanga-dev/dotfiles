@@ -51,3 +51,5 @@ if [ -n "${FOLDER}" ] && [ -d "${BASE}${FOLDER}" ]; then
     fi
 fi
 
+tmux kill-window -t default:default
+

@@ -47,17 +47,14 @@ require('lazy').setup('plugins', {
   },
 })
 
--- " se stl:— fcs=stl:─,stlnc:—
--- " se stl:— fcs=stl:─,stlnc:—
--- se fcs=stl:─, fcs=stl:─,stlnc:—
 
 cmd [[
     se stl:— fcs=stl:─,stlnc:—
 
     hi FoldColumn guibg=NONE
+    " hi Folded guibg=NONE ctermbg=NONE
 
     hi SignColumn guibg=NONE ctermbg=NONE
-    hi Folded guibg=NONE ctermbg=NONE
     hi NormalFloat guibg=NONE ctermbg=NONE
     hi FloatBorder guibg=NONE ctermbg=NONE
 
@@ -75,10 +72,13 @@ cmd [[
     hi WildMenu guibg=NONE ctermbg=NONE
     hi VertSplit ctermbg=NONE guibg=NONE
 
-    hi StatusLine gui=NONE guibg=NONE
-    hi StatusLineNC gui=NONE guibg=NONE
-    hi VertSplit gui=NONE guibg=NONE cterm=NONE
-    hi WinSeparator gui=NONE guibg=NONE cterm=NONE
+    hi PmenuKind guibg=NONE ctermbg=NONE
+    hi PmenuExtra  guibg=NONE ctermbg=NONE
+
+    hi StatusLine gui=NONE guifg=#262626 guibg=NONE
+    hi StatusLineNC gui=NONE guifg=#262626 guibg=NONE
+    hi VertSplit gui=NONE guifg=#262626 guibg=NONE cterm=NONE
+    hi WinSeparator gui=NONE guifg=#262626 guibg=NONE cterm=NONE
 
     hi TabLineFill guifg=NONE guibg=NONE
     hi TabLine guibg=NONE

@@ -8,6 +8,8 @@ if ! tmux list-windows -t default 2>/dev/null | grep -q "default"; then
     tmux new-window -t default -n  default
 fi
 
+tmux send-keys -t default:default C-C Enter
+
 tmux send-keys -t default:default "zsh /home/simanga/.local/bin/quickmove.sh" Enter
 
 tmux select-window -t default

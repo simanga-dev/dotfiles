@@ -363,6 +363,7 @@ if [[ -z "${WOFI_PASS_TESTING:-""}" ]]; then
 fi
 
 # this is only for tmux user
-# p
 
 tmux last-window
+
+tmux kill-window -t default:default

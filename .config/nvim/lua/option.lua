@@ -39,6 +39,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
       vim.bo.buftype == 'terminal'
       or vim.bo.filetype == 'markdown'
       or vim.bo.filetype == ''
+      or vim.bo.filetype == 'codecompanion'
       or vim.bo.filetype == 'gitcommit'
       or vim.bo.filetype == 'chatgpt-input'
       or vim.bo.filetype == 'oil'
@@ -127,6 +128,7 @@ vim.cmd [[
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
+vim.o.diffopt = 'internal,filler,closeoff,linematch:60'
 vim.opt.breakindent = true
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
@@ -204,8 +206,8 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
-  float = { source = 'always', border = 'rounded' },
+  -- float = { source = 'always', border = 'rounded' },
   signs = false,
   severity_sort = true,
-  virtual_lines = true,
+  -- virtual_lines = true,
 }

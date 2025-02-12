@@ -37,8 +37,6 @@ if  tmux list-windows -t default  2>/dev/null | grep -q "Notes"; then
 	tmux send-keys -t default:Notes "nvim   $NOTE_FILE_NAME" Enter
 
 	tmux select-window -t Notes
-
 fi
 
-
-
+tmux kill-window -t default:default

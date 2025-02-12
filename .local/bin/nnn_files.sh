@@ -15,3 +15,5 @@ if  tmux list-windows -t default  2>/dev/null | grep -q "NNN-Files"; then
 	tmux select-window -t NNN-Files
 fi
 
+tmux kill-window -t default:default
+

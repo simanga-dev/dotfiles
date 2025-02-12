@@ -82,16 +82,13 @@ return {
   -- },
 
   {
-    'nyoom-engineering/oxocarbon.nvim',
-    -- Add in any other configuration;
-    --   event = foo,
-    --   config = bar
-    --   end,
+    'tiagovla/tokyodark.nvim',
+    opts = {
+      -- custom options here
+    },
     config = function(_, opts)
-      -- require('tokyonight').setup(opts)
-      -- vim.cmd [[colorscheme tokyonight]]
-      vim.opt.background = 'dark' -- set this to dark or light
-      vim.cmd.colorscheme 'oxocarbon'
+      require('tokyodark').setup(opts) -- calling setup is optional
+      vim.cmd [[colorscheme tokyodark]]
     end,
   },
 
