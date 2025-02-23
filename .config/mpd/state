@@ -1,29 +1,34 @@
 sw_volume: 100
 audio_device_state:1:ALSA sound card
-state: play
-current: 5
-time: 120.001000
+state: pause
+current: 11
+time: 0.000000
 random: 1
-repeat: 0
-single: 0
-consume: 0
-crossfade: 0
+repeat: 1
+single: 1
+consume: 1
+crossfade: 5
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/01 - Sherane A.K.A. Master Splinters Daughter.mp3
-1:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/02 - Bitch, Dant Kill My Vibe.mp3
-2:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/03 - Backstreet Freestyle.mp3
-3:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/04 - The Art Of Peer Pressure.mp3
-4:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/05 - Money Trees (Feat. Jay Rock).mp3
-5:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/06 - Poetic Justice (Feat. Drake).mp3
-6:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/07 - Good Kid.mp3
-7:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/08 - M.A.A.D City (Feat. MC Eiht).mp3
-8:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/09 - Swimming Pools (Drank) (Extended Version).mp3
-9:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/10 - Sing About Me, Im Dying Of Thirst.mp3
-10:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/11 - Real (Feat. Anna Wise Of Sonnymoon).mp3
-11:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/12 - Compton (Feat. Dr. Dre).mp3
-12:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/13 - The Recipe (Feat. Dr Dre) (Bonus Track).mp3
-13:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/14 - Black Boy Fly (Bonus Track).mp3
-14:Kendrick_Lamar-Good_Kid_M.A.A.D_City-(Deluxe_Edition) [mindcrasher]/15 - Now Or Never (Feat. Mary J. Blige) (Bonus Track).mp3
+0:Tracy Chapman/01 Talkin' Bout a Revolution.m4a
+1:Tracy Chapman/02 Fast Car.m4a
+2:Tracy Chapman/03 Across the Lines.m4a
+3:Tracy Chapman/04 Behind the Wall.m4a
+4:Tracy Chapman/05 Baby Can I Hold You.m4a
+5:Tracy Chapman/06 Mountains O' Things.m4a
+6:Tracy Chapman/07 She's Got Her Ticket.m4a
+7:Tracy Chapman/08 Why_.m4a
+8:Tracy Chapman/09 For My Lover.m4a
+9:Tracy Chapman/10 If Not Now....m4a
+10:Tracy Chapman/11 For You.m4a
+11:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/02. Rock With You.mp3
+12:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/03. Working Day And Night.mp3
+13:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/04. Get On The Floor.mp3
+14:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/05. Off The Wall.mp3
+15:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/06. Girlfriend.mp3
+16:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/08. I Can't Help It.mp3
+17:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/07. She's Out Of My Life.mp3
+18:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/09. It's The Falling In Love.mp3
+19:Michael Jackson - Off The Wall + Thriller [MP3 320] 88/Michael Jackson - Off The Wall (1979) [MP3 320]/10. Burn This Disco Out.mp3
 playlist_end

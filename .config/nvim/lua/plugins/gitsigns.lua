@@ -57,11 +57,7 @@ return {
           else
             gitsigns.nav_hunk 'prev'
           end
-          vim.schedule(function()
-            gs.prev_hunk()
-          end)
-          return '<Ignore>'
-        end, { expr = true })
+        end)
 
         -- Actions
         map('n', '<leader>hs', gitsigns.stage_hunk)

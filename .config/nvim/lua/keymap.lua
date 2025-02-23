@@ -37,8 +37,6 @@ vim.keymap.set('n', '<leader>w', ':w <CR>')
 
 vim.keymap.set('v', '<leader>f', ':!pg_format <CR>')
 
-vim.keymap.set('v', '<leader>cl', ':CodeCompanion ')
-
 -- My greates remap yet
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 

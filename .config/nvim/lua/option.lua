@@ -191,3 +191,4 @@ vim.diagnostic.config {
   signs = false,
   severity_sort = true,
 }
+-- vim.notify = require('fidget.notification').notify

@@ -66,7 +66,7 @@ HELP
 BASE='/home/simanga/'
 output+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . 'Workspace'`
 output+=$'\n'
-output+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . '.config'`
+output+=`fd --follow --max-depth=1 --type=d  --base-directory=${BASE} . '.config'`
 output+=$'\n'
 output+=`fd --max-depth=1 --type=d  --base-directory=${BASE} . '.local/share/nvim/lazy'`
 output+=$'\n'
@@ -115,10 +115,6 @@ PROJECT_NAME="$(echo ${n} | sed 's/.*>//')"
 
 cd ${BASE}${selected}
 
-if  hyprctl activewindow 2>/dev/null | grep -q "special:special"; then
-    hyprctl dispatch togglespecialworkspace special
-fi
-
 if ! tmux has-session -t special 2>/dev/null; then
   tmux new-session -d -s special
 fi
@@ -131,7 +127,12 @@ fi
 if ! hyprctl clients 2>/dev/null | grep -q "NIDE"; then
   alacritty -T "neovim - $n" --class "NIDE"  -e tmux attach-session -t special:${PROJECT_NAME}
 else
+
+  if ! hyprctl activewindow 2>/dev/null | grep -q "special:special"; then
+      hyprctl dispatch togglespecialworkspace special
+  fi
+
   tmux select-window -t ${PROJECT_NAME}
 fi
 
-hyprctl dispatch togglespecialworkspace special
+
