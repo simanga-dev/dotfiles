@@ -47,49 +47,27 @@ require('lazy').setup('plugins', {
   },
 })
 
-
 cmd [[
-    se stl:— fcs=stl:─,stlnc:—
+  se stl:— fcs=stl:─,stlnc:—
 
-    hi FoldColumn guibg=NONE
-    " hi Folded guibg=NONE ctermbg=NONE
+  hi StatusLine gui=NONE guibg=NONE
+  hi StatusLineNC gui=NONE guibg=NONE
 
-    hi SignColumn guibg=NONE ctermbg=NONE
-    hi NormalFloat guibg=NONE ctermbg=NONE
-    hi FloatBorder guibg=NONE ctermbg=NONE
+  hi Normal guibg=NONE ctermbg=NONE
+  hi NonText guibg=NONE ctermbg=NONE
+  hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-    hi WinSeparator guibg=NONE ctermbg=NONE
-    hi WinBar guibg=NONE ctermbg=NONE
-    hi WinBarNC guibg=NONE ctermbg=NONE
+  hi SignColumn guibg=NONE ctermbg=NONE
+  hi NormalFloat guibg=NONE ctermbg=NONE
 
-    hi Normal guibg=NONE ctermbg=NONE
-    hi NormalFloat guibg=NONE ctermbg=NONE
-    hi CursorLine guibg=NONE ctermbg=NONE
-    hi NormalNC guibg=NONE ctermbg=NONE
-    hi PMenu guibg=NONE ctermbg=NONE
-    hi PMenuSBar guibg=NONE  ctermbg=NONE
-    hi PMenuThumb guibg=NONE ctermbg=NONE
-    hi WildMenu guibg=NONE ctermbg=NONE
-    hi VertSplit ctermbg=NONE guibg=NONE
+  hi NotificationInfo guibg=NONE
+  hi NotificationWarning guibg=NONE
+  hi NotificationError guibg=NONE
 
-    hi PmenuKind guibg=NONE ctermbg=NONE
-    hi PmenuExtra  guibg=NONE ctermbg=NONE
+  set exrc
+  set secure
 
-    hi StatusLine gui=NONE guifg=#262626 guibg=NONE
-    hi StatusLineNC gui=NONE guifg=#262626 guibg=NONE
-    hi VertSplit gui=NONE guifg=#262626 guibg=NONE cterm=NONE
-    hi WinSeparator gui=NONE guifg=#262626 guibg=NONE cterm=NONE
+  set termguicolors
 
-    hi TabLineFill guifg=NONE guibg=NONE
-    hi TabLine guibg=NONE
-    hi TabLineSel guibg=NONE
-
-    hi NotificationInfo guibg=NONE
-    hi NotificationWarning guibg=NONE
-    hi NotificationError guibg=NONE
-
-    set exrc
-    set secure
-
-    set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 ]]

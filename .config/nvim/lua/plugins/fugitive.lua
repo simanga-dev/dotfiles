@@ -3,20 +3,41 @@ return {
   dependencies = {
     'shumphrey/fugitive-gitlab.vim',
     'tpope/vim-rhubarb',
+    'j-hui/fidget.nvim',
   },
   event = 'VeryLazy',
   keys = {
     {
       '<leader>gA',
       function()
-        vim.cmd [[ Git add . ]]
+        local Job = require 'plenary.job'
+        local fidget = require 'fidget'
+
+        fidget.notify 'starting git add --update'
+        Job:new({
+          command = 'git',
+          args = { 'add', '--all' },
+          on_exit = function()
+            fidget.notify 'git add --update completed'
+          end,
+        }):start()
       end,
       desc = '[G] Git add all files',
     },
     {
       '<leader>ga',
       function()
-        vim.cmd [[ Git add --update ]]
+        local Job = require 'plenary.job'
+        local fidget = require 'fidget'
+
+        fidget.notify 'starting git add --update'
+        Job:new({
+          command = 'git',
+          args = { 'add', '--update' },
+          on_exit = function()
+            fidget.notify 'git add --update completed'
+          end,
+        }):start()
       end,
       desc = '[G] Git add all files',
     },
@@ -72,19 +93,50 @@ return {
     {
       '<leader>gp',
       function()
-        vim.cmd [[silent! Git stash]]
-        vim.cmd [[ Git pull --all --rebase ]]
+        local Job = require 'plenary.job'
+        local fidget = require 'fidget'
+
+        fidget.notify 'preparing to pull to remote'
+        Job:new({
+          command = 'git',
+          args = { 'branch', '--show-current' },
+          on_exit = function(job)
+            local branch = job:result()[1]
+            Job:new({
+              command = 'git',
+              args = { 'pull', '--rebase', branch },
+              on_exit = function()
+                fidget.notify('Successfully pull to ' .. branch)
+              end,
+            }):start()
+          end,
+        }):start()
       end,
+
       desc = 'Git pull --all',
     },
     {
       '<leader>gP',
       function()
-        local branch = vim.system({ 'git', 'branch --show-current' }, { text = true }):wait()
-        vim.cmd [[silent! Git stash]]
-        vim.cmd [[silent! Git pull --all --rebase ]]
-        local git_push = 'Git push origin ' .. branch.stdout
-        vim.cmd(git_push)
+        local Job = require 'plenary.job'
+        local fidget = require 'fidget'
+
+        fidget.notify 'preparing to push to remote'
+        Job:new({
+          command = 'git',
+          args = { 'branch', '--show-current' },
+          on_exit = function(job)
+            local branch = job:result()[1]
+
+            Job:new({
+              command = 'git',
+              args = { 'push', 'origin', branch },
+              on_exit = function()
+                fidget.notify('Successfully pushed to ' .. branch)
+              end,
+            }):start()
+          end,
+        }):start()
       end,
       desc = 'Git push to current branch',
     },
