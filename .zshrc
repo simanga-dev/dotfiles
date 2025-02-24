@@ -1,7 +1,11 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+#
+#
+zmodload zsh/zprof
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -23,7 +27,9 @@ function expand-alias() {
 	zle _expand_alias
 	zle self-insert
 }
+
 zle -N expand-alias
+
 bindkey -M main ' ' expand-alias
 
 # This is NNN staff, please bare with mere here, I am still cooking
@@ -39,30 +45,27 @@ export KEYTIMEOUT=1
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add in Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-# zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
-zinit ice depth=1; zinit light  hlissner/zsh-autopair
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # source ~/.config/zsh/zsh-vi-mode.zsh
 
 # n Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-
-# Add in snippets
-# zinit snippet OMZP::git
-# zinit snippet OMZP::sudo
-# zinit snippet OMZP::archlinux
-# # zinit snippet OMZP::aws
-# zinit snippet OMZP::kubectl
-# zinit snippet OMZP::command-not-found
+#
+zinit ice wait'!0'
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice wait'!0'
+zinit ice depth=1; zinit light  hlissner/zsh-autopair
+zinit ice wait'!0'
+zinit ice depth=1; zinit light zsh-users/zsh-syntax-highlighting
+zinit ice wait'!0'
+zinit ice depth=1; zinit light zsh-users/zsh-completions
+zinit ice wait'!0'
+zinit ice depth=1; zinit light zsh-users/zsh-autosuggestions
+zinit ice wait'!0'
+zinit ice depth=1; zinit light Aloxaf/fzf-tab
+export NVM_LAZY_LOAD=true
+zinit ice wait'!0'
+zinit ice depth=1; zinit load lukechilds/zsh-nvm
 
 bindkey -v
 # Edit line in vim with ctrl-e:
@@ -112,9 +115,11 @@ bindkey -M main ' ' expand-alias
 
 # History
 HISTSIZE=10000
+
 HISTFILE=~/.zsh/history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
+
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
@@ -139,24 +144,7 @@ eval "$(direnv hook zsh)"
 
 autoload -Uz compinit && compinit
 
-source <(ng completion script)
-source /usr/share/nvm/init-nvm.sh
 source ~/.config/zsh/aliases.sh
-# source /etc/profile.d/google-cloud-cli.sh
-
-# Check if already in a tmux session
-# if [ -n "$TMUX" ]; then
-#     echo "Already in a tmux session"
-# else
-#     # Check if the tmux session named "default" already exists
-#     if ! tmux has-session -t default 2>/dev/null; then
-#         # If the session does not exist, create a new one
-#         tmux new-session -s default -A
-#     else
-#         # If the session already exists, attach to it
-#         tmux attach-session -t default
-#     fi
-# fi
 
 # pnpm
 export PNPM_HOME="/home/simanga/.local/share/pnpm"
@@ -164,10 +152,8 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
-#
 
-# bun completions
+## bun completions
 [ -s "/home/simanga/.bun/_bun" ] && source "/home/simanga/.bun/_bun"
 
 # bun
