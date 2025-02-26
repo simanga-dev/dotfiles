@@ -8,13 +8,14 @@ return {
   opts = {
     strategies = {
       chat = {
-        adapter = 'openai',
+        adapter = 'gemini',
       },
       inline = {
-        adapter = 'openai',
+        adapter = 'gemini',
       },
     },
     adapters = {
+
       openai = function()
         return require('codecompanion.adapters').extend('openai', {
           env = {
@@ -22,17 +23,17 @@ return {
           },
         })
       end,
+
+      gemini = function()
+        return require('codecompanion.adapters').extend('gemini', {
+          env = {
+            api_key = 'cmd:echo $GEMINI_API_KEY',
+          },
+        })
+      end,
     },
   },
   keys = {
-    -- {
-    --   '<leader>cc',
-    --   function()
-    --     vim.cmd [[  CodeCompanionActions ]]
-    --   end,
-    --   desc = '[GPT] Edit with instruction',
-    --   mode = { 'v' },
-    -- },
     {
       '<leader>cc',
       function()
