@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
 
-nohup zsh -c 'cd "$2"; echo \"$*\"; alacritty ' &
+NEW_WINDOW=$(tmux new-window -t special -P)
 
-# "vim \"$*\""
-
-
-# "vim \"$*\""
+if [ -n "$TMUX" ] && tmux list-sessions 1>/dev/null 2>&1; then
+	tmux send-keys -t ${NEW_WINDOW} "cd $2 " Enter
+else
+    echo "hey what is wrong"
+    nohup zsh -c 'cd "$2"; echo \"$*\"; alacritty ' &
+fi
