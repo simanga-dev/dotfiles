@@ -5,8 +5,9 @@ WinFloat=$(hyprctl -j clients | jq '.[] | select(.focusHistoryID == 0) | .floati
 WinPinned=$(hyprctl -j clients | jq '.[] | select(.focusHistoryID == 0) | .pinned')
 
 # Get the class of the active window
-PiPCheck=$(hyprctl activewindow -j | jq -r 'select(.initialClass == "mpv")')
-PiPCheck=+$(hyprctl activewindow -j | jq -r 'select(.class == "zen") | select(.title == "Picture-in-Picture")')
+ActiveWindowClass=$(hyprctl activewindow -j | jq -r 'select(.initialClass == "mpv")')
+# Check if the active window is a Picture-in-Picture window of a media player
+PiPCheck=$(hyprctl activewindow -j | jq -r 'select(.class == "zen") | select(.title == "Picture-in-Picture")')
 
 # Function to toggle floating and adjust the window size/position
 toggle_floating_and_resize() {
@@ -24,8 +25,8 @@ toggle_floating_and_fullscreen() {
 }
 
 # Main logic
-if [ "${WinFloat}" = "false" ] && [ "${WinPinned}" = "false" ] && [ -n "${PiPCheck}" ]; then
+if [ "${WinFloat}" = "false" ] && [ "${WinPinned}" = "false" ] && ( [ "${ActiveWindowClass}" = "mpv" ] || [ -n "${PiPCheck}" ] ); then
     toggle_floating_and_resize
-elif  [ -n "${PiPCheck}" ]; then
+elif [ "${ActiveWindowClass}" = "mpv" ] || [ -n "${PiPCheck}" ]; then
     toggle_floating_and_fullscreen
 fi
