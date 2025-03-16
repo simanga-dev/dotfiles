@@ -5,7 +5,7 @@ WinFloat=$(hyprctl -j clients | jq '.[] | select(.focusHistoryID == 0) | .floati
 WinPinned=$(hyprctl -j clients | jq '.[] | select(.focusHistoryID == 0) | .pinned')
 
 # Get the class of the active window
-ActiveWindowClass=$(hyprctl activewindow -j | jq -r 'select(.initialClass == "mpv")')
+ActiveWindowClass=$(hyprctl activewindow -j | jq -r '.initialClass')
 # Check if the active window is a Picture-in-Picture window of a media player
 PiPCheck=$(hyprctl activewindow -j | jq -r 'select(.class == "zen") | select(.title == "Picture-in-Picture")')
 
