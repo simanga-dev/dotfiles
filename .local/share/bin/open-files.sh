@@ -9,7 +9,7 @@ NEW_WINDOW="Files"
 
 if ! tmux list-windows -t special  2>/dev/null | grep -q ${NEW_WINDOW}; then
 	tmux new-window -a -t special -n ${NEW_WINDOW}
-	tmux send-keys -t special:${NEW_WINDOW} "nnn" Enter
+	tmux send-keys -t special:${NEW_WINDOW} "nnn -c" Enter
 fi
 
 if ! hyprctl clients 2>/dev/null | grep -q "NIDE"; then
