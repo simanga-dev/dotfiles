@@ -108,8 +108,8 @@ vim.keymap.set('n', '<leader>ct', ':wa<CR>:!cargo test <CR>')
 vim.keymap.set('n', '<leader>B', ':bdelete!<CR>')
 vim.keymap.set('n', '<leader>>', ':bn<CR>')
 vim.keymap.set('n', '<leader><', ':bp<CR>')
-vim.keymap.set('n', '<leader>.', ':cnext<CR>')
-vim.keymap.set('n', '<leader>,', ':cprevious<CR>')
+-- vim.keymap.set('n', '<leader>.', ':cnext<CR>')
+-- vim.keymap.set('n', '<leader>,', ':cprevious<CR>')
 vim.keymap.set('n', '<leader>q', ':close<CR>')
 vim.keymap.set('n', '<leader>Q', ':tabc<CR>')
 vim.keymap.set('n', '<leader><CR>', ':only<CR>')
@@ -118,3 +118,11 @@ vim.keymap.set('n', '<leader>_', ':res<CR>')
 vim.keymap.set('n', '}', '}w0')
 vim.keymap.set('n', '{', '{b0')
 -- vim.keymap.set("n", "<leader>|", ":vert res<CR>")
+--
+--
+--
+--
+vim.api.nvim_set_keymap('n', '<S-ScrollWheelLeft>', '<Cmd>execute("vertical scroll +1")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-ScrollWheelRight>', '<Cmd>execute("vertical scroll -1")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<S-ScrollWheelLeft>', '<Cmd>execute("vertical scroll +1")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<S-ScrollWheelRight>', '<Cmd>execute("vertical scroll -1")<CR>', { noremap = true, silent = true })

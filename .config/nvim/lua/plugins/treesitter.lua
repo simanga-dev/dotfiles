@@ -33,7 +33,7 @@ return {
           -- extended to include preceding xor succeeding whitespace. Succeeding
           -- whitespace has priority in order to act similarly to eg the built-in
           -- `ap`.
-          include_surrounding_whitespace = true,
+          -- include_surrounding_whitespace = true,
         },
       },
     }

@@ -23,36 +23,36 @@ return {
       },
     },
   },
-  -- keys = {
-  --   {
-  --     '<leader>cc',
-  --     function()
-  --       vim.cmd [[ ChatGPTEditWithInstruction ]]
-  --     end,
-  --     desc = '[GPT] Edit with instruction',
-  --     mode = { 'v' },
-  --   },
-  --   {
-  --     '<leader>cg',
-  --     function()
-  --       vim.cmd [[ ChatGPTRun grammar_correction ]]
-  --     end,
-  --     desc = '[GPT] Fix Grammar',
-  --     mode = { 'v' },
-  --   },
-  --   {
-  --     '<leader>cc',
-  --     function()
-  --       vim.cmd [[ ChatGPT ]]
-  --     end,
-  --     desc = '[GPT] Launch ChatGPT Chat',
-  --   },
-  --   {
-  --     '<leader>cC',
-  --     function()
-  --       vim.cmd [[ ChatGPTActAs ]]
-  --     end,
-  --     desc = '[GPT] ChatGPT act AS',
-  --   },
-  -- },
+  keys = {
+    --   {
+    --     '<leader>cc',
+    --     function()
+    --       vim.cmd [[ ChatGPTEditWithInstruction ]]
+    --     end,
+    --     desc = '[GPT] Edit with instruction',
+    --     mode = { 'v' },
+    --   },
+    --   {
+    --     '<leader>cg',
+    --     function()
+    --       vim.cmd [[ ChatGPTRun grammar_correction ]]
+    --     end,
+    --     desc = '[GPT] Fix Grammar',
+    --     mode = { 'v' },
+    --   },
+    {
+      '<leader>gg',
+      function()
+        vim.cmd [[ ChatGPT ]]
+      end,
+      desc = '[GPT] Launch ChatGPT Chat',
+    },
+    --   {
+    --     '<leader>cC',
+    --     function()
+    --       vim.cmd [[ ChatGPTActAs ]]
+    --     end,
+    --     desc = '[GPT] ChatGPT act AS',
+    --   },
+  },
 }

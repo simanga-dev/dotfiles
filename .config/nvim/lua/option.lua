@@ -1,6 +1,21 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- lua
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'json' },
+  callback = function()
+    vim.opt_local.formatexpr = "v:lua.require'formatter'.format()"
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'html' },
+  callback = function()
+    vim.opt_local.formatexpr = "v:lua.require'formatter'.format()"
+  end,
+})
+
 local function trim_trailing_whitespaces()
   if
     vim.bo.modifiable == true

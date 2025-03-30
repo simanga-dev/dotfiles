@@ -11,6 +11,6 @@ return {
     },
   },
   opts = {
-    size = 15,
+    size = 20,
   },
 }
