@@ -10,7 +10,7 @@ return {
       end,
     },
     rconsole_width = 0,
-    rconsole_height = 15,
+    rconsole_height = 20,
     disable_cmds = {
       'RClearConsole',
       'RCustomStart',

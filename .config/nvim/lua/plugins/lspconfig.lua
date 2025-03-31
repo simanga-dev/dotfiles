@@ -26,13 +26,13 @@ return {
           end
         end, '[G]oto [D]efinition')
 
-        map('gr', function()
-          if vim.bo.filetype == 'cs' then
-            require('omnisharp_extended').telescope_lsp_references()
-          else
-            require('telescope.builtin').lsp_references()
-          end
-        end, '[G]oto [R]eferences')
+        -- map('gr', function()
+        --   if vim.bo.filetype == 'cs' then
+        --     require('omnisharp_extended').telescope_lsp_references()
+        --   else
+        --     require('telescope.builtin').lsp_references()
+        --   end
+        -- end, '[G]oto [R]eferences')
 
         map('gI', function()
           if vim.bo.filetype == 'cs' then

@@ -42,6 +42,8 @@ vim.keymap.set('v', '<leader>f', ':!pg_format <CR>')
 -- My greates remap yet
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 
+
+
 -- Supper Mapping to substitue// Degeration mapping
 vim.keymap.set('n', '<leader>S', ':%s/\\<<C-R><C-W>\\>/<C-R>0/g<CR>')
 vim.keymap.set('t', '<C-\\><C-\\>', '<C-\\><C-n>')
@@ -54,10 +56,13 @@ vim.keymap.set('n', '<leader>ct', ':wa<CR>:!cargo test <CR>')
 
 -- Managing buffers and Windows
 vim.keymap.set('n', '<leader>B', ':bdelete!<CR>')
-vim.keymap.set('n', '<leader>>', ':bn<CR>')
-vim.keymap.set('n', '<leader><', ':bp<CR>')
-vim.keymap.set('n', '<leader>.', ':cnext<CR>')
-vim.keymap.set('n', '<leader>,', ':cprevious<CR>')
+
+-- vim.keymap.set('n', '<leader>>', ':bn<CR>')
+-- vim.keymap.set('n', '<leader><', ':bp<CR>')
+
+-- vim.keymap.set('n', '<leader>.', ':cnext<CR>')
+-- vim.keymap.set('n', '<leader>,', ':cprevious<CR>')
+
 vim.keymap.set('n', '<leader>q', ':close<CR>')
 vim.keymap.set('n', '<leader>Q', ':tabc<CR>')
 vim.keymap.set('n', '<leader><CR>', ':only<CR>')

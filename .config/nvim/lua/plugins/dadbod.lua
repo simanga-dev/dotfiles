@@ -32,7 +32,7 @@ return {
     vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
       pattern = { '*.dbout' },
       callback = function()
-        vim.api.nvim_exec2([[ exe ':resize 15' ]], {})
+        vim.api.nvim_exec2([[ exe ':resize 20' ]], {})
         vim.g.db_ui_use_nerd_fonts = 1
       end,
     })

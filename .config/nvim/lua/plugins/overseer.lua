@@ -5,10 +5,10 @@ return {
       'terminal',
       auto_scroll = true,
     },
-    height = 15,
+    height = 20,
     task_list = {
       max_height = { 40, 0.5 },
-      height = 15,
+      height = 20,
       direction = 'bottom',
     },
   },

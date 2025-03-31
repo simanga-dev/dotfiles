@@ -36,6 +36,9 @@ bindkey -M main ' ' expand-alias
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
 export NNN_SSHFS='sshfs -o follow_symlinks'
+export NNN_OPENER="/home/simanga/.local/bin/nuke.sh"
+export NNN_BMS="D:/mnt/c/Users/Smanga.Khoza/Downloads/"
+
 # export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 #
 export EDITOR=nvim
@@ -138,7 +141,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 export PATH='/mnt/c/Windows/System32/WindowsPowerShell/v1.0//:/mnt/c/Windows:/mnt/c/Windows/system32:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/nvim/bin:/home/simanga/go/bin:/home/simanga/.dotnet/tools:/home/simanga/.cargo/bin:/home/simanga/.local/bin:/home/simanga/.local/share/gem/ruby/3.0.0/bin'
 
 # Load completions
-eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(direnv hook zsh)"
 
@@ -173,3 +175,13 @@ else
         tmux attach-session -t default
     fi
 fi
+
+# pnpm
+export PNPM_HOME="/home/simanga/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

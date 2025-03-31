@@ -10,7 +10,7 @@ if  tmux list-windows -t default  2>/dev/null | grep -q "NNN-Files"; then
   else
 	tmux new-window -a -t default -n NNN-Files
 
-	tmux send-keys -t default:NNN-Files "nnn   $NOTE_FILE_NAME" Enter
+	tmux send-keys -t default:NNN-Files "nnn -c" Enter
 
 	tmux select-window -t NNN-Files
 fi
