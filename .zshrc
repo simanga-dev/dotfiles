@@ -37,7 +37,7 @@ export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
 export NNN_SSHFS='sshfs -o follow_symlinks'
 export NNN_OPENER="/home/simanga/.local/bin/nuke.sh"
-export NNN_BMS="D:/mnt/c/Users/Smanga.Khoza/Downloads/"
+export NNN_BMS="d:/mnt/c/Users/Smanga.Khoza/Downloads/;r:/home/simanga/Workspace/resume"
 
 # export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 #
