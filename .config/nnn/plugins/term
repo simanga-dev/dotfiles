@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 
-nohup zsh -c 'cd "$2"; echo \"$*\"; alacritty ' &
+NEW_WINDOW=$(tmux new-window -t default -P)
 
-# "vim \"$*\""
+tmux send-keys -t ${NEW_WINDOW} "cd $2" Enter
 
-
-# "vim \"$*\""
+tmux attach-session -t ${NEW_WINDOW}
