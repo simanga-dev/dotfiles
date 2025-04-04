@@ -49,5 +49,13 @@ return {
       desc = '[GPT] Edit with instruction',
       mode = { 'v', 'n' },
     },
+    {
+      '<leader>cc',
+      function()
+        vim.cmd [[CodeCompanionActions]]
+      end,
+      desc = '[GPT] Edit with instruction',
+      mode = { 'v', },
+    }
   },
 }
