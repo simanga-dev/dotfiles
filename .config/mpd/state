@@ -1,36 +1,13 @@
 sw_volume: 100
 audio_device_state:1:ALSA sound card
-state: play
-current: 15
-time: 103.223000
+state: stop
 random: 1
 repeat: 1
-single: 1
+single: 0
 consume: 1
 crossfade: 5
-mixrampdb: 0.000000
-mixrampdelay: -1.000000
+mixrampdb: 0
+mixrampdelay: -1
+lastloadedplaylist: 
 playlist_begin
-0:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/01. Wake Me Up.mp3
-1:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/02. Cry For Me.mp3
-2:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/03. I Can't Fucking Sing.mp3
-3:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/04. São Paulo.mp3
-4:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/05. Until We're Skin & Bones.mp3
-5:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/06. Baptized In Fear.mp3
-6:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/07. Open Hearts.mp3
-7:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/08. Opening Night.mp3
-8:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/09. Reflections Laughing.mp3
-9:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/10. Enjoy The Show.mp3
-10:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/11. Given Up On Me.mp3
-11:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/12. I Can't Wait To Get There.mp3
-12:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/13. Timeless.mp3
-13:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/14. Niagara Falls.mp3
-14:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/15. Take Me Back To LA.mp3
-15:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/16. Big Sleep.mp3
-16:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/17. Give Me Mercy.mp3
-17:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/18. Drive.mp3
-18:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/19. The Abyss.mp3
-19:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/20. Red Terror.mp3
-20:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/21. Without a Warning.mp3
-21:The Weeknd - Hurry Up Tomorrow (2025) Mp3 320kbps [PMEDIA] ⭐️/22. Hurry Up Tomorrow.mp3
 playlist_end

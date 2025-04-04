@@ -449,9 +449,9 @@
     timeout = 0
 
 [urgency_low]
-    background = "#6574A380"
-    foreground = "#CCD8FFE6"
-    frame_color = "#6574A303"
+    background = "#6592A380"
+    foreground = "#CCF1FFE6"
+    frame_color = "#6592A303"
     icon = "/home/simanga/.config/dunst/icons/hyprdots.svg"
     timeout = 5
 

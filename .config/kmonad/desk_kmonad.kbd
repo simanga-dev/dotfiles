@@ -37,5 +37,5 @@
 
 
 (deflayer num
-  esc @a @s @d @f @bak down up @l @;
-  f5 left rght rpt @pst @cpy)
+  esc @a @s @d @f left down up rght @;
+  f5 , . @bak @pst @cpy)

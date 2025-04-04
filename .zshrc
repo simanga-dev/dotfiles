@@ -37,6 +37,10 @@ export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
 export NNN_SSHFS='sshfs -o follow_symlinks'
 export NNN_OPENER='nuke'
+export NNN_BMS="r:$HOME/Workspace/resume"
+# export NNN_BMS="r:$HOME/Workspace/resume;u:/home/user/Cam Uploads;D:$HOME/Downloads/"
+
+
 # export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 #
 export EDITOR=nvim
@@ -160,3 +164,15 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# pnpm
+export PNPM_HOME="/home/simanga/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

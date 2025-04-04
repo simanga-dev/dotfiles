@@ -22,7 +22,7 @@ return {
   init = function()
     -- Your DBUI configuration
     vim.g.db_ui_use_nerd_fonts = 1
-    vim.g.db_ui_default_query = 'SELECT * FROM "{table}" LIMIT 2;'
+    vim.g.db_ui_default_query = 'SELECT * FROM "{table}" LIMIT 10;'
     vim.g.db_ui_use_nerd_fonts = 1
     vim.g.db_ui_save_location = '~/Workspace/my-notes/db_ui'
     vim.g.db_ui_execute_on_save = 0
