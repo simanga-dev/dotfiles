@@ -12,7 +12,6 @@ return {
   'b0o/schemastore.nvim',
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
-  -- 'jamespeapen/Nvim-R',
   'svampkorg/moody.nvim',
   'norcalli/nvim-colorizer.lua',
   'preservim/vim-pencil',
