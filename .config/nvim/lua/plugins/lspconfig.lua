@@ -1,6 +1,9 @@
 return {
   'neovim/nvim-lspconfig',
-  dependencies = { 'saghen/blink.cmp' },
+  dependencies = {
+    'saghen/blink.cmp',
+    'nanotee/sqls.nvim',
+  },
   -- example using `opts` for defining servers
   opts = {
     servers = {

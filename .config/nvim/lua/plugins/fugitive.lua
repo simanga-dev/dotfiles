@@ -62,13 +62,13 @@ return {
       end,
       desc = 'Launch ChatGPT',
     },
-    {
-      '<leader>gd',
-      function()
-        vim.cmd [[ Gvdiffsplit! ]]
-      end,
-      desc = 'Merge request difference',
-    },
+    -- {
+    --   '<leader>gd',
+    --   function()
+    --     vim.cmd [[ Gvdiffsplit! ]]
+    --   end,
+    --   desc = 'Merge request difference',
+    -- },
     {
       '<leader>gmt',
       function()
