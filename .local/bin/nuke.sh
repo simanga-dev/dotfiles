@@ -268,12 +268,12 @@ handle_extension() {
             fi
             ;;
 
-        xlsx|xls)
+        xlsx|xls|sln|slnx)
             if type csview >/dev/null 2>&1; then
                 wslview "${FPATH}" # | eval "$PAGER"
                 exit 0
             elif type xan >/dev/null 2>&1; then
-                xan view "${FPATH}" ## | eval "$PAGER"
+                open view "${FPATH}" ## | eval "$PAGER"
                 exit 0
             fi
             ;;

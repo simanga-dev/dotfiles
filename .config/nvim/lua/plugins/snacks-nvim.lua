@@ -31,6 +31,13 @@ return {
       desc = 'Smart Find Files',
     },
     {
+      '<leader>sf',
+      function()
+        Snacks.picker.smart()
+      end,
+      desc = 'Smart Find Files',
+    },
+    {
       '<leader>ff',
       function()
         Snacks.picker.files()

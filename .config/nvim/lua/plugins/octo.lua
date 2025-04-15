@@ -1,19 +1,19 @@
 return {
-  'pwntester/octo.nvim',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope.nvim',
-    'nvim-tree/nvim-web-devicons',
-  },
-  opts = {},
-  keys = {
-    { 'ghic', '<cmd>Octo issue close <cr>', desc = 'close issue' },
-    { 'ghil', '<cmd>Octo issue list <cr>', desc = 'list open issues on same repo' },
-    { 'ghio', '<cmd>Octo issue open <cr>', desc = 'reopen issue' },
-    { 'ghprl', '<cmd>Octo pr list <cr>', desc = 'list open issues on same repo' },
-  },
-  event = 'VeryLazy',
-  -- branch       = "fix_429",
+  -- 'pwntester/octo.nvim',
+  -- dependencies = {
+  --   'nvim-lua/plenary.nvim',
+  --   'nvim-telescope/telescope.nvim',
+  --   'nvim-tree/nvim-web-devicons',
+  -- },
+  -- opts = {},
+  -- keys = {
+  --   { 'ghic', '<cmd>Octo issue close <cr>', desc = 'close issue' },
+  --   { 'ghil', '<cmd>Octo issue list <cr>', desc = 'list open issues on same repo' },
+  --   { 'ghio', '<cmd>Octo issue open <cr>', desc = 'reopen issue' },
+  --   { 'ghprl', '<cmd>Octo pr list <cr>', desc = 'list open issues on same repo' },
+  -- },
+  -- event = 'VeryLazy',
+  -- -- branch       = "fix_429",
 }
 
 -- require"octo".setup({
