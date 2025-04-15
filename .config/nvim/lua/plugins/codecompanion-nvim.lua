@@ -36,17 +36,15 @@ return {
   keys = {
     {
       '<leader>cc',
-      function()
-        vim.cmd [[ CodeCompanionChat Toggle ]]
-      end,
+      ':CodeCompanionChat Toggle <CR>',
       desc = '[GPT] Launch ChatGPT Chat',
-      mode = { 'v', 'n' },
+      mode = { 'n' },
     },
     {
-      '<leader>cl',
-      ':CodeCompanion',
+      '<leader>cc',
+      ':CodeCompanionActions <CR>',
       desc = '[GPT] Launch ChatGPT Chat',
-      mode = { 'v', 'n' },
+      mode = { 'v', 'x' },
     },
   },
   config = true,

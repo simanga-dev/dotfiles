@@ -9,7 +9,7 @@ return {
     servers = {
       clangd = {},
       gopls = {},
-      pyright = {},
+      -- pyright = {},
       texlab = {},
       dockerls = {},
       cmake = {},
@@ -27,13 +27,13 @@ return {
           vim.keymap.set('n', '<leader>dB', ':SqlsSwitchDatabase<CR>')
         end,
       },
-      markdownlint = {},
-      emmet_language_server = {},
-      svelte = {},
+      -- markdownlint = {},
+      -- emmet_language_server = {},
+      -- svelte = {},
       rust_analyzer = {},
       -- sql_formatter = {},
-      tailwindcss = {},
-      angularls = {},
+      -- tailwindcss = {},
+      -- angularls = {},
       omnisharp = {
         handlers = {
           ['textDocument/definition'] = require('omnisharp_extended').definition_handler,
@@ -80,7 +80,7 @@ return {
         analyze_open_documents_only = false,
       },
 
-      omnisharp_mono = {},
+      -- omnisharp_mono = {},
 
       -- -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       -- --

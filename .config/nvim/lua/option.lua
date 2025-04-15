@@ -55,6 +55,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
       or vim.bo.filetype == 'markdown'
       or vim.bo.filetype == ''
       or vim.bo.filetype == 'help'
+      or vim.bo.filetype == 'codecompanion'
       or vim.bo.filetype == 'gitcommit'
       or vim.bo.filetype == 'chatgpt-input'
       or vim.bo.filetype == 'oil'
