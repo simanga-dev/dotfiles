@@ -25,7 +25,10 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
+    keymap = {
+      preset = 'default',
+      ['<Tab>'] = { 'show', 'accept' },
+    },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -34,12 +37,20 @@ return {
     },
 
     -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = false } },
+    completion = { menu = { auto_show = true } },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+
+    cmdline = {
+      keymap = {
+        -- recommended, as the default keymap will only show and select the next item
+        ['<C-y>'] = { 'show', 'accept' },
+      },
+      completion = { menu = { auto_show = true } },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

@@ -47,27 +47,45 @@ require('lazy').setup('plugins', {
   },
 })
 
+-- se fcs=stl:─,stlnc:—
 cmd [[
-  se stl:— fcs=stl:─,stlnc:—
+    se stl:— fcs=stl:─,stlnc:—
 
-  hi StatusLine gui=NONE guibg=NONE
-  hi StatusLineNC gui=NONE guibg=NONE
+    hi FoldColumn guibg=NONE
 
-  hi Normal guibg=NONE ctermbg=NONE
-  hi NonText guibg=NONE ctermbg=NONE
-  hi EndOfBuffer guibg=NONE ctermbg=NONE
+    hi SignColumn guibg=NONE ctermbg=NONE
+    hi Folded guibg=NONE ctermbg=NONE
+    hi NormalFloat guibg=NONE ctermbg=NONE
+    hi FloatBorder guibg=NONE ctermbg=NONE
 
-  hi SignColumn guibg=NONE ctermbg=NONE
-  hi NormalFloat guibg=NONE ctermbg=NONE
+    hi WinSeparator guibg=NONE ctermbg=NONE
+    hi WinBar guibg=NONE ctermbg=NONE
+    hi WinBarNC guibg=NONE ctermbg=NONE
 
-  hi NotificationInfo guibg=NONE
-  hi NotificationWarning guibg=NONE
-  hi NotificationError guibg=NONE
+    hi Normal guibg=NONE ctermbg=NONE
+    hi NormalFloat guibg=NONE ctermbg=NONE
+    hi CursorLine guibg=NONE ctermbg=NONE
+    hi NormalNC guibg=NONE ctermbg=NONE
+    hi PMenu guibg=NONE ctermbg=NONE
+    hi PMenuSBar guibg=NONE  ctermbg=NONE
+    hi PMenuThumb guibg=NONE ctermbg=NONE
+    hi WildMenu guibg=NONE ctermbg=NONE
+    hi VertSplit ctermbg=NONE guibg=NONE
 
-  set exrc
-  set secure
+    hi StatusLine gui=NONE guifg=#565f89 guibg=NONE
+    hi StatusLineNC gui=NONE guifg=#565f89 guibg=NONE
+    hi VertSplit gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
+    hi WinSeparator gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
 
-  set termguicolors
+    hi TabLineFill guifg=NONE guibg=NONE
+    hi TabLine guifg=#565f89  guibg=NONE
+    hi TabLineSel guifg=#565f89  guibg=NONE
 
-  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+    hi NotificationInfo guifg=#565f89 guibg=NONE
+    hi NotificationWarning guifg=#565f89 guibg=NONE
+    hi NotificationError guifg=#565f89 guibg=NONE
+    set exrc
+    set secure
+
+    set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 ]]

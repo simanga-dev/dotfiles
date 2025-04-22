@@ -182,7 +182,13 @@ handle_extension() {
 
         ## PDF
         pdf)
-            handle_pdf
+            if type csview >/dev/null 2>&1; then
+                wslview "${FPATH}" # | eval "$PAGER"
+                exit 0
+            else
+                 handle_pdf
+                exit 0
+            fi
             exit 1;;
 
         ## Audio

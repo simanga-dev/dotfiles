@@ -152,5 +152,28 @@ return {
       end,
       desc = 'Git Log File',
     },
+    {
+      '<leader>gm',
+      function()
+        Snacks.picker.git_branches {
+          all = true,
+          layout = 'select',
+          title = 'Merge Branch',
+          confirm = function(picker, item)
+            picker:close()
+            return picker:norm(function()
+              local line = item.text
+              local branch = line:match '^%*?%s*([%w%-%._/]+)'
+              if not branch then
+                vim.notify('Could not parse branch name from: ' .. line, vim.log.levels.ERROR)
+                return
+              end
+              vim.cmd('Git merge --no-ff ' .. branch)
+            end)
+          end,
+        }
+      end,
+      desc = 'Git merge',
+    },
   },
 }

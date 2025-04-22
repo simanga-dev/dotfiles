@@ -69,20 +69,21 @@ return {
     --   end,
     --   desc = 'Merge request difference',
     -- },
-    {
-      '<leader>gmt',
-      function()
-        vim.cmd [[ Git mergetool ]]
-      end,
-      desc = '[GM] Merge Tool, show file with conffilt',
-    },
-    {
-      '<leader>gmc',
-      function()
-        vim.cmd [[ Git merge --continue ]]
-      end,
-      desc = 'git merge continue',
-    },
+    -- {
+    --   '<leader>gmt',
+    --   function()
+    --     vim.cmd [[ Git mergetool ]]
+    --   end,
+    --   desc = '[GM] Merge Tool, show file with conffilt',
+    -- },
+    -- {
+    --   '<leader>gmc',
+    --   function()
+    --     vim.cmd [[ Git merge --continue ]]
+    --   end,
+    --   desc = 'git merge continue',
+    -- },
+
     {
       '<leader>gw',
       function()
@@ -160,19 +161,19 @@ return {
       end,
       desc = 'Git push to current branch',
     },
-    {
-      '<leader>grc',
-      function()
-        vim.cmd [[ Git rebase --continue ]]
-      end,
-      desc = 'Git rebase --continue',
-    },
-    {
-      '<leader>gmc',
-      function()
-        vim.cmd [[ Git merge --continue ]]
-      end,
-      desc = 'Git merge --continue',
-    },
+    -- {
+    --   '<leader>grc',
+    --   function()
+    --     vim.cmd [[ Git rebase --continue ]]
+    --   end,
+    --   desc = 'Git rebase --continue',
+    -- },
+    -- {
+    --   '<leader>gmc',
+    --   function()
+    --     vim.cmd [[ Git merge --continue ]]
+    --   end,
+    --   desc = 'Git merge --continue',
+    -- },
   },
 }
