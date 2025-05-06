@@ -28,6 +28,8 @@ return {
     keymap = {
       preset = 'default',
       ['<Tab>'] = { 'show', 'accept' },
+      ['<C-p>'] = { 'select_prev', 'snippet_backward', 'fallback_to_mappings' },
+      ['<C-n>'] = { 'select_next', 'snippet_forward', 'fallback_to_mappings' },
     },
 
     appearance = {
@@ -37,7 +39,15 @@ return {
     },
 
     -- (Default) Only show the documentation popup when manually triggered
-    completion = { menu = { auto_show = true } },
+    completion = {
+      documentation = {
+        auto_show = true,
+      },
+      ghost_text = {
+        enabled = true,
+      },
+      menu = { auto_show = true },
+    },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
