@@ -111,13 +111,13 @@ return {
       end,
       desc = 'Git Branches',
     },
-    {
-      '<leader>gl',
-      function()
-        Snacks.picker.git_log()
-      end,
-      desc = 'Git Log',
-    },
+    -- {
+    --   '<leader>gl',
+    --   function()
+    --     Snacks.picker.git_log()
+    --   end,
+    --   desc = 'Git Log',
+    -- },
     {
       '<leader>gL',
       function()

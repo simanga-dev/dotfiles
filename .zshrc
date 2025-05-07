@@ -58,8 +58,8 @@ source "${ZINIT_HOME}/zinit.zsh"
 #
 zinit ice wait'!0'
 zinit ice depth=1; zinit light romkatv/powerlevel10k
-zinit ice wait'!0'
-zinit ice depth=1; zinit light  hlissner/zsh-autopair
+# zinit ice wait'!0'
+# zinit ice depth=1; zinit light  hlissner/zsh-autopair
 zinit ice wait'!0'
 zinit ice depth=1; zinit light zsh-users/zsh-syntax-highlighting
 zinit ice wait'!0'
@@ -69,8 +69,8 @@ zinit ice depth=1; zinit light zsh-users/zsh-autosuggestions
 zinit ice wait'!0'
 zinit ice depth=1; zinit light Aloxaf/fzf-tab
 export NVM_LAZY_LOAD=true
-zinit ice wait'!0'
-zinit ice depth=1; zinit load lukechilds/zsh-nvm
+# zinit ice wait'!0'
+# zinit ice depth=1; zinit load lukechilds/zsh-nvm
 
 bindkey -v
 # Edit line in vim with ctrl-e:
@@ -145,7 +145,8 @@ export PATH='/home/simanga/.config/nnn/plugins:/usr/local/sbin:/usr/local/bin:/u
 # Load completions
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(direnv hook zsh)"
+
+# eval "$(direnv hook zsh)"
 
 autoload -Uz compinit && compinit
 
