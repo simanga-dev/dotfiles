@@ -57,7 +57,7 @@ return {
 
     cmdline = {
       keymap = {
-        -- recommended, as the default keymap will only show and select the next item
+        ['<CR>'] = { 'accept_and_enter', 'fallback' },
         ['<C-y>'] = { 'show', 'accept' },
       },
       completion = { menu = { auto_show = true } },
