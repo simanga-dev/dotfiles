@@ -32,19 +32,13 @@ return {
       desc = '[GPT] Edit with instruction',
       mode = { 'n' }, -- the selected code must be open on a chat buffer
     },
-    --   {
-    --     '<leader>cc',
-    --     function()
-    --       vim.cmd [[ CodeCompanionChat Toggle ]]
-    --     end,
-    --     desc = '[GPT] Launch ChatGPT Chat', -- the selected code must be open on a chat buffer
-    --   },
-    --   -- {
-    --   --   '<leader>cl',
-    --   --   function()
-    --   --     vim.cmd [[ ChatGPTActAs ]]
-    --   --   end,
-    --   --   desc = '[GPT] ChatGPT act AS',
-    --   -- },
+    {
+      '<leader>gg',
+      function()
+        vim.cmd [[ ChatGPTRun grammar_correction ]]
+      end,
+      desc = '[GPT] Fix spelling and gramma',
+      mode = { 'v' }, -- the selected code must be open on a chat buffer
+    },
   },
 }
