@@ -1,36 +1,36 @@
 return {
-  'neovim/nvim-lspconfig',
-  dependencies = {
-    'saghen/blink.cmp',
-    'nanotee/sqls.nvim',
-  },
-  -- example using `opts` for defining servers
-  opts = {
-    servers = {
-      lua_ls = {},
-      sqls = {
-        cmd = {
-          '/home/simanga/.local/share/nvim/mason/bin/sqls',
-          '-config',
-          '/home/simanga/Workspace/my-notes/db_ui/.sqls.yml',
-        },
-        on_attach = function(client, bufnr)
-          require('sqls').on_attach(client, bufnr)
-          vim.keymap.set('n', '<leader>dB', ':SqlsSwitchDatabase<CR>')
-        end,
-      },
-    },
-  },
-  config = function(_, opts)
-    local lspconfig = require 'lspconfig'
-    for server, config in pairs(opts.servers) do
-      -- passing config.capabilities to blink.cmp merges with the capabilities in your
-      -- `opts[server].capabilities, if you've defined it
-      config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-      lspconfig[server].setup(config)
-    end
-  end,
-
+  -- 'neovim/nvim-lspconfig',
+  -- dependencies = {
+  --   'saghen/blink.cmp',
+  --   'nanotee/sqls.nvim',
+  -- },
+  -- -- example using `opts` for defining servers
+  -- opts = {
+  --   servers = {
+  --     lua_ls = {},
+  --     sqls = {
+  --       cmd = {
+  --         '/home/simanga/.local/share/nvim/mason/bin/sqls',
+  --         '-config',
+  --         '/home/simanga/Workspace/my-notes/db_ui/.sqls.yml',
+  --       },
+  --       on_attach = function(client, bufnr)
+  --         require('sqls').on_attach(client, bufnr)
+  --         vim.keymap.set('n', '<leader>dB', ':SqlsSwitchDatabase<CR>')
+  --       end,
+  --     },
+  --   },
+  -- },
+  -- config = function(_, opts)
+  --   local lspconfig = require 'lspconfig'
+  --   for server, config in pairs(opts.servers) do
+  --     -- passing config.capabilities to blink.cmp merges with the capabilities in your
+  --     -- `opts[server].capabilities, if you've defined it
+  --     config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+  --     lspconfig[server].setup(config)
+  --   end
+  -- end,
+  --
   -- example calling setup directly for each LSP
   -- config = function()
   --   local capabilities = require('blink.cmp').get_lsp_capabilities()

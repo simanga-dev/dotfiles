@@ -43,9 +43,11 @@ return {
       documentation = {
         auto_show = true,
       },
-      ghost_text = {
-        enabled = true,
-      },
+
+      -- ghost_text = {
+      --   enabled = true,
+      -- },
+
       menu = { auto_show = true },
     },
 
@@ -59,6 +61,7 @@ return {
       keymap = {
         -- recommended, as the default keymap will only show and select the next item
         ['<C-y>'] = { 'show', 'accept' },
+        ['<CR>'] = { 'accept_and_enter', 'fallback' },
       },
       completion = { menu = { auto_show = true } },
     },
