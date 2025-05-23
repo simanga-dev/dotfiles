@@ -249,3 +249,24 @@ vim.api.nvim_create_autocmd('ModeChanged', {
     pcall(vim.diagnostic.show)
   end,
 })
+
+vim.lsp.enable {
+  'lua_ls',
+  'gopls',
+  'terraformls',
+  'astro',
+  'pyright',
+  'ruff',
+  'ansiblels',
+  'jsonnet_ls',
+  'tailwindcss',
+  'marksman',
+  'ltex',
+  'rust_analyzer',
+  'templ',
+  'htmx',
+  'jsonlls',
+  'nixd',
+  'ts_ls',
+  'yamlls',
+}

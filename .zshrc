@@ -64,7 +64,7 @@ zinit ice wait'!0'
 zinit ice depth=1; zinit light zsh-users/zsh-syntax-highlighting
 zinit ice wait'!0'
 zinit ice depth=1; zinit light zsh-users/zsh-completions
-zinit ice wait'!0'
+zinit ice defer'1'
 zinit ice depth=1; zinit light zsh-users/zsh-autosuggestions
 zinit ice wait'!0'
 zinit ice depth=1; zinit light Aloxaf/fzf-tab

@@ -43,9 +43,9 @@ return {
       documentation = {
         auto_show = true,
       },
-      ghost_text = {
-        enabled = true,
-      },
+      -- ghost_text = {
+      --   enabled = true,
+      -- },
       menu = { auto_show = true },
     },
 
