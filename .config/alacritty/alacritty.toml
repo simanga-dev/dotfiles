@@ -46,8 +46,8 @@ columns = 150
 lines = 40
 
 [window.padding]
-x = 10
-y = 16
+x = 25
+y = 25
 
 [colors.primary]
 background = "#11121D"

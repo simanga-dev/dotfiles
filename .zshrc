@@ -1,27 +1,21 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-#
-#
-zmodload zsh/zprof
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+# Add user configurations here
+# For HyDE to not touch your beloved configurations,
+# we added 2 files to the project structure:
+# 1. ~/.hyde.zshrc - for customizing the shell related hyde configurations
+# 2. ~/.zshenv - for updating the zsh environment variables handled by HyDE // this will be modified across updates
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#  Plugins 
+# oh-my-zsh plugins are loaded  in ~/.hyde.zshrc file, see the file for more information
 
+#  Aliases 
+# Add aliases here
 
-# Set the directory we want to store zinit and plugins
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-
-
-# Download Zinit, if it's not there yet
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
+#  This is your file 
+# Add your configurations here
+# export EDITOR=nvim
+export EDITOR=nvim
+bindkey -v
+export KEYTIMEOUT=1
 
 function expand-alias() {
 	zle _expand_alias
@@ -38,39 +32,6 @@ export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
 export NNN_SSHFS='sshfs -o follow_symlinks'
 export NNN_OPENER='nuke'
 export NNN_BMS="r:$HOME/Workspace/resume"
-# export NNN_BMS="r:$HOME/Workspace/resume;u:/home/user/Cam Uploads;D:$HOME/Downloads/"
-
-
-# export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
-#
-export EDITOR=nvim
-bindkey -v
-export KEYTIMEOUT=1
-
-# Source/Load zinit
-source "${ZINIT_HOME}/zinit.zsh"
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# source ~/.config/zsh/zsh-vi-mode.zsh
-
-# n Add in zsh plugins
-#
-zinit ice wait'!0'
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-# zinit ice wait'!0'
-# zinit ice depth=1; zinit light  hlissner/zsh-autopair
-zinit ice wait'!0'
-zinit ice depth=1; zinit light zsh-users/zsh-syntax-highlighting
-zinit ice wait'!0'
-zinit ice depth=1; zinit light zsh-users/zsh-completions
-zinit ice defer'1'
-zinit ice depth=1; zinit light zsh-users/zsh-autosuggestions
-zinit ice wait'!0'
-zinit ice depth=1; zinit light Aloxaf/fzf-tab
-export NVM_LAZY_LOAD=true
-# zinit ice wait'!0'
-# zinit ice depth=1; zinit load lukechilds/zsh-nvm
 
 bindkey -v
 # Edit line in vim with ctrl-e:
@@ -125,6 +86,7 @@ HISTFILE=~/.zsh/history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
+
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
@@ -151,31 +113,3 @@ eval "$(zoxide init --cmd cd zsh)"
 autoload -Uz compinit && compinit
 
 source ~/.config/zsh/aliases.sh
-
-# pnpm
-export PNPM_HOME="/home/simanga/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-## bun completions
-[ -s "/home/simanga/.bun/_bun" ] && source "/home/simanga/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-# pnpm
-export PNPM_HOME="/home/simanga/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-#
-export GUI=1

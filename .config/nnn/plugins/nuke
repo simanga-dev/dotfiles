@@ -65,7 +65,7 @@
 #   2. Clean-up the unnecessary exit codes
 
 # set to 1 to enable GUI apps and/or BIN execution
-GUI="${GUI:-0}"
+GUI="${GUI:-1}"
 BIN="${BIN:-0}"
 
 set -euf -o noclobber -o noglob -o nounset
@@ -130,10 +130,10 @@ handle_video() {
     if [ "$GUI" -ne 0 ]; then
         if is_mac; then
             nohup open "${FPATH}" >/dev/null 2>&1 &
-        elif type smplayer >/dev/null 2>&1; then
-            nohup smplayer "${FPATH}" >/dev/null 2>&1 &
         elif type mpv >/dev/null 2>&1; then
             nohup mpv "${FPATH}" >/dev/null 2>&1 &
+        elif type smplayer >/dev/null 2>&1; then
+            nohup smplayer "${FPATH}" >/dev/null 2>&1 &
         else
             return
         fi
@@ -203,7 +203,8 @@ handle_extension() {
         ## BitTorrent
         torrent)
             if type rtorrent >/dev/null 2>&1; then
-                rtorrent "${FPATH}"
+                NEW_WINDOW=$(tmux new-window -t special -P)
+                tmux send-keys -t ${NEW_WINDOW} "cd $(pwd) && rtorrent \"$FPATH\" " Enter
                 exit 0
             elif type transmission-show >/dev/null 2>&1; then
                 transmission-show -- "${FPATH}"
