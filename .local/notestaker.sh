@@ -1,1 +1,0 @@
-bin/notestaker.sh
