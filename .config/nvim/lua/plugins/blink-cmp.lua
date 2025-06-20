@@ -27,7 +27,7 @@ return {
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
       preset = 'default',
-      ['<Tab>'] = { 'show', 'accept' },
+      -- ['<Tab>'] = { 'show', 'accept' },
       ['<C-p>'] = { 'select_prev', 'snippet_backward', 'fallback_to_mappings' },
       ['<C-n>'] = { 'select_next', 'snippet_forward', 'fallback_to_mappings' },
     },

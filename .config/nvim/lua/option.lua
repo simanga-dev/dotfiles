@@ -271,4 +271,5 @@ vim.lsp.enable {
   'nixd',
   'ts_ls',
   'yamlls',
+  'sql'
 }

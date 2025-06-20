@@ -55,7 +55,7 @@ return {
         vim.cmd [[CodeCompanionActions]]
       end,
       desc = '[GPT] Edit with instruction',
-      mode = { 'v', },
-    }
+      mode = { 'v' },
+    },
   },
 }
