@@ -2,7 +2,7 @@
 vi_mode_style = "Block"
 
 [font]
-size = 10
+size = 10.5
 
 [font.bold]
 family = "JetBrainsMonoNerdFont"

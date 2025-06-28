@@ -113,3 +113,10 @@ eval "$(zoxide init --cmd cd zsh)"
 autoload -Uz compinit && compinit
 
 source ~/.config/zsh/aliases.sh
+
+# bun completions
+[ -s "/home/simanga/.bun/_bun" ] && source "/home/simanga/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -47,12 +47,13 @@ return {
       end,
       desc = '[GPT] Launch ChatGPT Chat',
     },
-    --   {
-    --     '<leader>cC',
-    --     function()
-    --       vim.cmd [[ ChatGPTActAs ]]
-    --     end,
-    --     desc = '[GPT] ChatGPT act AS',
-    --   },
+    {
+      '<leader>gg',
+      function()
+        vim.cmd [[ ChatGPTRun grammar_correction ]]
+      end,
+      desc = '[GPT] ChatGPT act AS',
+      mode = { 'v' },
+    },
   },
 }
