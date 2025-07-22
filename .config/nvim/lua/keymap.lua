@@ -42,8 +42,6 @@ vim.keymap.set('v', '<leader>f', ':!pg_format <CR>')
 -- My greates remap yet
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 
-
-
 -- Supper Mapping to substitue// Degeration mapping
 vim.keymap.set('n', '<leader>S', ':%s/\\<<C-R><C-W>\\>/<C-R>0/g<CR>')
 vim.keymap.set('t', '<C-\\><C-\\>', '<C-\\><C-n>')
