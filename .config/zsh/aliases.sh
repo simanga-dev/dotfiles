@@ -5,11 +5,13 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-alias mpv='dwmswallow $WINDOWID & mpv'
-alias zathura='dwmswallow $WINDOWID & zathura'
-alias feh='dwmswallow $WINDOWID & feh'
-# alias scrcpy='dwmswallow $WINDOWID & scrcpy'
+# alias mpv='dwmswallow $WINDOWID & mpv'
+# alias zathura='dwmswallow $WINDOWID & zathura'
+# alias feh='dwmswallow $WINDOWID & feh'
+# # alias scrcpy='dwmswallow $WINDOWID & scrcpy'
 
+
+alias winterm='cmd.exe /c start "" "C:\Program Files\Alacritty\alacritty.exe" --working-directory "$(wslpath -w $(pwd))" --command PowerShell.exe'
 
 alias vi='nvim'
 

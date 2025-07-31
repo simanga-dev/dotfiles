@@ -1,7 +1,15 @@
 #!/usr/bin/env sh
 
-NEW_WINDOW=$(tmux new-window -t default -P)
+n="$(echo $2 | sed 's/\/$//')"
+n="$(echo ${n} | sed 's/\//->/g')"
 
-tmux send-keys -t ${NEW_WINDOW} "cd $2" Enter
+PROJECT_NAME="f-$(echo ${n} | sed 's/.*>//')"
+NEW_WINDOW=$(tmux new-window -t default -P -n ${PROJECT_NAME})
 
-tmux attach-session -t ${NEW_WINDOW}
+if ! tmux list-windows -t default 2>/dev/null | grep -q "${PROJECT_NAME}"; then
+    tmux new-window -a -t default -n ${PROJECT_NAME}
+    tmux send-keys -t ${NEW_WINDOW} "cd $2" Enter
+    tmux select-window -t ${PROJECT_NAME}
+else
+    tmux select-window -t ${PROJECT_NAME}
+fi
