@@ -25,7 +25,7 @@ return {
   },
   keys = {
     {
-      '<leader>gg',
+      '<leader>cc',
       function()
         vim.cmd [[ ChatGPT ]]
       end,
@@ -33,7 +33,7 @@ return {
       mode = { 'n' }, -- the selected code must be open on a chat buffer
     },
     {
-      '<leader>gg',
+      '<leader>cc',
       function()
         vim.cmd [[ ChatGPTRun grammar_correction ]]
       end,

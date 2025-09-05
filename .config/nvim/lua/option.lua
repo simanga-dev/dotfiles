@@ -44,6 +44,9 @@ vim.api.nvim_create_autocmd('BufEnter', {
       or vim.bo.filetype == 'chatgpt-input'
       or vim.bo.filetype == 'oil'
       or vim.bo.filetype == 'neo-tree'
+      or vim.bo.filetype == 'Avante'
+      or vim.bo.filetype == 'AvanteSelectedFiles'
+      or vim.bo.filetype == 'AvanteInput'
     then
       vim.wo.number = false
       vim.wo.relativenumber = false
@@ -80,7 +83,7 @@ vim.api.nvim_create_autocmd('TermOpen', { callback = term_config, group = group_
 
 local group_2 = vim.api.nvim_create_augroup('auto-save', { clear = true })
 
-vim.api.nvim_create_autocmd('FocusLost', { callback = trim_trailing_whitespaces, group = group_2 })
+-- vim.api.nvim_create_autocmd({ 'FocusLost', 'BufWrite' }, { callback = trim_trailing_whitespaces, group = group_2 })
 
 -- Highlight on yank
 vim.cmd [[
@@ -273,4 +276,5 @@ vim.lsp.enable {
   'ts_ls',
   'yamlls',
   'sql',
+  'marksman',
 }

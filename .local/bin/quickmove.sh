@@ -42,10 +42,12 @@ if [ -n "${FOLDER}" ] && [ -d "${BASE}${FOLDER}" ]; then
 	tmux new-session -d -s default
     fi
 
-    if ! tmux list-windows -t default 2>/dev/null | grep -q "${PROJECT_NAME}"; then
+    if ! tmux list-windows -t default 2>/dev/null | rg -q "\s${PROJECT_NAME}"; then
 	tmux new-window -a -t default -n ${PROJECT_NAME}
 	tmux send-keys -t default:${PROJECT_NAME} "nvim ." Enter
 	tmux select-window -t ${PROJECT_NAME}
+	echo $PROJECT_NAME
+
     else
 	tmux select-window -t ${PROJECT_NAME}
     fi
