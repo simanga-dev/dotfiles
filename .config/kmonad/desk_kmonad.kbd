@@ -38,4 +38,5 @@
 
 (deflayer num
   esc @a @s @d @f left down up rght @;
-  f5 , . @bak @pst @cpy)
+  f5 , . @bak @pst @cpy
+)

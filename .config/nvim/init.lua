@@ -78,6 +78,7 @@ cmd [[
     hi StatusLineNC gui=NONE guifg=#565f89 guibg=NONE
     hi VertSplit gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
     hi WinSeparator gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
+    hi ColorColumn gui=NONE guifg=NONE guibg=#565f89 cterm=NONE
 
     hi TabLineFill guifg=NONE guibg=NONE
     hi TabLine guifg=#1d202f  guibg=NONE

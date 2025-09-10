@@ -2,6 +2,8 @@
 set selection-clipboard clipboard
 map <C-i> zoom in
 map <C-o> zoom out
+map <C-d> scroll full-down
+map <C-u> scroll full-up
 #}}}
 
 
@@ -49,16 +51,21 @@ set adjust-open "best-fit"
 # One page per row by default
 set pages-per-row 1
 
-#stop at page boundries
+# stop at page boundaries
 set scroll-page-aware true
 set scroll-full-overlap 0.01
-set scroll-step 50
+
+# Make scrolling smooth and a bit faster
+set smooth-scroll true
+set scroll-step 90
+
 set toggle_inputbar false
-set toggle_statusbar "false"
+# set toggle_statusbar "false"
 
 set guioptions ""
 
-#zoom settings
+# zoom settings
 set zoom-min 10
 
-set font "JetBrainsMono 10"
+set font "JetBrainsMono 14"
+# }}}
