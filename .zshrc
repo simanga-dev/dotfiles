@@ -33,8 +33,12 @@ zle -N expand-alias
 bindkey -M main ' ' expand-alias
 
 # This is NNN staff, please bare with mere here, I am still cooking
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
+#
+
+BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+
+export NNN_PLUG=';:autojump;a:mtpmount;m:nmount;t:term;r:fzplug'
 export NNN_SSHFS='sshfs -o follow_symlinks'
 export NNN_OPENER="/home/simanga/.local/bin/nuke.sh"
 export NNN_BMS="d:/mnt/c/Users/Smanga.Khoza/Downloads/;r:/home/simanga/Workspace/resume;w:/mnt/c/Users/Smanga.Khoza/Workspace/q4/src;c:/mnt/c/Users/Smanga.Khoza/Workspace/RSA-CentralServices/src"
@@ -169,7 +173,7 @@ else
     # Check if the tmux session named "default" already exists
     if ! tmux has-session -t default 2>/dev/null; then
         # If the session does not exist, create a new one
-        tmux new-session -s default -A
+        tmux new-session -s default -A \; send-keys 'nnn -c' C-m
     else
         # If the session already exists, attach to it
         tmux attach-session -t default
@@ -193,3 +197,9 @@ source <(ng completion script)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# opencode
+export PATH=/home/simanga/.opencode/bin:$PATH
+
+
+

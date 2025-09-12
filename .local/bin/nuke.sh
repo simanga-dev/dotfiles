@@ -68,6 +68,8 @@
 GUI="${GUI:-0}"
 BIN="${BIN:-0}"
 
+GUI=1
+
 set -euf -o noclobber -o noglob -o nounset
 IFS="$(printf '%b_' '\n')"; IFS="${IFS%_}" # protect trailing \n
 
@@ -127,28 +129,31 @@ handle_audio() {
 }
 
 handle_video() {
-    if [ "$GUI" -ne 0 ]; then
-        if is_mac; then
-            nohup open "${FPATH}" >/dev/null 2>&1 &
-        elif type smplayer >/dev/null 2>&1; then
-            nohup smplayer "${FPATH}" >/dev/null 2>&1 &
-        elif type mpv >/dev/null 2>&1; then
-            nohup mpv "${FPATH}" >/dev/null 2>&1 &
-        else
-            return
-        fi
-    elif type ffmpegthumbnailer >/dev/null 2>&1; then
-        # Thumbnail
-        [ -d "${IMAGE_CACHE_PATH}" ] || mkdir "${IMAGE_CACHE_PATH}"
-        ffmpegthumbnailer -i "${FPATH}" -o "${IMAGE_CACHE_PATH}/${FNAME}.jpg" -s 0
-        viu -n "${IMAGE_CACHE_PATH}/${FNAME}.jpg" | eval "$PAGER"
-    elif type mediainfo >/dev/null 2>&1; then
-        mediainfo "${FPATH}" | eval "$PAGER"
-    elif type exiftool >/dev/null 2>&1; then
-        exiftool "${FPATH}"| eval "$PAGER"
-    else
-        return
-    fi
+        wslview "${FPATH}" # | eval "$PAGER"
+
+    #
+    # if [ "$GUI" -ne 0 ]; then
+    #     if is_mac; then
+    #         nohup open "${FPATH}" >/dev/null 2>&1 &
+    #     elif type smplayer >/dev/null 2>&1; then
+    #         nohup smplayer "${FPATH}" >/dev/null 2>&1 &
+    #     elif type mpv >/dev/null 2>&1; then
+    #         nohup mpv "${FPATH}" >/dev/null 2>&1 &
+    #     else
+    #         return
+    #     fi
+    # elif type ffmpegthumbnailer >/dev/null 2>&1; then
+    #     # Thumbnail
+    #     [ -d "${IMAGE_CACHE_PATH}" ] || mkdir "${IMAGE_CACHE_PATH}"
+    #     ffmpegthumbnailer -i "${FPATH}" -o "${IMAGE_CACHE_PATH}/${FNAME}.jpg" -s 0
+    #     viu -n "${IMAGE_CACHE_PATH}/${FNAME}.jpg" | eval "$PAGER"
+    # elif type mediainfo >/dev/null 2>&1; then
+    #     mediainfo "${FPATH}" | eval "$PAGER"
+    # elif type exiftool >/dev/null 2>&1; then
+    #     exiftool "${FPATH}"| eval "$PAGER"
+    # else
+    #     return
+    # fi
     exit 0
 }
 
@@ -182,13 +187,7 @@ handle_extension() {
 
         ## PDF
         pdf)
-            if type csview >/dev/null 2>&1; then
-                wslview "${FPATH}" # | eval "$PAGER"
-                exit 0
-            else
-                 handle_pdf
-                exit 0
-            fi
+            handle_pdf
             exit 1;;
 
         ## Audio
