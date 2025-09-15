@@ -55,6 +55,8 @@ vim.keymap.set('n', '<leader>ct', ':wa<CR>:!cargo test <CR>')
 -- Managing buffers and Windows
 vim.keymap.set('n', '<leader>B', ':bdelete!<CR>')
 
+vim.keymap.set('n', '<leader>A', ':!launch-agent.sh <CR>')
+
 -- vim.keymap.set('n', '<leadereader>>', ':bn<CR>')
 -- vim.keymap.set('n', '<leader><', ':bp<CR>')
 

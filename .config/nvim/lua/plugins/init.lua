@@ -10,8 +10,6 @@ return {
   'b0o/schemastore.nvim',
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
-  'svampkorg/moody.nvim',
-  -- 'jamespeapen/Nvim-R',
   'norcalli/nvim-colorizer.lua',
   'preservim/vim-pencil',
   'amadeus/vim-convert-color-to',
@@ -32,66 +30,6 @@ return {
     end,
   },
 
-  -- {
-  --   'tiagovla/tokyodark.nvim',
-  --   opts = {
-  --     transparent_background = true,
-  --   },
-  --   config = function(_, opts)
-  --     require('tokyodark').setup(opts) -- calling setup is optional
-  --     vim.cmd [[colorscheme tokyodark]]
-  --   end,
-  -- },
-
-  -- {
-  --   'rebelot/kanagawa.nvim',
-  --   config = function()
-  --     require('kanagawa').setup {
-  --       theme = 'dragon', -- Load "wave" theme when 'background' option is not set
-  --     }
-  --     vim.cmd [[ colorscheme kanagawa ]]
-  --   end,
-  -- },
-  -- {
-  --   'ellisonleao/gruvbox.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.o.background = 'dark' -- or "light" for light mode
-  --     vim.cmd [[colorscheme gruvbox]]
-  --   end,
-  --   opts = {},
-  -- },
-  --
-
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     -- style = 'night',
-  --     styles = {
-  --       sidebars = 'transparent',
-  --       floats = 'transparent',
-  --     },
-  --     transparent = true,
-  --   },
-  --   config = function(_, opts)
-  --     require('tokyonight').setup(opts)
-  --     vim.cmd [[colorscheme tokyonight]]
-  --   end,
-  -- },
-
-  -- {
-  --   'tiagovla/tokyodark.nvim',
-  --   opts = {
-  --     -- custom options here
-  --   },
-  --   config = function(_, opts)
-  --     require('tokyodark').setup(opts) -- calling setup is optional
-  --     vim.cmd [[colorscheme tokyodark]]
-  --   end,
-  -- },
-
   {
     'folke/tokyonight.nvim',
     lazy = false,
@@ -102,27 +40,6 @@ return {
       vim.cmd [[colorscheme tokyonight-night  ]]
     end,
   },
-
-  -- {
-  --   'projekt0n/github-nvim-theme',
-  --   config = function()
-  --     require('github-theme').setup {
-  --       -- ...
-  --     }
-  --     vim.cmd 'colorscheme github_dark'
-  --   end,
-  -- },
-  --
-
-  -- {
-  --   'gbprod/nord.nvim',
-  --   config = function()
-  --     require('nord').setup {
-  --       -- ...
-  --     }
-  --     vim.cmd [[colorscheme nord]]
-  --   end,
-  -- },
 
   { 'rebelot/kanagawa.nvim', lazy = false },
   'MunifTanjim/nui.nvim',

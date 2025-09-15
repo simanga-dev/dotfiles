@@ -277,4 +277,5 @@ vim.lsp.enable {
   'yamlls',
   'sql',
   'marksman',
+  'angularls',
 }
