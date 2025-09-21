@@ -275,4 +275,8 @@ vim.lsp.enable {
   'ts_ls',
   'yamlls',
   'sqls',
+  'angularls',
+  'docker_compose_language_service',
+  'docker_language_server',
+  'omnisharp',
 }

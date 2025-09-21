@@ -6,7 +6,7 @@
 
 (defsrc
   caps a s d f h j k l ;
-  f5 , . spc p y
+  f5 , . spc p y b
 )
 
 (defvar
@@ -32,11 +32,11 @@
 
 (deflayer base
  @escctrl  @a @s @d @f h @j @k @l @;
-  lrld  , . spc p y
+  lrld  , . spc p y b
 )
 
 
 (deflayer num
   esc @a @s @d @f left down up rght @;
-  f5 , . @bak @pst @cpy
+  f5 , . @bak @pst @cpy bspc
 )

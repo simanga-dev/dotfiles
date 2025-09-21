@@ -40,6 +40,7 @@ vim.keymap.set('v', '<leader>f', ':!pg_format <CR>')
 -- My greates remap yet
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 
+vim.keymap.set('n', '<leader>A', ':!launch-agent.sh<CR>', { desc = 'Lauch agentic coding for this folder' })
 -- -- format code based on a specific file type, use the LSP formnater if none
 -- -- is mathch | asumem jq, black, prettier is installed on ypur machine
 -- vim.keymap.set('n', '<space>F', function()

@@ -87,6 +87,13 @@ cmd [[
     hi NotificationInfo guifg=#565f89 guibg=NONE
     hi NotificationWarning guifg=#565f89 guibg=NONE
     hi NotificationError guifg=#565f89 guibg=NONE
+
+
+    hi EndOfBuffer guifg=#1C1E23 guibg=NONE cterm=NONE
+    hi LineNrAbove guifg=#565f89 guibg=NONE cterm=NONE
+    hi LineNrBelow guifg=#565f89 guibg=NONE cterm=NONE
+
+
     set exrc
     set secure
 

@@ -49,6 +49,14 @@ lines = 40
 x = 25
 y = 25
 
+[window]
+opacity = 0.75
+blur = true
+
+[scrolling]
+history = 1000
+multiplier = 3
+
 [colors.primary]
 background = "#11121D"
 foreground = "#cdd6f4"

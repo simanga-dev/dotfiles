@@ -8,11 +8,9 @@ return {
   'tpope/vim-capslock',
   'tpope/vim-dotenv',
   'andymass/vim-matchup',
-  'kovetskiy/sxhkd-vim',
   'b0o/schemastore.nvim',
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
-  'svampkorg/moody.nvim',
   'norcalli/nvim-colorizer.lua',
   'preservim/vim-pencil',
   'amadeus/vim-convert-color-to',
@@ -21,8 +19,6 @@ return {
     opts = {},
   },
   'brenoprata10/nvim-highlight-colors',
-  'nvim-lua/lsp_extensions.nvim',
-  'Hoffs/omnisharp-extended-lsp.nvim',
   {
     'ibhagwan/fzf-lua',
     -- optional for icon support
