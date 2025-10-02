@@ -62,27 +62,27 @@ return {
       end,
       desc = 'Launch ChatGPT',
     },
-    -- {
-    --   '<leader>gd',
-    --   function()
-    --     vim.cmd [[ Gvdiffsplit! ]]
-    --   end,
-    --   desc = 'Merge request difference',
-    -- },
-    -- {
-    --   '<leader>gmt',
-    --   function()
-    --     vim.cmd [[ Git mergetool ]]
-    --   end,
-    --   desc = '[GM] Merge Tool, show file with conffilt',
-    -- },
-    -- {
-    --   '<leader>gmc',
-    --   function()
-    --     vim.cmd [[ Git merge --continue ]]
-    --   end,
-    --   desc = 'git merge continue',
-    -- },
+    {
+      '<leader>gd',
+      function()
+        vim.cmd [[ Gvdiffsplit! ]]
+      end,
+      desc = 'Merge request difference',
+    },
+    {
+      '<leader>gmt',
+      function()
+        vim.cmd [[ Git mergetool ]]
+      end,
+      desc = '[GM] Merge Tool, show file with conffilt',
+    },
+    {
+      '<leader>gmc',
+      function()
+        vim.cmd [[ Git merge --continue ]]
+      end,
+      desc = 'git merge continue',
+    },
 
     {
       '<leader>gw',

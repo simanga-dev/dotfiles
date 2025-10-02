@@ -45,6 +45,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
       or vim.bo.filetype == 'oil'
       or vim.bo.filetype == 'neo-tree'
       or vim.bo.filetype == 'Avante'
+      or vim.bo.filetype == 'trouble'
       or vim.bo.filetype == 'AvanteSelectedFiles'
       or vim.bo.filetype == 'AvanteInput'
     then
