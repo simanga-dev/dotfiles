@@ -180,7 +180,9 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.opt.undofile = true
 vim.opt.incsearch = true
+
 -- vim.o.showmode = false
+
 vim.o.laststatus = 0
 vim.o.showcmd = true
 vim.opt.termguicolors = true
@@ -204,56 +206,35 @@ vim.opt.updatetime = 50
 vim.opt.shortmess:append 'c'
 -- vim.opt.colorcolumn = "80"
 
--- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
--- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
-
+-- Diagnostic Config
+-- See :help vim.diagnostic.Opts
+vim.g.have_nerd_font = true
 vim.diagnostic.config {
-  float = { source = 'always', border = 'rounded' },
-  virtual_lines = { current_line = true },
-  signs = false,
   severity_sort = true,
-  update_in_insert = false,
+  float = { border = 'rounded', source = 'if_many' },
+  underline = { severity = vim.diagnostic.severity.ERROR },
+  signs = vim.g.have_nerd_font and {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '󰅚 ',
+      [vim.diagnostic.severity.WARN] = '󰀪 ',
+      [vim.diagnostic.severity.INFO] = '󰋽 ',
+      [vim.diagnostic.severity.HINT] = '󰌶 ',
+    },
+  } or {},
+  virtual_text = {
+    source = 'if_many',
+    spacing = 2,
+    format = function(diagnostic)
+      local diagnostic_message = {
+        [vim.diagnostic.severity.ERROR] = diagnostic.message,
+        [vim.diagnostic.severity.WARN] = diagnostic.message,
+        [vim.diagnostic.severity.INFO] = diagnostic.message,
+        [vim.diagnostic.severity.HINT] = diagnostic.message,
+      }
+      return diagnostic_message[diagnostic.severity]
+    end,
+  },
 }
-
-local og_virt_text
-local og_virt_line
-
-vim.api.nvim_create_autocmd({ 'CursorMoved', 'DiagnosticChanged' }, {
-  group = vim.api.nvim_create_augroup('diagnostic_only_virtlines', {}),
-  callback = function()
-    if og_virt_line == nil then
-      og_virt_line = vim.diagnostic.config().virtual_lines
-    end
-
-    -- ignore if virtual_lines.current_line is disabled
-    if not (og_virt_line and og_virt_line.current_line) then
-      if og_virt_text then
-        vim.diagnostic.config { virtual_text = og_virt_text }
-        og_virt_text = nil
-      end
-      return
-    end
-
-    if og_virt_text == nil then
-      og_virt_text = vim.diagnostic.config().virtual_text
-    end
-
-    local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
-
-    if vim.tbl_isempty(vim.diagnostic.get(0, { lnum = lnum })) then
-      vim.diagnostic.config { virtual_text = og_virt_text }
-    else
-      vim.diagnostic.config { virtual_text = false }
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd('ModeChanged', {
-  group = vim.api.nvim_create_augroup('diagnostic_redraw', {}),
-  callback = function()
-    pcall(vim.diagnostic.show)
-  end,
-})
 
 vim.lsp.enable {
   'lua_ls',
@@ -278,5 +259,5 @@ vim.lsp.enable {
   'angularls',
   'docker_compose_language_service',
   'docker_language_server',
-  'omnisharp',
+  -- 'omnisharp',
 }

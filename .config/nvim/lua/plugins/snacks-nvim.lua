@@ -4,11 +4,11 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    -- scroll = {
-    --   -- your scroll configuration comes here
-    --   -- or leave it empty to use the default settings
-    --   -- refer to the configuration section below
-    -- },
+    scroll = {
+      -- your scroll configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
     statuscolumn = {},
     picker = {
       -- your picker configuration comes here
@@ -144,13 +144,13 @@ return {
       end,
       desc = 'Git Stash',
     },
-    {
-      '<leader>gd',
-      function()
-        Snacks.picker.git_diff()
-      end,
-      desc = 'Git Diff (Hunks)',
-    },
+    -- {
+    --   '<leader>gd',
+    --   function()
+    --     Snacks.picker.git_diff()
+    --   end,
+    --   desc = 'Git Diff (Hunks)',
+    -- },
     {
       '<leader>gf',
       function()
@@ -337,13 +337,13 @@ return {
       desc = 'Colorschemes',
     },
     -- LSP
-    {
-      'gd',
-      function()
-        Snacks.picker.lsp_definitions()
-      end,
-      desc = 'Goto Definition',
-    },
+    -- {
+    --   'gd',
+    --   function()
+    --     Snacks.picker.lsp_definitions()
+    --   end,
+    --   desc = 'Goto Definition',
+    -- },
     {
       'gD',
       function()
