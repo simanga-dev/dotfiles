@@ -93,7 +93,6 @@ cmd [[
     hi LineNrAbove guifg=#565f89 guibg=NONE cterm=NONE
     hi LineNrBelow guifg=#565f89 guibg=NONE cterm=NONE
 
-
     set exrc
     set secure
 

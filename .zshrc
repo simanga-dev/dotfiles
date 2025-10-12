@@ -28,10 +28,11 @@ bindkey -M main ' ' expand-alias
 
 # This is NNN staff, please bare with mere here, I am still cooking
 export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='p:preview-tabbed;;:autojump;a:mtpmount;m:nmount;t:term'
+export NNN_PLUG=';:autojump;a:mtpmount;m:nmount;t:term;r:fzplug'
 export NNN_SSHFS='sshfs -o follow_symlinks'
 export NNN_OPENER='nuke'
-export NNN_BMS="r:$HOME/Workspace/resume"
+export NNN_BMS="r:$HOME/Workspace/resume;d:$HOME/Downloads;m:$HOME/Music"
+
 
 bindkey -v
 # Edit line in vim with ctrl-e:

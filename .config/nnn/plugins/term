@@ -9,6 +9,7 @@ if [ -n "$TMUX" ] && tmux list-sessions 1>/dev/null 2>&1; then
         tmux select-window -t "${PROJECT_NAME}"
     fi
 else
-    echo "hey what is wrong"
     nohup bash -c 'cd "$2"; echo "$*"; alacritty' &
 fi
+
+killall nnn
