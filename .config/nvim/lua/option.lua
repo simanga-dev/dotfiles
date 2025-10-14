@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
       or vim.bo.filetype == 'trouble'
       or vim.bo.filetype == 'AvanteSelectedFiles'
       or vim.bo.filetype == 'AvanteInput'
+      or vim.bo.filetype == 'undotree'
     then
       vim.wo.number = false
       vim.wo.relativenumber = false
@@ -209,46 +210,31 @@ vim.opt.shortmess:append 'c'
 -- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
-  float = { source = 'always', border = 'rounded' },
-  -- virtual_lines = { current_line = true },
-  signs = false,
   severity_sort = true,
-  virtual_text = true,
-  update_in_insert = false,
+  float = { border = 'rounded', source = 'if_many' },
+  underline = { severity = vim.diagnostic.severity.ERROR },
+  signs = vim.g.have_nerd_font and {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '?? ',
+      [vim.diagnostic.severity.WARN] = '?? ',
+      [vim.diagnostic.severity.INFO] = '?? ',
+      [vim.diagnostic.severity.HINT] = '?? ',
+    },
+  } or {},
+  virtual_text = {
+    source = 'if_many',
+    spacing = 2,
+    format = function(diagnostic)
+      local diagnostic_message = {
+        [vim.diagnostic.severity.ERROR] = diagnostic.message,
+        [vim.diagnostic.severity.WARN] = diagnostic.message,
+        [vim.diagnostic.severity.INFO] = diagnostic.message,
+        [vim.diagnostic.severity.HINT] = diagnostic.message,
+      }
+      return diagnostic_message[diagnostic.severity]
+    end,
+  },
 }
-
-local og_virt_text
-local og_virt_line
-
--- vim.api.nvim_create_autocmd({ 'CursorMoved', 'DiagnosticChanged' }, {
---   group = vim.api.nvim_create_augroup('diagnostic_only_virtlines', {}),
---   callback = function()
---     if og_virt_line == nil then
---       og_virt_line = vim.diagnostic.config().virtual_lines
---     end
---
---     -- ignore if virtual_lines.current_line is disabled
---     if not (og_virt_line and og_virt_line.current_line) then
---       if og_virt_text then
---         vim.diagnostic.config { virtual_text = og_virt_text }
---         og_virt_text = nil
---       end
---       return
---     end
---
---     if og_virt_text == nil then
---       og_virt_text = vim.diagnostic.config().virtual_text
---     end
---
---     local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
---
---     if vim.tbl_isempty(vim.diagnostic.get(0, { lnum = lnum })) then
---       vim.diagnostic.config { virtual_text = og_virt_text }
---     else
---       vim.diagnostic.config { virtual_text = false }
---     end
---   end,
--- })
 
 vim.api.nvim_create_autocmd('ModeChanged', {
   group = vim.api.nvim_create_augroup('diagnostic_redraw', {}),

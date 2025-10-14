@@ -187,7 +187,8 @@ handle_extension() {
 
         ## PDF
         pdf)
-            handle_pdf
+            wslview "${FPATH}" # | eval "$PAGER"
+            # handle_pdf
             exit 1;;
 
         ## Audio

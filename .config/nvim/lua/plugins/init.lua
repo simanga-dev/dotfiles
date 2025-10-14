@@ -2,6 +2,7 @@ return {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-repeat',
   'tpope/vim-endwise',
+  'mbbill/undotree',
   'tpope/vim-eunuch',
   'tpope/vim-capslock',
   'tpope/vim-dotenv',

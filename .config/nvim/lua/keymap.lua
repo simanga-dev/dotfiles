@@ -63,6 +63,7 @@ vim.keymap.set('n', '<leader>B', ':bdelete!<CR>')
 -- vim.keymap.set('n', '<leader>.', ':cnext<CR>')
 -- vim.keymap.set('n', '<leader>,', ':cprevious<CR>')
 
+vim.keymap.set('n', '<leader>uu', ':UndotreeToggle<CR>')
 vim.keymap.set('n', '<leader>q', ':close<CR>')
 vim.keymap.set('n', '<leader>Q', ':tabc<CR>')
 vim.keymap.set('n', '<leader><CR>', ':only<CR>')
