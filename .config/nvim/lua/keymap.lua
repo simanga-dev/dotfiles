@@ -34,6 +34,10 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<leader>dh', ':diffget //2 <CR>')
 vim.keymap.set('n', '<leader>dl', ':diffget //3 <CR>')
 
+-- Diff get stafff
+vim.keymap.set('n', '<leader>dH', ':%diffget //2 <CR>')
+vim.keymap.set('n', '<leader>dL', ':%diffget //3 <CR>')
+
 -- for some reason I need to save a lot since I am using oil.vim so better I have this
 vim.keymap.set('n', '<leader>w', ':w <CR>')
 
@@ -46,6 +50,21 @@ vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>S', ':%s/\\<<C-R><C-W>\\>/<C-R>0/g<CR>')
 vim.keymap.set('t', '<C-\\><C-\\>', '<C-\\><C-n>')
 vim.keymap.set('t', '<C-\\>\\', '<C-\\><C-n>')
+
+vim.keymap.set('t', '<C-_>', '<C-\\><C-n>')
+
+vim.keymap.set('n', '<leader>A', ':!launch-agent.sh<CR>', { desc = 'Lauch agentic coding for this folder' })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'snacks_terminal', -- Replace 'lua' with your desired file type
+  callback = function()
+    vim.keymap.set('t', '<leader>t', function()
+      vim.api.nvim_input '<C-\\><C-n>'
+      require('snacks').terminal()
+    end, { buffer = true }) -- Local to buffer
+  end,
+})
+
 vim.keymap.set('n', '<leader>.', ':e<space>**/')
 -- vim.keymap.set("n", "<leader>sT", ":tjump *")
 vim.keymap.set('n', '<leader>M', ':wa<CR>:make<CR>')

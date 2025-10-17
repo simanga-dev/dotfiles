@@ -1,13 +1,24 @@
-sw_volume: 100
-audio_device_state:1:ALSA sound card
-audio_device_state:1:Visualizer feed
-state: stop
-random: 0
+sw_volume: 65
+audio_device_state:1:PulseAudio
+state: pause
+current: 7
+time: 121.969000
+random: 1
 repeat: 0
 single: 0
-consume: 0
+consume: 1
 crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
+0:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/02 What If - 50 Cent.mp3
+1:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/03 Things Change (feat. 50 Cent & Lloyd Banks) - Spider Loc.mp3
+2:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/06 Have A Party - Mobb Deep.mp3
+3:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/08 Don't Need No Help - Young Buck.mp3
+4:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/09 Get Low - Lloyd Banks.mp3
+5:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/12 Born Alone Die Alone - Lloyd Banks.mp3
+6:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/13 You A Shooter (feat. 50 Cent) - Mobb Deep.mp3
+7:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/15 Talk About Me - 50 Cent.mp3
+8:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/18 Best Friend [Bonus Track] - 50 Cent.mp3
+9:50 Cent - Get Rich or Die Tryin' (Music from and Inspired by the Motion Picture) [ChattChitto RG]/Get Rich or Die Tryin' - Music from and Inspired by the Motion Picture/19 I'll Whip Ya Head Boy (feat. Young Buck) [Bonus Track] - 50 Cent.mp3
 playlist_end

@@ -1,28 +1,50 @@
+--iii
+--terminal//
 -- lazy.nvim
 return {
   'folke/snacks.nvim',
   priority = 1000,
   lazy = false,
   opts = {
-    scroll = {
-      -- your scroll configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    scroll = {},
     statuscolumn = {},
     picker = {
-      -- your picker configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+      layout = {
+        preset = 'dropdown',
+        cycle = true,
+      },
     },
-    words = {
-      -- your words configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+
+    words = {},
+    terminal = {
+      win = {
+        position = 'float',
+        border = 'rounded',
+        width = 150, -- Sets the width to 100 columns
+        height = 30,
+      },
     },
   },
   keys = {
-    -- Top Pickers & Explorer
+    q = 'hide',
+
+    term_normal = {
+      '<esc>',
+      function(self)
+        self.esc_timer = self.esc_timer or (vim.uv or vim.loop).new_timer()
+        if self.esc_timer:is_active() then
+          self.esc_timer:stop()
+          vim.cmd 'stopinsert'
+        else
+          self.esc_timer:start(200, 0, function() end)
+          return '<esc>'
+        end
+      end,
+      mode = 't',
+      expr = true,
+      desc = 'Double escape to normal mode',
+    },
+
     {
       '<leader><space>',
       function()
@@ -137,13 +159,13 @@ return {
       end,
       desc = 'Git Status',
     },
-    {
-      '<leader>gS',
-      function()
-        Snacks.picker.git_stash()
-      end,
-      desc = 'Git Stash',
-    },
+    -- {
+    --   '<leader>gS',
+    --   function()
+    --     Snacks.picker.git_stash()
+    --   end,
+    --   desc = 'Git Stash',
+    -- },
     -- {
     --   '<leader>gd',
     --   function()
@@ -337,34 +359,42 @@ return {
       desc = 'Colorschemes',
     },
     -- LSP
-    {
-      'gd',
-      function()
-        Snacks.picker.lsp_definitions()
-      end,
-      desc = 'Goto Definition',
-    },
-    {
-      'gD',
-      function()
-        Snacks.picker.lsp_declarations()
-      end,
-      desc = 'Goto Declaration',
-    },
-    {
-      'gI',
-      function()
-        Snacks.picker.lsp_implementations()
-      end,
-      desc = 'Goto Implementation',
-    },
-    {
-      'gy',
-      function()
-        Snacks.picker.lsp_type_definitions()
-      end,
-      desc = 'Goto T[y]pe Definition',
-    },
+    -- {
+    --   'gd',
+    --   function()
+    --     Snacks.picker.lsp_definitions()
+    --   end,
+    --   desc = 'Goto Definition',
+    -- },
+    -- {
+    --   'gD',
+    --   function()
+    --     Snacks.picker.lsp_declarations()
+    --   end,
+    --   desc = 'Goto Declaration',
+    -- },
+    -- {
+    --   'gr',
+    --   function()
+    --     Snacks.picker.lsp_references()
+    --   end,
+    --   nowait = true,
+    --   desc = 'References',
+    -- },
+    -- {
+    --   'gI',
+    --   function()
+    --     Snacks.picker.lsp_implementations()
+    --   end,
+    --   desc = 'Goto Implementation',
+    -- },
+    -- {
+    --   'gy',
+    --   function()
+    --     Snacks.picker.lsp_type_definitions()
+    --   end,
+    --   desc = 'Goto T[y]pe Definition',
+    -- },
     {
       '<leader>ss',
       function()
@@ -453,6 +483,14 @@ return {
     },
     {
       '<c-/>',
+      function()
+        Snacks.terminal()
+      end,
+      desc = 'Toggle Terminal',
+    },
+
+    {
+      '<leader>t',
       function()
         Snacks.terminal()
       end,

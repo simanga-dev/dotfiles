@@ -49,6 +49,13 @@ return {
       desc = '[G] Git blame ',
     },
     {
+      '<leader>gS',
+      function()
+        vim.cmd [[ Git stash]]
+      end,
+      desc = '[G] Git blame ',
+    },
+    {
       '<leader>gc',
       function()
         vim.cmd [[ Git commit ]]
@@ -161,19 +168,12 @@ return {
       end,
       desc = 'Git push to current branch',
     },
-    -- {
-    --   '<leader>grc',
-    --   function()
-    --     vim.cmd [[ Git rebase --continue ]]
-    --   end,
-    --   desc = 'Git rebase --continue',
-    -- },
-    -- {
-    --   '<leader>gmc',
-    --   function()
-    --     vim.cmd [[ Git merge --continue ]]
-    --   end,
-    --   desc = 'Git merge --continue',
-    -- },
+    {
+      '<leader>grc',
+      function()
+        vim.cmd [[ Git rebase --continue ]]
+      end,
+      desc = 'Git rebase --continue',
+    },
   },
 }

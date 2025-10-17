@@ -173,7 +173,7 @@ else
     # Check if the tmux session named "default" already exists
     if ! tmux has-session -t default 2>/dev/null; then
         # If the session does not exist, create a new one
-        tmux new-session -s default -A \; send-keys 'nnn -c' C-m
+        tmux new-session -s default -A 
     else
         # If the session already exists, attach to it
         tmux attach-session -t default

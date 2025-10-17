@@ -3,12 +3,12 @@ return {
   opts = {
     strategy = {
       'terminal',
-      auto_scroll = true,
+      auto_scroll = false,
     },
-    height = 20,
+    -- height = 20,
     task_list = {
-      max_height = { 40, 0.5 },
-      height = 20,
+      max_height = { 50, 0.5 },
+      --   height = 20,
       direction = 'bottom',
     },
   },
