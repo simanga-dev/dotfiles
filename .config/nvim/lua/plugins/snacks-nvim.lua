@@ -6,10 +6,21 @@ return {
   opts = {
     scroll = {},
     statuscolumn = {},
-    picker = {},
+    picker = {
+      layout = {
+        preset = 'telescope',
+        cycle = true,
+      },
+    },
+
     words = {},
     terminal = {
-      win = { position = 'float', border = 'rounded' },
+      win = {
+        position = 'float',
+        border = 'rounded',
+        width = math.floor(vim.o.columns * 0.75), -- Sets the width to 75% of the screen
+        height = math.floor(vim.o.lines * 0.6), -- Sets the height to 60% of the screen
+      },
     },
   },
   keys = {
@@ -146,13 +157,13 @@ return {
       end,
       desc = 'Git Status',
     },
-    {
-      '<leader>gS',
-      function()
-        Snacks.picker.git_stash()
-      end,
-      desc = 'Git Stash',
-    },
+    -- {
+    --   '<leader>gS',
+    --   function()
+    --     Snacks.picker.git_stash()
+    --   end,
+    --   desc = 'Git Stash',
+    -- },
     -- {
     --   '<leader>gd',
     --   function()

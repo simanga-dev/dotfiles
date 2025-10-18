@@ -261,3 +261,6 @@ vim.lsp.enable {
   'docker_language_server',
   -- 'omnisharp',
 }
+-- init.lua
+vim.g.dotnet_errors_only = true
+vim.g.dotnet_show_project_file = false

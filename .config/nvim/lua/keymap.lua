@@ -32,7 +32,13 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<leader>dh', ':diffget //2 <CR>')
 vim.keymap.set('n', '<leader>dl', ':diffget //3 <CR>')
 
--- for some reason I need to save a lot since I am using oil.vim so better I have this
+vim.keymap.set('n', '<leader>dH', ':%diffget //2 <CR>')
+vim.keymap.set('n', '<leader>dL', ':%diffget //3 <CR>')
+
+-- --- mappings.lua
+-- map("n", "<leader>qo", "<cmd>copen<CR>", opts)
+-- map("n", "<leader>qc", "<cmd>cclose<CR>", opts)- for some reason I need to save a lot since I am using oil.vim so better I have this
+
 vim.keymap.set('n', '<leader>w', ':w <CR>')
 
 vim.keymap.set('v', '<leader>f', ':!pg_format <CR>')

@@ -49,6 +49,13 @@ return {
       desc = '[G] Git blame ',
     },
     {
+      '<leader>gS',
+      function()
+        vim.cmd [[ Git stash]]
+      end,
+      desc = '[G] Git stash ',
+    },
+    {
       '<leader>gc',
       function()
         vim.cmd [[ Git commit ]]

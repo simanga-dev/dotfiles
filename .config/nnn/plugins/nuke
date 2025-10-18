@@ -65,7 +65,7 @@
 #   2. Clean-up the unnecessary exit codes
 
 # set to 1 to enable GUI apps and/or BIN execution
-GUI="${GUI:-1}"
+GUI="${GUI:-0}"
 BIN="${BIN:-0}"
 
 set -euf -o noclobber -o noglob -o nounset
@@ -129,14 +129,17 @@ handle_audio() {
 handle_video() {
     if [ "$GUI" -ne 0 ]; then
         if is_mac; then
-            nohup open "${FPATH}" >/dev/null 2>&1 &
-        elif type mpv >/dev/null 2>&1; then
-            nohup mpv "${FPATH}" >/dev/null 2>&1 &
+            open "${FPATH}" >/dev/null 2>&1 &
         elif type smplayer >/dev/null 2>&1; then
-            nohup smplayer "${FPATH}" >/dev/null 2>&1 &
+            smplayer "${FPATH}" >/dev/null 2>&1 &
+        elif type mpv >/dev/null 2>&1; then
+            mpv "${FPATH}" >/dev/null 2>&1 &
         else
             return
         fi
+
+        disown
+
     elif type ffmpegthumbnailer >/dev/null 2>&1; then
         # Thumbnail
         [ -d "${IMAGE_CACHE_PATH}" ] || mkdir "${IMAGE_CACHE_PATH}"
@@ -203,8 +206,7 @@ handle_extension() {
         ## BitTorrent
         torrent)
             if type rtorrent >/dev/null 2>&1; then
-                NEW_WINDOW=$(tmux new-window -t special -P)
-                tmux send-keys -t ${NEW_WINDOW} "cd $(pwd) && rtorrent \"$FPATH\" " Enter
+                rtorrent "${FPATH}"
                 exit 0
             elif type transmission-show >/dev/null 2>&1; then
                 transmission-show -- "${FPATH}"
@@ -255,17 +257,6 @@ handle_extension() {
                 exit 0
             elif type python >/dev/null 2>&1; then
                 python -m json.tool -- "${FPATH}" | eval "$PAGER"
-                exit 0
-            fi
-            ;;
-
-        ## CSV
-        csv)
-            if type csview >/dev/null 2>&1; then
-                csview "${FPATH}" ## | eval "$PAGER"
-                exit 0
-            elif type xsv >/dev/null 2>&1; then
-                xsv table "${FPATH}" | eval "$PAGER"
                 exit 0
             fi
             ;;
@@ -557,12 +548,13 @@ handle_bin() {
     esac
 }
 
-MIMETYPE="$( file -bL --mime-type -- "${FPATH}" )"
 handle_extension
+MIMETYPE="$( file -bL --mime-type -- "${FPATH}" )"
 handle_multimedia "${MIMETYPE}"
 handle_mime "${MIMETYPE}"
 [ "$BIN" -ne 0 ] && [ -x "${FPATH}" ] && handle_bin
 handle_blocked "${MIMETYPE}"
 handle_fallback
 
+# shellcheck disable=SC2317
 exit 1
