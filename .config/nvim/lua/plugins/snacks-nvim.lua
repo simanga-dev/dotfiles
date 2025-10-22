@@ -10,7 +10,7 @@ return {
     statuscolumn = {},
     picker = {
       layout = {
-        preset = 'dropdown',
+        preset = 'telescope',
         cycle = true,
       },
     },

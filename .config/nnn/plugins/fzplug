@@ -24,7 +24,7 @@
 # Add extra variables if needed, make sure you call them in the find command.
 
 #CUSTOMDIR1="$HOME/.local/share/nautilus/scripts"
-CUSTOMDIR1="$HOME/.local/bin"
+# CUSTOMDIR1="$HOME/.local/bin"
 CUSTOMDIR2=""
 
 nnnpluginsdir="$HOME/.config/nnn/plugins"

@@ -41,8 +41,6 @@ vim.keymap.set('n', '<leader>dL', ':%diffget //3 <CR>')
 -- for some reason I need to save a lot since I am using oil.vim so better I have this
 vim.keymap.set('n', '<leader>w', ':w <CR>')
 
-vim.keymap.set('v', '<leader>f', ':!pg_format <CR>')
-
 -- My greates remap yet
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 
@@ -58,7 +56,7 @@ vim.keymap.set('n', '<leader>A', ':!launch-agent.sh<CR>', { desc = 'Lauch agenti
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'snacks_terminal', -- Replace 'lua' with your desired file type
   callback = function()
-    vim.keymap.set('t', '<leader>t', function()
+    vim.keymap.set('t', '<C-_>', function()
       vim.api.nvim_input '<C-\\><C-n>'
       require('snacks').terminal()
     end, { buffer = true }) -- Local to buffer
