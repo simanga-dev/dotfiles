@@ -5,7 +5,7 @@ return {
   },
   keys = {
     {
-      '<leader>a',
+      '<leader>ha',
       function()
         require('harpoon'):list():add()
       end,
@@ -20,28 +20,28 @@ return {
       desc = '[T] Harpoon Menu',
     },
     {
-      '<C-h>',
+      '<A-h>',
       function()
         require('harpoon'):list():select(1)
       end,
       desc = '[T] Harpoon GoTo 1',
     },
     {
-      '<C-t>',
+      '<A-j>',
       function()
         require('harpoon'):list():select(2)
       end,
       desc = '[T] Harpoon GoTo 2',
     },
     {
-      '<C-n>',
+      '<A-k>',
       function()
         require('harpoon'):list():select(3)
       end,
       desc = '[T] Harpoon GoTo 3',
     },
     {
-      '<C-s>',
+      '<A-l>',
       function()
         require('harpoon'):list():select(4)
       end,

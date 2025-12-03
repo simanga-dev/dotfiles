@@ -36,10 +36,10 @@ chars = "\u001B[76;5u"
 key = "L"
 mods = "Control|Shift"
 
-# [[keyboard.bindings]]
-# action = "ToggleViMode"
-# key = "A"
-# mode = "Vi|~Search"
+[[keyboard.bindings]]
+chars = "\u001b[46;5u"
+key = "."
+mods = "Control"
 
 [window.dimensions]
 columns = 150

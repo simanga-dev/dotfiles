@@ -18,7 +18,7 @@ return {
       win = {
         position = 'float',
         border = 'rounded',
-        width = math.floor(vim.o.columns * 0.75), -- Sets the width to 75% of the screen
+        width = math.floor(vim.o.columns * 0.6), -- Sets the width to 75% of the screen
         height = math.floor(vim.o.lines * 0.6), -- Sets the height to 60% of the screen
       },
     },
@@ -157,13 +157,13 @@ return {
       end,
       desc = 'Git Status',
     },
-    -- {
-    --   '<leader>gS',
-    --   function()
-    --     Snacks.picker.git_stash()
-    --   end,
-    --   desc = 'Git Stash',
-    -- },
+    {
+      '<leader>gv',
+      function()
+        Snacks.picker.git_stash()
+      end,
+      desc = 'Git Stash',
+    },
     -- {
     --   '<leader>gd',
     --   function()
@@ -482,15 +482,26 @@ return {
     {
       '<c-/>',
       function()
-        Snacks.terminal()
+        print(vim.bo.filetype)
+        if string.find(vim.bo.filetype, 'chatpgt') then
+          vim.cmd 'fc!'
+        else
+          Snacks.terminal()
+        end
       end,
       desc = 'Toggle Terminal',
     },
     {
       '<c-_>',
       function()
-        Snacks.terminal()
+        print(vim.bo.filetype)
+        if string.find(vim.bo.filetype, 'chatpgt') then
+          vim.cmd 'fc!'
+        else
+          Snacks.terminal()
+        end
       end,
+
       desc = 'which_key_ignore',
     },
     {

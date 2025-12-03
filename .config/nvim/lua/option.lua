@@ -1,21 +1,23 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.opt_local.errorformat = '%f(%l\\,%c):%t%*[\\^\\ ]%m'
+
 -- lua
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'json' },
-  callback = function()
-    vim.opt_local.formatexpr = "v:lua.require'formatter'.format()"
-  end,
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = { 'json' },
+--   callback = function()
+--     vim.opt_local.formatexpr = "v:lua.require'formatter'.format()"
+--   end,
+-- })
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'html' },
-  callback = function()
-    vim.opt_local.formatexpr = "v:lua.require'formatter'.format()"
-  end,
-})
-
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = { 'html' },
+--   callback = function()
+--     vim.opt_local.formatexpr = "v:lua.require'formatter'.format()"
+--   end,
+-- })
+--
 local function trim_trailing_whitespaces()
   if
     vim.bo.modifiable == true
@@ -79,6 +81,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
       or vim.bo.filetype == 'DiffviewFiles'
       or vim.bo.filetype == 'git'
       or vim.bo.filetype == 'fugitiveblame'
+      or vim.bo.filetype == 'dapui_scopes'
       or vim.bo.filetype == 'OverseerList'
     then
       vim.wo.number = false
@@ -128,11 +131,12 @@ vim.cmd [[
         autocmd FileType gitcommit setlocal complete+=kspell
     augroup END
 
-
   autocmd BufNewFile,BufRead *.cshtml set filetype=html.cshtml.razor
   autocmd BufNewFile,BufRead *.razor set filetype=html.cshtml.razor
-
   autocmd BufNewFile,BufRead *.pcss set filetype=css
+
+ set errorformat=%f(%l\\,%c):%t%*[^\ ]%m
+
 
 ]]
 
@@ -215,10 +219,10 @@ vim.diagnostic.config {
   underline = { severity = vim.diagnostic.severity.ERROR },
   signs = vim.g.have_nerd_font and {
     text = {
-      [vim.diagnostic.severity.ERROR] = '󰅚 ',
-      [vim.diagnostic.severity.WARN] = '󰀪 ',
-      [vim.diagnostic.severity.INFO] = '󰋽 ',
-      [vim.diagnostic.severity.HINT] = '󰌶 ',
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '',
     },
   } or {},
   virtual_text = {
