@@ -364,6 +364,3 @@ fi
 
 # this is only for tmux user
 
-tmux last-window
-
-tmux kill-window -t default:default

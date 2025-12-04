@@ -1,8 +1,8 @@
 sw_volume: 65
 audio_device_state:1:PulseAudio
 state: play
-current: 343
-time: 25.515000
+current: 134
+time: 120.174000
 random: 1
 repeat: 0
 single: 0
@@ -467,52 +467,96 @@ playlist_begin
 453:Chris Brown - Indigo [2019-Album]/31 Part of the Plan.mp3
 454:Chris Brown - Indigo [2019-Album]/32 Play Catch Up.mp3
 455:Chris Brown [2014] X (Deluxe Version)/01. X.m4a
-456:Nipsey Hussle - Victory Lap/01. Nipsey Hussle - Victory Lap (feat. Stacy Barthe).mp3
-457:Nipsey Hussle - Victory Lap/02. Nipsey Hussle - Rap Niggas.mp3
-458:Nipsey Hussle - Victory Lap/04. Nipsey Hussle - Young Nigga (feat. Puff Daddy).mp3
-459:Nipsey Hussle - Victory Lap/05. Nipsey Hussle - Dedication (feat. Kendrick Lamar).mp3
-460:Nipsey Hussle - Victory Lap/06. Nipsey Hussle - Blue Laces 2.mp3
-461:Nipsey Hussle - Victory Lap/07. Nipsey Hussle - Hussle & Motivate.mp3
-462:Nipsey Hussle - Victory Lap/08. Nipsey Hussle - Status Symbol 3 (feat. Buddy).mp3
-463:Nipsey Hussle - Victory Lap/09. Nipsey Hussle - Succa Proof.mp3
-464:Nipsey Hussle - Victory Lap/10. Nipsey Hussle - Keyz 2 the City 2 (feat. TeeFlii).mp3
-465:Nipsey Hussle - Victory Lap/11. Nipsey Hussle - Grinding All My Life.mp3
-466:Nipsey Hussle - Victory Lap/12. Nipsey Hussle - Million While You Young (feat. The-Dream).mp3
-467:Nipsey Hussle - Victory Lap/13. Nipsey Hussle - Loaded Bases (feat. CeeLo Green).mp3
-468:Nipsey Hussle - Victory Lap/14. Nipsey Hussle - Real Big (feat. Marsha Ambrosius).mp3
-469:Nipsey Hussle - Victory Lap/15. Nipsey Hussle - Double Up (feat. Belly & Dom Kennedy).mp3
-470:Nipsey Hussle - Victory Lap/16. Nipsey Hussle - Right Hand 2 God.mp3
-471:01 The Poem.m4a
-472:01 Pon de Replay.m4a
-473:02 Poetic Sex.m4a
-474:02 Here I Go Again.m4a
-475:03 Anything Goes (feat. Ty Dolla $ign).m4a
-476:03 If It's Lovin' That You Want.m4a
-477:04 Let's Make Some Noise (feat. Jhen├й Aiko).m4a
-478:04 You Don't Love Me (No, No, No).m4a
-479:05 Marching Band (feat. Juicy J).m4a
-480:05 That La, La, La.m4a
-481:06 Switch Up (feat. Lil Wayne & Jeremih).m4a
-482:06 The Last Time.m4a
-483:07 Wanna Be There (feat. Ariiray├й).m4a
-484:07 Willing to Wait.m4a
-485:08 Music of the Sun.m4a
-486:09 Let Me.m4a
-487:10 Rush.m4a
-488:11 There's a Thug In My Life.m4a
-489:12 Now I Know.m4a
-490:13 Pon de Replay.m4a
-491:[album_preview] Malaika-Malaika (2003).mp3
-492:Chillstep Music for Programming _ Cyber _ Coding-M5QY2_8704o.mp3
-493:John Wick-06_9LOj75g4.mp3
-494:John Wick-06_9LOj75g4.opus
-495:Jordin Sparks - Battlefield-suPlYwJ3YvM.mp3
-496:Jordin Sparks - Tattoo (Speer Version)-EspCzgXH0o0.mp3
-497:Kygo Greatest Hits Full Album 2021 _ Best Songs Of Kygo-iQ4GTo6dIS4.mp3
-498:Lionel Richie - All Night Long (All Night)-nqAvFx3NxUM.mp3
-499:Many Faces       Jonathan Butler-aKGDNQW1gJs.opus
-500:Mike + The Mechanics - Over My Shoulder (Official Video)-H7m1PO7wvYM.mp3
-501:new-file.wav
-502:Sponky Ponky-5MIvKzlSYzg.mp3
-503:test.wav
+456:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part01.mp3
+457:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part02.mp3
+458:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part03.mp3
+459:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part04.mp3
+460:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part05.mp3
+461:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part06.mp3
+462:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part07.mp3
+463:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part08.mp3
+464:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part09.mp3
+465:Natalie Haynes - Pandora's Jar - mp3/Pandora's Jar-Part10.mp3
+466:Nipsey Hussle - Victory Lap/01. Nipsey Hussle - Victory Lap (feat. Stacy Barthe).mp3
+467:Nipsey Hussle - Victory Lap/02. Nipsey Hussle - Rap Niggas.mp3
+468:Nipsey Hussle - Victory Lap/04. Nipsey Hussle - Young Nigga (feat. Puff Daddy).mp3
+469:Nipsey Hussle - Victory Lap/05. Nipsey Hussle - Dedication (feat. Kendrick Lamar).mp3
+470:Nipsey Hussle - Victory Lap/06. Nipsey Hussle - Blue Laces 2.mp3
+471:Nipsey Hussle - Victory Lap/07. Nipsey Hussle - Hussle & Motivate.mp3
+472:Nipsey Hussle - Victory Lap/08. Nipsey Hussle - Status Symbol 3 (feat. Buddy).mp3
+473:Nipsey Hussle - Victory Lap/09. Nipsey Hussle - Succa Proof.mp3
+474:Nipsey Hussle - Victory Lap/10. Nipsey Hussle - Keyz 2 the City 2 (feat. TeeFlii).mp3
+475:Nipsey Hussle - Victory Lap/11. Nipsey Hussle - Grinding All My Life.mp3
+476:Nipsey Hussle - Victory Lap/12. Nipsey Hussle - Million While You Young (feat. The-Dream).mp3
+477:Nipsey Hussle - Victory Lap/13. Nipsey Hussle - Loaded Bases (feat. CeeLo Green).mp3
+478:Nipsey Hussle - Victory Lap/14. Nipsey Hussle - Real Big (feat. Marsha Ambrosius).mp3
+479:Nipsey Hussle - Victory Lap/15. Nipsey Hussle - Double Up (feat. Belly & Dom Kennedy).mp3
+480:Nipsey Hussle - Victory Lap/16. Nipsey Hussle - Right Hand 2 God.mp3
+481:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/1 - R. Kelly & Public Annoucement - She's Got That Vibe.mp3
+482:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/2 - R. Kelly & Public Annoucement - Honey Love.mp3
+483:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/3 - R. Kelly & Public Annoucement - Slow Dance (Hey Mr. Dj).mp3
+484:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/4 - R. Kelly - Sex Me (Part 1).mp3
+485:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/5 - R. Kelly - Bump N' Grind.mp3
+486:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/6 - R. Kelly - Your Body's Callin'.mp3
+487:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/7 - R. Kelly - You Remind Me Of Something.mp3
+488:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/8 - R. Kelly - Down Low (Nobody Has To Know) (Feat. Ronald & Ernie Isley).mp3
+489:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/9 - R. Kelly - I Can't Sleep Baby (If I).mp3
+490:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/10 - R. Kelly - I Believe I Can Fly.mp3
+491:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/11 - The Notorious B.i.g. - #!@ You Tonight (Feat. R. Kelly).mp3
+492:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/12 - R. Kelly - Gotham City (Remix).mp3
+493:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/13 - Sparkle - Be Careful (Feat. R. Kelly).mp3
+494:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/14 - R. Kelly - When A Woman's Fed Up.mp3
+495:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/15 - R. Kelly - Did You Ever Think (Remix) (Feat. Nas).mp3
+496:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/16 - R. Kelly - If I Could Turn Back The Hands Of Time.mp3
+497:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/1/17 - R. Kelly - I'm Your Angel (Duet With Celine Dion).mp3
+498:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/1 - R. Kelly - I Wish.mp3
+499:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/2 - R. Kelly - Feelin' On Yo Booty.mp3
+500:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/3 - R. Kelly - The World's Greatest.mp3
+501:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/4 - R. Kelly - Ignition (Remix).mp3
+502:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/5 - R. Kelly - Thoia Thoing.mp3
+503:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/6 - R. Kelly - Step In The Name Of Love (Remix).mp3
+504:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/7 - Cassidy - Hotel (Feat. R. Kelly).mp3
+505:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/8 - R. Kelly - Happy People.mp3
+506:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/9 - Ja Rule - Wonderful (Feat. R. Kelly & Ashanti).mp3
+507:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/10 - R. Kelly - In The Kitchen.mp3
+508:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/11 - R. Kelly - Trapped In The Closet (Chapter 1).mp3
+509:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/12 - R. Kelly - I'm A Flirt (Remix) (Feat. T.i. & T-Pain).mp3
+510:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/13 - R. Kelly - Same Girl (Duet With Usher).mp3
+511:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/14 - R. Kelly - Number One (Feat. Keri Hilson).mp3
+512:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/15 - R. Kelly - When A Woman Loves.mp3
+513:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/16 - R. Kelly - Love Letter.mp3
+514:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/17 - R. Kelly - Feelin' Single.mp3
+515:R Kelly - The Essential R Kelly 2014 2CD 320kbps CBR MP3 [VX]/2/18 - R. Kelly - U Saved Me.mp3
+516:01 The Poem.m4a
+517:01 Pon de Replay.m4a
+518:02 Poetic Sex.m4a
+519:02 Here I Go Again.m4a
+520:03 Anything Goes (feat. Ty Dolla $ign).m4a
+521:03 If It's Lovin' That You Want.m4a
+522:04 Let's Make Some Noise (feat. Jhen├й Aiko).m4a
+523:04 You Don't Love Me (No, No, No).m4a
+524:05 Marching Band (feat. Juicy J).m4a
+525:05 That La, La, La.m4a
+526:06 Switch Up (feat. Lil Wayne & Jeremih).m4a
+527:06 The Last Time.m4a
+528:07 Wanna Be There (feat. Ariiray├й).m4a
+529:07 Willing to Wait.m4a
+530:08 Music of the Sun.m4a
+531:09 Let Me.m4a
+532:10 Rush.m4a
+533:11 There's a Thug In My Life.m4a
+534:12 Now I Know.m4a
+535:13 Pon de Replay.m4a
+536:[album_preview] Malaika-Malaika (2003).mp3
+537:Chillstep Music for Programming _ Cyber _ Coding-M5QY2_8704o.mp3
+538:John Wick-06_9LOj75g4.mp3
+539:John Wick-06_9LOj75g4.opus
+540:Jordin Sparks - Battlefield-suPlYwJ3YvM.mp3
+541:Jordin Sparks - Tattoo (Speer Version)-EspCzgXH0o0.mp3
+542:Kygo Greatest Hits Full Album 2021 _ Best Songs Of Kygo-iQ4GTo6dIS4.mp3
+543:Lionel Richie - All Night Long (All Night)-nqAvFx3NxUM.mp3
+544:Many Faces       Jonathan Butler-aKGDNQW1gJs.opus
+545:Mike + The Mechanics - Over My Shoulder (Official Video)-H7m1PO7wvYM.mp3
+546:new-file.wav
+547:Sponky Ponky-5MIvKzlSYzg.mp3
 playlist_end

@@ -20,8 +20,8 @@ return {
       win = {
         position = 'float',
         border = 'rounded',
-        width = 150, -- Sets the width to 100 columns
-        height = 30,
+        width = math.floor(vim.api.nvim_get_option 'columns' * 0.6), -- 70% of window width
+        height = math.floor(vim.api.nvim_get_option 'lines' * 0.6), -- 50% of window height
       },
     },
   },
@@ -159,13 +159,13 @@ return {
       end,
       desc = 'Git Status',
     },
-    -- {
-    --   '<leader>gS',
-    --   function()
-    --     Snacks.picker.git_stash()
-    --   end,
-    --   desc = 'Git Stash',
-    -- },
+    {
+      '<leader>gv',
+      function()
+        Snacks.picker.git_stash()
+      end,
+      desc = 'Git Stash',
+    },
     -- {
     --   '<leader>gd',
     --   function()

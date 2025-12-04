@@ -38,7 +38,7 @@ bindkey -M main ' ' expand-alias
 BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 
-export NNN_PLUG=';:autojump;a:mtpmount;m:nmount;t:term;r:fzplug'
+export NNN_PLUG=';:autojump;a:mtpmount;m:nmount;t:term;r:fzplug;s:ssh.sh'
 export NNN_SSHFS='sshfs -o follow_symlinks'
 export NNN_OPENER="/home/simanga/.local/bin/nuke.sh"
 export NNN_BMS="d:/mnt/c/Users/Smanga.Khoza/Downloads/;r:/home/simanga/Workspace/resume;w:/mnt/c/Users/Smanga.Khoza/Workspace/q4/src;c:/mnt/c/Users/Smanga.Khoza/Workspace/RSA-CentralServices/src"

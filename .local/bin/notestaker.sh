@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 WEEK_NUMBER=$(date +%V)
 YEAR=$(date +%Y)

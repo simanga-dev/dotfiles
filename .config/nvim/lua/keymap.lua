@@ -49,7 +49,7 @@ vim.keymap.set('n', '<leader>S', ':%s/\\<<C-R><C-W>\\>/<C-R>0/g<CR>')
 vim.keymap.set('t', '<C-\\><C-\\>', '<C-\\><C-n>')
 vim.keymap.set('t', '<C-\\>\\', '<C-\\><C-n>')
 
-vim.keymap.set('t', '<C-_>', '<C-\\><C-n>')
+vim.keymap.set('t', '<C-_>', ':fc!')
 
 vim.keymap.set('n', '<leader>A', ':!launch-agent.sh<CR>', { desc = 'Lauch agentic coding for this folder' })
 
