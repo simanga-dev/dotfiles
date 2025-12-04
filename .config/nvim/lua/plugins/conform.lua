@@ -14,6 +14,7 @@ return {
         typescript = { 'biome', 'prettierd', lsp_format = 'fallback' },
         typescriptreact = { 'prettierd', 'prettier', lsp_format = 'fallback' },
         json = { 'biome', 'jq', lsp_format = 'fallback' },
+        rest_nvim_result = { 'biome', 'jq', lsp_format = 'fallback' },
 
         html = { 'prettierd', 'prettier' },
         -- sql = { 'sqlfluff', lsp_format = 'fallback' }, when I have time to configure it the way I want to but for now pg_format is more than enough
