@@ -19,9 +19,10 @@ return {
         html = { 'prettierd', 'prettier' },
         -- sql = { 'sqlfluff', lsp_format = 'fallback' }, when I have time to configure it the way I want to but for now pg_format is more than enough
         sql = { 'pg_format', lsp_format = 'fallback' },
-        cs = { 'csharpier_ramboe' },
-        csproj = { 'csharpier_ramboe' },
+        -- cs = { 'csharpier_ramboe' },
+        -- csproj = { 'csharpier_ramboe' },
       },
+
       formatters = {
         csharpier_ramboe = {
           command = 'csharpier',
@@ -33,6 +34,8 @@ return {
         },
       },
     }
+
+    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
     vim.api.nvim_create_autocmd('BufWritePre', {
       pattern = '*',

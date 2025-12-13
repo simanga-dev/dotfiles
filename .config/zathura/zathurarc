@@ -1,9 +1,11 @@
 #{{{
 set selection-clipboard clipboard
+
 map <C-i> zoom in
 map <C-o> zoom out
 map <C-d> scroll full-down
 map <C-u> scroll full-up
+
 #}}}
 
 

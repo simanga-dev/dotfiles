@@ -185,9 +185,9 @@ vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.opt.undofile = true
 vim.opt.incsearch = true
 
--- vim.o.showmode = false
+vim.o.showmode = false
 
-vim.o.laststatus = 0
+vim.o.laststatus = 3
 vim.o.showcmd = true
 vim.opt.termguicolors = true
 vim.o.pumheight = 8

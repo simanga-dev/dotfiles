@@ -23,6 +23,9 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<leader>dh', ':diffget //2 <CR>')
 vim.keymap.set('n', '<leader>dl', ':diffget //3 <CR>')
 
+vim.keymap.set('x', '<leader>dh', ":'<,'>diffget //2<CR>", { silent = true })
+vim.keymap.set('x', '<leader>dl', ":'<,'>diffget //3<CR>", { silent = true })
+
 vim.keymap.set('n', '<leader>dH', ':%diffget //2 <CR>')
 vim.keymap.set('n', '<leader>dL', ':%diffget //3 <CR>')
 

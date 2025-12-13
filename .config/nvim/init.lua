@@ -48,10 +48,10 @@ require('lazy').setup('plugins', {
 })
 
 -- " se stl:— fcs=stl:─,stlnc:—
+-- se stl:— fcs=stl:─,stlnc:—
 -- se fcs=stl:─,stlnc:—
 cmd [[
 
-    se stl:— fcs=stl:─,stlnc:—
 
     hi FoldColumn guibg=NONE
 
