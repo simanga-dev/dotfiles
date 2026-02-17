@@ -10,17 +10,10 @@ if [ ! -f $NOTE_FILE_NAME ]; then
   echo "## Notes | Year: ${YEAR} | Month: ${MONTH} | Week: ${WEEK_NUMBER}" > $NOTE_FILE_NAME
   echo "
 
-### On my mind 🤯
-
-
-### Interesting 💭
-
-
-### Today's Goals 🚀
+### TASK
 
 " >> $NOTE_FILE_NAME
 
 fi
 
-tmux display-popup -E "nvim   $NOTE_FILE_NAME"
-
+tmux display-popup -w 80% -h 70% -E "nvim   $NOTE_FILE_NAME"
