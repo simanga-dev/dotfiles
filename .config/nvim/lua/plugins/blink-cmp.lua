@@ -61,7 +61,7 @@ return {
       keymap = {
         -- recommended, as the default keymap will only show and select the next item
         ['<C-y>'] = { 'show', 'accept' },
-        ['<CR>'] = { 'accept_and_enter', 'fallback' },
+        -- ['<CR>'] = { 'accept_and_enter', 'fallback' },
       },
       completion = { menu = { auto_show = true } },
     },

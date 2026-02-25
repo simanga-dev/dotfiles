@@ -23,12 +23,10 @@ fi
  
 # SSH logic with tmux
 if [ -n "$TMUX" ] && tmux list-sessions 1>/dev/null 2>&1; then
-    if ! tmux list-windows -t default 2>/dev/null | grep -q "\s${SERVER_NAME}"; then
-        NEW_WINDOW=$(tmux new-window -t default -n "${SERVER_NAME}")
-        tmux send-keys -t "${NEW_WINDOW}" "ssh $SERVER_NAME" Enter
-    else
-        tmux select-window -t "${SERVER_NAME}"
+    if ! tmux has-session -t "${SERVER_NAME}" 2>/dev/null; then
+        tmux new-session -d -s "${SERVER_NAME}" "ssh $SERVER_NAME"
     fi
+    tmux switch-client -t "${SERVER_NAME}"
 else
     nohup bash -c "ssh $SERVER_NAME" &
 fi

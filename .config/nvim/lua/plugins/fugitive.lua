@@ -18,7 +18,9 @@ return {
           command = 'git',
           args = { 'add', '--all' },
           on_exit = function()
-            fidget.notify 'git add --update completed'
+            vim.schedule(function()
+              fidget.notify 'git add --update completed'
+            end)
           end,
         }):start()
       end,
@@ -35,7 +37,9 @@ return {
           command = 'git',
           args = { 'add', '--update' },
           on_exit = function()
-            fidget.notify 'git add --update completed'
+            vim.schedule(function()
+              fidget.notify 'git add --update completed'
+            end)
           end,
         }):start()
       end,
@@ -109,24 +113,28 @@ return {
           command = 'git',
           args = { 'branch', '--show-current' },
           on_exit = function(job, code)
-            if code ~= 0 then
-              fidget.notify('Error retrieving branch: ' .. table.concat(job:stderr_result(), '\n'))
-              return
-            end
-            local branch = job:result()[1]
-            Job:new({
-              command = 'git',
-              args = { 'pull', '--rebase', 'origin', branch },
-              on_exit = function(pull_job, pull_code)
-                if pull_code ~= 0 then
-                  local error_output = table.concat(pull_job:stderr_result(), '\n')
-                  fidget.notify('Error pulling branch ' .. branch .. ':\n' .. error_output)
-                else
-                  local success_output = table.concat(pull_job:result(), '\n')
-                  fidget.notify('Successfully pulled to ' .. branch .. '\nOutput:\n' .. success_output)
-                end
-              end,
-            }):start()
+            vim.schedule(function()
+              if code ~= 0 then
+                fidget.notify('Error retrieving branch: ' .. table.concat(job:stderr_result(), '\n'))
+                return
+              end
+              local branch = job:result()[1]
+              Job:new({
+                command = 'git',
+                args = { 'pull', '--rebase', 'origin', branch },
+                on_exit = function(pull_job, pull_code)
+                  vim.schedule(function()
+                    if pull_code ~= 0 then
+                      local error_output = table.concat(pull_job:stderr_result(), '\n')
+                      fidget.notify('Error pulling branch ' .. branch .. ':\n' .. error_output)
+                    else
+                      local success_output = table.concat(pull_job:result(), '\n')
+                      fidget.notify('Successfully pulled to ' .. branch .. '\nOutput:\n' .. success_output)
+                    end
+                  end)
+                end,
+              }):start()
+            end)
           end,
         }):start()
       end,
@@ -144,25 +152,29 @@ return {
           command = 'git',
           args = { 'branch', '--show-current' },
           on_exit = function(job, code)
-            if code ~= 0 then
-              fidget.notify('Error retrieving branch: ' .. table.concat(job:stderr_result(), '\n'))
-              return
-            end
-            local branch = job:result()[1]
+            vim.schedule(function()
+              if code ~= 0 then
+                fidget.notify('Error retrieving branch: ' .. table.concat(job:stderr_result(), '\n'))
+                return
+              end
+              local branch = job:result()[1]
 
-            Job:new({
-              command = 'git',
-              args = { 'push', 'origin', branch },
-              on_exit = function(push_job, push_code)
-                if push_code ~= 0 then
-                  local error_output = table.concat(push_job:stderr_result(), '\n')
-                  fidget.notify('Error pushing branch ' .. branch .. ':\n' .. error_output)
-                else
-                  local success_output = table.concat(push_job:result(), '\n')
-                  fidget.notify('Successfully pushed to ' .. branch .. '\nOutput:\n' .. success_output)
-                end
-              end,
-            }):start()
+              Job:new({
+                command = 'git',
+                args = { 'push', 'origin', branch },
+                on_exit = function(push_job, push_code)
+                  vim.schedule(function()
+                    if push_code ~= 0 then
+                      local error_output = table.concat(push_job:stderr_result(), '\n')
+                      fidget.notify('Error pushing branch ' .. branch .. ':\n' .. error_output)
+                    else
+                      local success_output = table.concat(push_job:result(), '\n')
+                      fidget.notify('Successfully pushed to ' .. branch .. '\nOutput:\n' .. success_output)
+                    end
+                  end)
+                end,
+              }):start()
+            end)
           end,
         }):start()
       end,

@@ -38,10 +38,10 @@ bindkey -M main ' ' expand-alias
 BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 
-export NNN_PLUG=';:autojump;a:mtpmount;m:nmount;t:term;r:fzplug;s:ssh.sh'
+export NNN_PLUG=';:autojump;a:mtpmount;m:nmount;t:term;r:fzplug;s:ssh.sh;d:torrent-download.sh;y:cppath.sh'
 export NNN_SSHFS='sshfs -o follow_symlinks'
 export NNN_OPENER="/home/simanga/.local/bin/nuke.sh"
-export NNN_BMS="d:/mnt/c/Users/Smanga.Khoza/Downloads/;r:/home/simanga/Workspace/resume;w:/mnt/c/Users/Smanga.Khoza/Workspace/q4/src;c:/mnt/c/Users/Smanga.Khoza/Workspace/RSA-CentralServices/src"
+export NNN_BMS="p:/mnt/c/Users/Smanga.Khoza/Pictures;d:/mnt/c/Users/Smanga.Khoza/Downloads/;r:/home/simanga/Workspace/resume;w:/mnt/c/Users/Smanga.Khoza/Workspace/rsa-q4/src;c:/mnt/c/Users/Smanga.Khoza/Workspace/RSA-CentralServices/src"
 
 # export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 #
@@ -148,7 +148,7 @@ export PATH='/mnt/c/Windows/System32/WindowsPowerShell/v1.0//:/mnt/c/Windows:/mn
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(direnv hook zsh)"
 
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 
 source ~/.config/zsh/aliases.sh
 
@@ -202,4 +202,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=/home/simanga/.opencode/bin:$PATH
 
 
-
+# Amp CLI
+export PATH="/home/simanga/.amp/bin:$PATH"

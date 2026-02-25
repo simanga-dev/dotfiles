@@ -90,41 +90,45 @@ is_mac() {
 }
 
 handle_pdf() {
-    if [ "$GUI" -ne 0 ]; then
-        if is_mac; then
-            nohup open "${FPATH}" >/dev/null 2>&1 &
-        elif type zathura >/dev/null 2>&1; then
-            nohup zathura "${FPATH}" >/dev/null 2>&1 &
-        else
-            return
-        fi
-    elif type pdftotext >/dev/null 2>&1; then
-        ## Preview as text conversion
-        pdftotext -l 10 -nopgbrk -q -- "${FPATH}" - | eval "$PAGER"
-    elif type mutool >/dev/null 2>&1; then
-        mutool draw -F txt -i -- "${FPATH}" 1-10 | eval "$PAGER"
-    elif type exiftool >/dev/null 2>&1; then
-        exiftool "${FPATH}" | eval "$PAGER"
-    else
-        return
-    fi
+
+    wslview "${FPATH}"
+
+    # if [ "$GUI" -ne 0 ]; then
+    #     if is_mac; then
+    #         nohup open "${FPATH}" >/dev/null 2>&1 &
+    #     elif type zathura >/dev/null 2>&1; then
+    #         nohup zathura "${FPATH}" >/dev/null 2>&1 &
+    #     else
+    #         return
+    #     fi
+    # elif type pdftotext >/dev/null 2>&1; then
+    #     ## Preview as text conversion
+    #     pdftotext -l 10 -nopgbrk -q -- "${FPATH}" - | eval "$PAGER"
+    # elif type mutool >/dev/null 2>&1; then
+    #     mutool draw -F txt -i -- "${FPATH}" 1-10 | eval "$PAGER"
+    # elif type exiftool >/dev/null 2>&1; then
+    #     exiftool "${FPATH}" | eval "$PAGER"
+    # else
+    #     return
+    # fi
     exit 0
 }
 
 handle_audio() {
-    if type mocp >/dev/null 2>&1 && type mocq >/dev/null 2>&1; then
-        mocq "${FPATH}" "opener" >/dev/null 2>&1
-    elif type mpv >/dev/null 2>&1; then
-        mpv "${FPATH}" >/dev/null 2>&1 &
-    elif type media_client >/dev/null 2>&1; then
-        media_client play "${FPATH}" >/dev/null 2>&1 &
-    elif type mediainfo >/dev/null 2>&1; then
-        mediainfo "${FPATH}" | eval "$PAGER"
-    elif type exiftool >/dev/null 2>&1; then
-        exiftool "${FPATH}"| eval "$PAGER"
-    else
-        return
-    fi
+    wslview "${FPATH}"
+    # if type mocp >/dev/null 2>&1 && type mocq >/dev/null 2>&1; then
+    #     mocq "${FPATH}" "opener" >/dev/null 2>&1
+    # elif type mpv >/dev/null 2>&1; then
+    #     mpv "${FPATH}" >/dev/null 2>&1 &
+    # elif type media_client >/dev/null 2>&1; then
+    #     media_client play "${FPATH}" >/dev/null 2>&1 &
+    # elif type mediainfo >/dev/null 2>&1; then
+    #     mediainfo "${FPATH}" | eval "$PAGER"
+    # elif type exiftool >/dev/null 2>&1; then
+    #     exiftool "${FPATH}"| eval "$PAGER"
+    # else
+    #     return
+    # fi
     exit 0
 }
 
@@ -342,33 +346,35 @@ handle_multimedia() {
 
         ## Image
         image/*)
-            if [ "$GUI" -ne 0 ]; then
-                if is_mac; then
-                    nohup open "${FPATH}" >/dev/null 2>&1 &
-                    exit 0
-                elif type imv >/dev/null 2>&1; then
-                    load_dir imv "${FPATH}" >/dev/null 2>&1 &
-                    exit 0
-                elif type imvr >/dev/null 2>&1; then
-                    load_dir imvr "${FPATH}" >/dev/null 2>&1 &
-                    exit 0
-                elif type sxiv >/dev/null 2>&1; then
-                    load_dir sxiv "${FPATH}" >/dev/null 2>&1 &
-                    exit 0
-                elif type nsxiv >/dev/null 2>&1; then
-                    load_dir nsxiv "${FPATH}" >/dev/null 2>&1 &
-                    exit 0
-                fi
-            elif type viu >/dev/null 2>&1; then
-                viu -n "${FPATH}" | eval "$PAGER"
-                exit 0
-            elif type img2txt >/dev/null 2>&1; then
-                img2txt --gamma=0.6 -- "${FPATH}" | eval "$PAGER"
-                exit 0
-            elif type exiftool >/dev/null 2>&1; then
-                exiftool "${FPATH}" | eval "$PAGER"
-                exit 0
-            fi
+            wslview "${FPATH}"
+
+            # if [ "$GUI" -ne 0 ]; then
+            #     if is_mac; then
+            #         nohup open "${FPATH}" >/dev/null 2>&1 &
+            #         exit 0
+            #     elif type imv >/dev/null 2>&1; then
+            #         load_dir imv "${FPATH}" >/dev/null 2>&1 &
+            #         exit 0
+            #     elif type imvr >/dev/null 2>&1; then
+            #         load_dir imvr "${FPATH}" >/dev/null 2>&1 &
+            #         exit 0
+            #     elif type sxiv >/dev/null 2>&1; then
+            #         load_dir sxiv "${FPATH}" >/dev/null 2>&1 &
+            #         exit 0
+            #     elif type nsxiv >/dev/null 2>&1; then
+            #         load_dir nsxiv "${FPATH}" >/dev/null 2>&1 &
+            #         exit 0
+            #     fi
+            # elif type viu >/dev/null 2>&1; then
+            #     viu -n "${FPATH}" | eval "$PAGER"
+            #     exit 0
+            # elif type img2txt >/dev/null 2>&1; then
+            #     img2txt --gamma=0.6 -- "${FPATH}" | eval "$PAGER"
+            #     exit 0
+            # elif type exiftool >/dev/null 2>&1; then
+            #     exiftool "${FPATH}" | eval "$PAGER"
+            #     exit 0
+            # fi
             # local orientation
             # orientation="$( identify -format '%[EXIF:Orientation]\n' -- "${FPATH}" )"
             ## If orientation data is present and the image actually

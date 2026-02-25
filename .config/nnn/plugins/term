@@ -6,12 +6,6 @@ n="$(echo ${n} | sed 's/\//->/g')"
 PROJECT_NAME="f-$(echo ${n} | sed 's/.*>//')"
 NEW_WINDOW=$(tmux new-window -t default -P -n ${PROJECT_NAME})
 
-if ! tmux list-windows -t default 2>/dev/null | rg -q "\s${PROJECT_NAME}"; then
-    tmux new-window -a -t default -n ${PROJECT_NAME}
-    tmux send-keys -t ${NEW_WINDOW} "cd $2" Enter
-    tmux select-window -t ${PROJECT_NAME}
-else
-    tmux select-window -t ${PROJECT_NAME}
-fi
+sesh connect $2
 
 killall nnn

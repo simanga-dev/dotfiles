@@ -14,6 +14,27 @@ return {
   'norcalli/nvim-colorizer.lua',
   'preservim/vim-pencil',
   'amadeus/vim-convert-color-to',
+  'wsdjeg/calendar.nvim',
+  -- Amp Plugin
+  {
+    'sourcegraph/amp.nvim',
+    branch = 'main',
+    lazy = false,
+    opts = { auto_start = true, log_level = 'info' },
+  },
+
+  {
+    'Willem-J-an/adopure.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      -- "sindrets/diffview.nvim" -- Optionally required to open PR in diffview
+    },
+    config = function()
+      vim.g.adopure = {}
+    end,
+  },
+
   {
     'yorickpeterse/nvim-tree-pairs',
     opts = {},

@@ -13,15 +13,29 @@ return {
         preset = 'telescope',
         cycle = true,
       },
+
+      actions = {
+        sidekick_send = function(...)
+          return require('sidekick.cli.picker.snacks').send(...)
+        end,
+      },
+      win = {
+        input = {
+          keys = {
+            ['<a-a>'] = {
+              'sidekick_send',
+              mode = { 'n', 'i' },
+            },
+          },
+        },
+      },
     },
 
     words = {},
     terminal = {
       win = {
-        position = 'float',
-        border = 'rounded',
-        width = math.floor(vim.api.nvim_get_option 'columns' * 0.6), -- 70% of window width
-        height = math.floor(vim.api.nvim_get_option 'lines' * 0.6), -- 50% of window height
+        position = 'bottom',
+        height = 0.5,
       },
     },
   },

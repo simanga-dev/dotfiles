@@ -4,7 +4,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>D', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 -- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
 -- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 -- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 -- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
@@ -44,12 +43,17 @@ vim.keymap.set('n', '<leader>w', ':w <CR>')
 -- My greates remap yet
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 
+vim.keymap.set('n', '<C-c>', ':r !lumen draft<CR>')
+
 -- Supper Mapping to substitue// Degeration mapping
 vim.keymap.set('n', '<leader>S', ':%s/\\<<C-R><C-W>\\>/<C-R>0/g<CR>')
 vim.keymap.set('t', '<C-\\><C-\\>', '<C-\\><C-n>')
+
 vim.keymap.set('t', '<C-\\>\\', '<C-\\><C-n>')
 
-vim.keymap.set('t', '<C-_>', ':fc!')
+vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-n>')
+
+-- vim.keymap.set('t', '<C-_>', ':fc!')
 
 vim.keymap.set('n', '<leader>A', ':!launch-agent.sh<CR>', { desc = 'Lauch agentic coding for this folder' })
 
@@ -72,9 +76,10 @@ vim.keymap.set('n', '<leader>ct', ':wa<CR>:!cargo test <CR>')
 -- Managing buffers and Windows
 vim.keymap.set('n', '<leader>B', ':bdelete!<CR>')
 
--- vim.keymap.set('n', '<leader>A', ':!launch-agent.sh <CR>')
+vim.keymap.set('n', '<leader>mp', ':LivePreview start <CR>')
 
 -- vim.keymap.set('n', '<leadereader>>', ':bn<CR>')
+--
 -- vim.keymap.set('n', '<leader><', ':bp<CR>')
 
 -- vim.keymap.set('n', '<leader>.', ':cnext<CR>')
@@ -84,18 +89,35 @@ vim.keymap.set('n', '<leader>uu', ':UndotreeToggle<CR>')
 vim.keymap.set('n', '<leader>q', ':close<CR>')
 vim.keymap.set('n', '<leader>Q', ':tabc<CR>')
 vim.keymap.set('n', '<leader><CR>', ':only<CR>')
+vim.keymap.set('t', '<leader><CR>', ':only<CR>')
 -- vim.keymap.set("n", "<leader>O", ":unhide<CR>")
 vim.keymap.set('n', '<leader>_', ':res<CR>')
 
 vim.keymap.set('v', '<leader>cl', ':CodeCompanion  ')
+
+vim.keymap.set('v', '<leader>r', ':!bash <CR>') -- this might be my best mapping evere
 
 -- vim.keymap.set('n', '}', function()
 --   vim.opt.hlsearch = false
 --   -- vim.cmd '}/.\\+<CR>:noh<CR>'
 --   vim.opt.hlsearch = true
 -- end)
+--
 
 vim.keymap.set('n', '}', ':nohl<CR>}/.\\+<CR>:noh<CR>')
-vim.keymap.set('n', '{', ':hol<CR>{?.\\+<CR>:noh<CR>')
+vim.keymap.set('n', '{', ':nohl<CR>{?.\\+<CR>:noh<CR>')
+
+-- Open PR for current branch in browser
+vim.keymap.set('n', '<leader>pr', function()
+  local branch = vim.fn.system('git rev-parse --abbrev-ref HEAD'):gsub('\n', '')
+  local remote = vim.fn.system('git remote get-url origin'):gsub('\n', '')
+  local org, project, repo = remote:match 'dev%.azure%.com[:/]v3/([^/]+)/([^/]+)/([^/\n]+)'
+  if org and project then
+    local url = string.format('https://dev.azure.com/%s/%s/_git/%s/pullrequests?sourceRef=%s', org, project, repo:gsub('%.git$', ''), branch)
+    vim.fn.system('wslview "' .. url .. '"')
+  else
+    vim.notify('Could not parse Azure DevOps remote', vim.log.levels.ERROR)
+  end
+end, { desc = 'Open PR in browser' })
 
 -- vim.keymap.set("n", "<leader>|", ":vert res<CR>")

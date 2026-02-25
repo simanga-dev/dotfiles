@@ -2,7 +2,9 @@
 
 export GEMINI_API_KEY="AIzaSyDi6frLW9z1WxiWBWiwKhloSA7AV1RLyww"
 export OPENROUTER_API_KEY="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";
+export GOOGLE_GENERATIVE_AI_API_KEY="AIzaSyDi6frLW9z1WxiWBWiwKhloSA7AV1RLyww"
 export OPENAI_API_KEY="[REDACTED:api-key]"
+export AZURE_DEVOPS_EXT_PAT="[REDACTED:api-key]"
 
 clipse --listen
 

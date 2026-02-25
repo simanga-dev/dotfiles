@@ -4,8 +4,17 @@ return {
     -- add any options here
     cli = {
       mux = {
-        backend = 'tmux',
+        backend = 'zellij',
         enabled = true,
+      },
+      tools = {
+        amp = {
+          cmd = { 'amp', '--ide' },
+        },
+      },
+      prompts = {
+        pr = 'create pr to Q4Dev using the template',
+        resume_update = 'create pr to Q4Dev using the template',
       },
     },
   },
@@ -35,12 +44,21 @@ return {
         require('sidekick.cli').toggle { focus = true }
       end,
       desc = 'Sidekick Toggle CLI',
-      mode = { 'n', 'v' },
+      mode = { 'n', 't' },
     },
+    {
+      '<leader>aa',
+      function()
+        require('sidekick.cli').send { msg = '{selection}' }
+      end,
+      desc = 'Sidekick Toggle CLI',
+      mode = { 'v' },
+    },
+
     {
       '<leader>ac',
       function()
-        require('sidekick.cli').toggle { name = 'claude', focus = true }
+        require('sidekick.cli').send { msg = '{file}' }
       end,
       desc = 'Sidekick Claude Toggle',
       mode = { 'n', 'v' },
@@ -97,7 +115,7 @@ return {
     {
       '<leader>ap',
       function()
-        require('sidekick.cli').select_prompt()
+        require('sidekick.cli').prompt()
       end,
       desc = 'Sidekick Ask Prompt',
       mode = { 'n', 'v' },
