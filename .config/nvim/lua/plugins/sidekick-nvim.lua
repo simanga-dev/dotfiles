@@ -14,7 +14,7 @@ return {
       },
       prompts = {
         pr = 'create pr to Q4Dev using the template',
-        resume_update = 'create pr to Q4Dev using the template',
+        resume_update = 'Update the resume in the @main.tex file to align perfectly with the job description provided in @job-description.md . Make sure to highlight relevant skills, experiences, and qualifications that directly match the requirements of the job. Tailor the resume to showcase how your background and expertise make you an ideal candidate for the position. Be sure to emphasize any specific achievements or accomplishments demonstrate your ability to excel in this role, run `make` to make sure that the cv build fine',
       },
     },
   },
