@@ -217,3 +217,10 @@ Then continue with the [Install Kickstart](#Install-Kickstart) step.
 
 
 
+jkkkkk
+
+oiIf you are a software engineer reading this and feeling like your job quietly
+became harder while everyone around you celebrates how easy everything is now,
+you are not imagining things. The job changed. The expectations changed. And
+nobody sent a memo.
+

@@ -28,7 +28,7 @@ bindkey -M main ' ' expand-alias
 
 # This is NNN staff, please bare with mere here, I am still cooking
 export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG=';:autojump;a:mtpmount;m:nmount;t:term;r:fzplug'
+export NNN_PLUG=';:autojump;a:mtpmount;m:nmount;t:term;r:fzplug;p:mtppaste'
 export NNN_SSHFS='sshfs -o follow_symlinks'
 export NNN_OPENER='nuke'
 export NNN_BMS="r:$HOME/Workspace/resume;d:$HOME/Downloads;m:$HOME/Music"
@@ -109,7 +109,7 @@ export PATH='/home/simanga/.config/nnn/plugins:/usr/local/sbin:/usr/local/bin:/u
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 autoload -Uz compinit && compinit
 
@@ -122,6 +122,10 @@ source ~/.config/zsh/aliases.sh
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)

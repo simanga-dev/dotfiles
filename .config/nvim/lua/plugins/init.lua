@@ -13,7 +13,17 @@ return {
   'neovim/nvim-lspconfig',
   'preservim/vim-pencil',
   'amadeus/vim-convert-color-to',
+  'wsdjeg/calendar.nvim',
   'brenoprata10/nvim-highlight-colors',
+  {
+    'sourcegraph/amp.nvim',
+    branch = 'main',
+    lazy = false,
+    opts = { auto_start = true, log_level = 'info' },
+  },
+
+  { 'ellisonleao/dotenv.nvim', opts = {} },
+
   {
     'folke/tokyonight.nvim',
     lazy = false,
@@ -31,4 +41,6 @@ return {
     event = { 'BufReadPost' },
     ft = { 'json', 'yaml' },
   },
+
+  { 'mistricky/codesnap.nvim', tag = 'v2.0.0' },
 }

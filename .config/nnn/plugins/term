@@ -1,13 +1,7 @@
 #!/usr/bin/env sh
 
 if [ -n "$TMUX" ] && tmux list-sessions 1>/dev/null 2>&1; then
-    PROJECT_NAME=$(echo "$2" | md5sum | cut -d' ' -f1)
-    if ! tmux list-windows -t special 2>/dev/null | grep -q "\s${PROJECT_NAME}"; then
-        NEW_WINDOW=$(tmux new-window -t special -n "${PROJECT_NAME}")
-        tmux send-keys -t "${NEW_WINDOW}" "cd $2" Enter
-    else
-        tmux select-window -t "${PROJECT_NAME}"
-    fi
+    sesh connect $2
 else
     nohup bash -c 'cd "$2"; echo "$*"; alacritty' &
 fi

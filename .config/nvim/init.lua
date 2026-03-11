@@ -45,11 +45,14 @@ require('lazy').setup('plugins', {
     enabled = true,
     notify = false, -- get a notification when changes are found
   },
+  spec = {
+    'rest-nvim/rest.nvim',
+  },
+  rocks = {
+    hererocks = true, -- you should enable this to get hererocks support
+  },
 })
 
--- " se stl:— fcs=stl:─,stlnc:—
--- se stl:— fcs=stl:─,stlnc:—
--- se fcs=stl:─,stlnc:—
 cmd [[
 
 

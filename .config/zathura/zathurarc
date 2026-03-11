@@ -41,7 +41,7 @@ set completion-highlight-bg     "#191919"
 set recolor-lightcolor          "#191919"
 set recolor-darkcolor           "#f9f5f7"
 
-# set recolor                     "true"
+set recolor "false"
 set recolor-keephue             "true"
 # }}}
 

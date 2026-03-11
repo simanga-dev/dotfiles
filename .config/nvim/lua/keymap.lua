@@ -36,7 +36,7 @@ vim.keymap.set('n', '<leader>A', ':!launch-agent.sh<CR>', { desc = 'Lauch agenti
 vim.keymap.set('n', '<leader>S', ':%s/\\<<C-R><C-W>\\>/<C-R>0/g<CR>')
 
 vim.keymap.set('t', '<C-\\><C-\\>', '<C-\\><C-n>')
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-n>')
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'snacks_terminal', -- Replace 'lua' with your desired file type
@@ -48,10 +48,18 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- vim.keymap.set('n', '<leader>.', ':e<space>**/')
-vim.keymap.set('n', '<leader>M', ':wa<CR>:make<CR>')
+vim.keymap.set('n', '<leader>mp', function()
+  vim.fn.jobstart({ 'tatum', 'serve', '--open', vim.fn.expand '%' }, { noremap = true, silent = true })
+end)
+
+vim.keymap.set('n', '<C-c>', ':r !lumen draft<CR>')
+
 -- vim.keymap.set('n', '<leader>cr', ':wa<CR>:!cargo run <CR>')
 -- vim.keymap.set('n', '<leader>ct', ':wa<CR>:!cargo test <CR>')
+vim.keymap.set('n', '<leader>M', ':make <CR>')
+--
+
+vim.keymap.set('v', '<leader>r', ':!bash <CR>') -- this might be my best mapping evere
 
 -- Managing buffers and Windows
 vim.keymap.set('n', '<leader>B', ':bdelete!<CR>')
@@ -59,6 +67,45 @@ vim.keymap.set('n', '<leader>B', ':bdelete!<CR>')
 -- vim.keymap.set('n', '<leader><', ':bp<CR>')
 -- vim.keymap.set('n', '<leader>.', ':cnext<CR>')
 -- vim.keymap.set('n', '<leader>,', ':cprevious<CR>')
+
+vim.api.nvim_create_user_command('HackerNews', function()
+  local url = 'https://hacker-news.firebaseio.com/v0/topstories.json'
+  local ids = vim.fn.json_decode(vim.fn.system('curl -s ' .. url))
+  local lines = { '# Hacker News Top 10', '' }
+  for i = 1, 10 do
+    local story_url = 'https://hacker-news.firebaseio.com/v0/item/' .. ids[i] .. '.json'
+    local story = vim.fn.json_decode(vim.fn.system('curl -s ' .. story_url))
+    table.insert(lines, i .. '. [' .. story.title .. '](' .. (story.url or ('https://news.ycombinator.com/item?id=' .. story.id)) .. ')')
+  end
+  vim.cmd 'new'
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+  vim.bo.buftype = 'nofile'
+  vim.bo.bufhidden = 'wipe'
+  vim.bo.swapfile = false
+  vim.bo.modifiable = false
+  vim.bo.filetype = 'markdown'
+end, {})
+
+vim.api.nvim_create_user_command('GitHubTrending', function()
+  local url = 'https://api.github.com/search/repositories?q=created:>'
+    .. os.date('%Y-%m-%d', os.time() - 7 * 24 * 60 * 60)
+    .. '&sort=stars&order=desc&per_page=10'
+  local result = vim.fn.system('curl -s -H "Accept: application/vnd.github.v3+json" "' .. url .. '"')
+  local data = vim.fn.json_decode(result)
+  local lines = { '# GitHub Trending (Past Week)', '' }
+  for i, repo in ipairs(data.items or {}) do
+    table.insert(lines, i .. '. [' .. repo.full_name .. '](' .. repo.html_url .. ') ⭐ ' .. repo.stargazers_count)
+    table.insert(lines, '   ' .. (repo.description or 'No description'))
+    table.insert(lines, '')
+  end
+  vim.cmd 'new'
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+  vim.bo.buftype = 'nofile'
+  vim.bo.bufhidden = 'wipe'
+  vim.bo.swapfile = false
+  vim.bo.modifiable = false
+  vim.bo.filetype = 'markdown'
+end, {})
 
 vim.keymap.set('n', '<leader>q', ':close<CR>')
 

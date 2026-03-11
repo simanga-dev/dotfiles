@@ -16,10 +16,8 @@ return {
     words = {},
     terminal = {
       win = {
-        position = 'float',
-        border = 'rounded',
-        width = math.floor(vim.o.columns * 0.6), -- Sets the width to 75% of the screen
-        height = math.floor(vim.o.lines * 0.6), -- Sets the height to 60% of the screen
+        position = 'bottom',
+        height = 0.5,
       },
     },
   },
@@ -501,7 +499,7 @@ return {
           Snacks.terminal()
         end
       end,
-
+      mode = { 't', 'n', 'v' },
       desc = 'which_key_ignore',
     },
     {

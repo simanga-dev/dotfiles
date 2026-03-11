@@ -7,8 +7,8 @@ return {
     },
     -- height = 20,
     task_list = {
-      max_height = { 50, 0.5 },
-      --   height = 20,
+      min_height = 0.5,
+      max_height = 0.5,
       direction = 'bottom',
     },
   },
