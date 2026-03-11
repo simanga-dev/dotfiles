@@ -95,27 +95,30 @@ vim.keymap.set('n', '<leader>_', ':res<CR>')
 
 vim.keymap.set('v', '<leader>cl', ':CodeCompanion  ')
 
-vim.keymap.set('v', '<leader>r', function()
-  vim.cmd 'normal! "zy'
-  local output = vim.fn.systemlist(vim.fn.getreg 'z')
-  local pos = vim.fn.getpos '.'
-  local last_line = vim.fn.line '$'
-  vim.cmd 'normal! }'
-  local first_blank = vim.fn.line '.'
-  if first_blank == last_line then
-    vim.api.nvim_buf_set_lines(0, last_line, last_line, false, { '' })
-    vim.api.nvim_buf_set_lines(0, last_line + 1, last_line + 1, false, output)
-  else
-    vim.cmd 'normal! }'
-    local second_blank = vim.fn.line '.'
-    if second_blank == first_blank or first_blank + 1 > second_blank - 1 then
-      vim.api.nvim_buf_set_lines(0, first_blank, first_blank, false, output)
-    else
-      vim.api.nvim_buf_set_lines(0, first_blank, second_blank - 1, false, output)
-    end
-  end
-  vim.fn.setpos('.', pos)
-end)
+-- vim.keymap.set('n', '<leader>r', function()
+--   vim.cmd 'normal! "zy'
+--   local output = vim.fn.systemlist(vim.fn.getreg 'z')
+--   local pos = vim.fn.getpos '.'
+--   local last_line = vim.fn.line '$'
+--   vim.cmd 'normal! }'
+--   local first_blank = vim.fn.line '.'
+--   if first_blank == last_line then
+--     vim.api.nvim_buf_set_lines(0, last_line, last_line, false, { '' })
+--     vim.api.nvim_buf_set_lines(0, last_line + 1, last_line + 1, false, output)
+--   else
+--     vim.cmd 'normal! }'
+--     local second_blank = vim.fn.line '.'
+--     if second_blank == first_blank or first_blank + 1 > second_blank - 1 then
+--       vim.api.nvim_buf_set_lines(0, first_blank, first_blank, false, output)
+--     else
+--       vim.api.nvim_buf_set_lines(0, first_blank, second_blank - 1, false, output)
+--     end
+--   end
+--   vim.fn.setpos('.', pos)
+-- end)
+
+
+
 
 -- vim.keymap.set('n', '}', function()
 --   vim.opt.hlsearch = false
