@@ -3,18 +3,17 @@ return {
   opts = {
     -- add any options here
     cli = {
-      mux = {
-        backend = 'zellij',
-        enabled = true,
-      },
       tools = {
         amp = {
           cmd = { 'amp', '--ide' },
         },
       },
+      mux = {
+        backend = 'zellij',
+        enabled = true,
+      },
       prompts = {
-        pr = 'create pr to Q4Dev using the template',
-        resume_update = 'Update the resume in the @main.tex file to align perfectly with the job description provided in @job-description.md . Make sure to highlight relevant skills, experiences, and qualifications that directly match the requirements of the job. Tailor the resume to showcase how your background and expertise make you an ideal candidate for the position. Be sure to emphasize any specific achievements or accomplishments demonstrate your ability to excel in this role, run `make` to make sure that the cv build fine',
+        resume_update = 'Update the resume in the @main.tex file to align perfectly with the job description provided in @job-description.md . Make sure to highlight relevant skills, experiences, and qualifications that directly match the requirements of the job. Tailor the resume to showcase how your background and expertise make you an ideal candidate for the position. Be sure to emphasize any specific achievements or accomplishments demonstrate your ability to excel in this role.',
       },
     },
   },
@@ -41,20 +40,21 @@ return {
     {
       '<leader>aa',
       function()
-        require('sidekick.cli').toggle { focus = true }
+        require('sidekick.cli').toggle()
       end,
       desc = 'Sidekick Toggle CLI',
       mode = { 'n', 't' },
     },
     {
-      '<leader>aa',
+      '<leader>as',
       function()
-        require('sidekick.cli').send { msg = '{selection}' }
+        require('sidekick.cli').select()
+        -- Or to select only installed tools:
+        -- require("sidekick.cli").select({ filter = { installed = true } })
       end,
-      desc = 'Sidekick Toggle CLI',
-      mode = { 'v' },
+      desc = 'Sidekick Select CLI',
+      mode = { 'n', 'v' },
     },
-
     {
       '<leader>ac',
       function()
@@ -63,6 +63,7 @@ return {
       desc = 'Sidekick Claude Toggle',
       mode = { 'n', 'v' },
     },
+
     {
       '<leader>af',
       function()
@@ -70,38 +71,6 @@ return {
       end,
       desc = 'Sidekick Claude Toggle',
       mode = { 'n', 'v', 't' },
-    },
-    {
-      '<leader>av',
-      function()
-        require('sidekick.cli').send { msg = '{selection}' }
-      end,
-      mode = { 'x' },
-      desc = 'Send Visual Selection',
-    },
-    {
-      '<leader>as',
-      function()
-        require('sidekick.cli').select()
-      end,
-      -- Or to select only installed tools:
-      -- require("sidekick.cli").select({ filter = { installed = true } })
-      desc = 'Select CLI',
-    },
-    {
-      '<leader>ad',
-      function()
-        require('sidekick.cli').close()
-      end,
-      desc = 'Detach a CLI Session',
-    },
-    {
-      '<leader>at',
-      function()
-        require('sidekick.cli').send { msg = '{this}' }
-      end,
-      mode = { 'x', 'n' },
-      desc = 'Send This',
     },
 
     {
@@ -112,6 +81,32 @@ return {
       desc = 'Sidekick Grok Toggle',
       mode = { 'n', 'v' },
     },
+    {
+      '<leader>ao',
+      function()
+        require('sidekick.cli').toggle { name = 'opencode', focus = true }
+      end,
+      desc = 'Sidekick Opencode Toggle',
+      mode = { 'n', 'v' },
+    },
+    {
+      '<leader>aa',
+      function()
+        require('sidekick.cli').send { msg = '{selection}' }
+      end,
+      mode = { 'v' },
+      desc = 'Send Visual Selection',
+    },
+
+    {
+      '<leader>at',
+      function()
+        require('sidekick.cli').send { msg = '{this}' }
+      end,
+      mode = { 'x', 'n' },
+      desc = 'Send This',
+    },
+
     {
       '<leader>ap',
       function()
