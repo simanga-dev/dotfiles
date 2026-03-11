@@ -95,7 +95,27 @@ vim.keymap.set('n', '<leader>_', ':res<CR>')
 
 vim.keymap.set('v', '<leader>cl', ':CodeCompanion  ')
 
-vim.keymap.set('v', '<leader>r', ':!bash <CR>') -- this might be my best mapping evere
+vim.keymap.set('v', '<leader>r', function()
+  vim.cmd 'normal! "zy'
+  local output = vim.fn.systemlist(vim.fn.getreg 'z')
+  local pos = vim.fn.getpos '.'
+  local last_line = vim.fn.line '$'
+  vim.cmd 'normal! }'
+  local first_blank = vim.fn.line '.'
+  if first_blank == last_line then
+    vim.api.nvim_buf_set_lines(0, last_line, last_line, false, { '' })
+    vim.api.nvim_buf_set_lines(0, last_line + 1, last_line + 1, false, output)
+  else
+    vim.cmd 'normal! }'
+    local second_blank = vim.fn.line '.'
+    if second_blank == first_blank or first_blank + 1 > second_blank - 1 then
+      vim.api.nvim_buf_set_lines(0, first_blank, first_blank, false, output)
+    else
+      vim.api.nvim_buf_set_lines(0, first_blank, second_blank - 1, false, output)
+    end
+  end
+  vim.fn.setpos('.', pos)
+end)
 
 -- vim.keymap.set('n', '}', function()
 --   vim.opt.hlsearch = false
@@ -110,13 +130,12 @@ vim.keymap.set('n', '{', ':nohl<CR>{?.\\+<CR>:noh<CR>')
 -- Open PR for current branch in browser
 vim.keymap.set('n', '<leader>pr', function()
   local branch = vim.fn.system('git rev-parse --abbrev-ref HEAD'):gsub('\n', '')
-  local remote = vim.fn.system('git remote get-url origin'):gsub('\n', '')
-  local org, project, repo = remote:match 'dev%.azure%.com[:/]v3/([^/]+)/([^/]+)/([^/\n]+)'
-  if org and project then
-    local url = string.format('https://dev.azure.com/%s/%s/_git/%s/pullrequests?sourceRef=%s', org, project, repo:gsub('%.git$', ''), branch)
-    vim.fn.system('wslview "' .. url .. '"')
+  local pr_id =
+    vim.fn.system('az repos pr list --source-branch ' .. vim.fn.shellescape(branch) .. ' --query "[0].pullRequestId" -o tsv 2>/dev/null'):gsub('\n', '')
+  if pr_id ~= '' then
+    vim.fn.system('az repos pr show --id ' .. vim.fn.shellescape(pr_id) .. ' --open >/dev/null 2>&1')
   else
-    vim.notify('Could not parse Azure DevOps remote', vim.log.levels.ERROR)
+    vim.notify('No PR found for branch: ' .. branch, vim.log.levels.WARN)
   end
 end, { desc = 'Open PR in browser' })
 
