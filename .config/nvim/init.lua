@@ -45,16 +45,11 @@ require('lazy').setup('plugins', {
     enabled = true,
     notify = false, -- get a notification when changes are found
   },
-  spec = {
-    'rest-nvim/rest.nvim',
-  },
-  rocks = {
-    hererocks = true, -- you should enable this to get hererocks support
-  },
 })
 
+-- se fcs=stl:─,stlnc:—
+-- se stl:— fcs=stl:─,stlnc:—
 cmd [[
-
 
     hi FoldColumn guibg=NONE
 
@@ -81,24 +76,16 @@ cmd [[
     hi StatusLineNC gui=NONE guifg=#565f89 guibg=NONE
     hi VertSplit gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
     hi WinSeparator gui=NONE guifg=#565f89 guibg=NONE cterm=NONE
-    hi ColorColumn gui=NONE guifg=NONE guibg=#565f89 cterm=NONE
 
     hi TabLineFill guifg=NONE guibg=NONE
-    hi TabLine guifg=#1d202f  guibg=NONE
+    hi TabLine guifg=#565f89  guibg=NONE
     hi TabLineSel guifg=#565f89  guibg=NONE
 
     hi NotificationInfo guifg=#565f89 guibg=NONE
     hi NotificationWarning guifg=#565f89 guibg=NONE
     hi NotificationError guifg=#565f89 guibg=NONE
-
-
-    hi EndOfBuffer guifg=#1C1E23 guibg=NONE cterm=NONE
-    hi LineNrAbove guifg=#565f89 guibg=NONE cterm=NONE
-    hi LineNrBelow guifg=#565f89 guibg=NONE cterm=NONE
-
     set exrc
     set secure
 
     set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-
 ]]

@@ -47,10 +47,11 @@ return {
       end,
       desc = '[T] Harpoon GoTo 2',
     },
+
     {
-      '<leader>>',
+      '<leadereader>>',
       function()
-        require('harpoon'):list():next()
+        require('harpoon'):list():prev()
       end,
       desc = '[T] Harpoon GoTo 3',
     },

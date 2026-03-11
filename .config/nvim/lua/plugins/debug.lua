@@ -124,7 +124,7 @@ return {
       desc = 'Continue',
     },
     {
-      '<F10>',
+      '<leader>ds',
       function()
         require('dap').step_over()
       end,
@@ -209,19 +209,11 @@ return {
         name = 'launch - netcoredbg',
         request = 'launch',
         program = function()
-          return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net8.0/linux-x64/', 'file')
-        end,
-      },
-    }
-
-    dap.configurations.cs = {
-      {
-        type = 'coreclr',
-        name = 'launch - netcoredbg',
-        request = 'launch',
-        program = function()
-          -- return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/src/", "file")
-          return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net9.0/', 'file')
+          if vim.fn.getcwd() == '/home/simanga/Workspace/quest-system' then
+            return vim.fn.getcwd() .. '/src/Host.Api/bin/Debug/net9.0/Host.Api.dll'
+          else
+            return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net9.0/', 'file')
+          end
         end,
       },
     }

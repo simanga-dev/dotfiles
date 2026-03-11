@@ -1,29 +1,32 @@
 return {
   'stevearc/conform.nvim',
   config = function()
+    local sqlfluff_config = vim.fn.stdpath 'config' .. '/.sqlfluff'
+
     require('conform').setup {
       notify_on_error = true,
-      fomat_on_save = {
+      format_on_save = {
         timeout_ms = 10000,
         lsp_fallback = true,
       },
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'black', 'isort' },
-        javascript = { 'biome', 'prettierd', lsp_format = 'fallback' },
-        typescript = { 'biome', 'prettierd', lsp_format = 'fallback' },
-        typescriptreact = { 'prettierd', 'prettier', lsp_format = 'fallback' },
-        json = { 'biome', 'jq', lsp_format = 'fallback' },
-        rest_nvim_result = { 'biome', 'jq', lsp_format = 'fallback' },
-
+        sql = { 'sqlfluff_one' },
         html = { 'prettierd', 'prettier' },
-        -- sql = { 'sqlfluff', lsp_format = 'fallback' }, when I have time to configure it the way I want to but for now pg_format is more than enough
-        sql = { 'pg_format', lsp_format = 'fallback' },
+        json = { 'prettierd', 'prettier', stop_after_first = true },
+        -- javascript = { 'prettierd', 'prettier', stop_after_first = true, lsp_format = 'fallback' },
+        -- typescript = { 'prettierd', 'prettier', lsp_format = 'fallback' },
+        -- typescriptreact = { 'prettierd', 'prettier', lsp_format = 'fallback' },
         -- cs = { 'csharpier_ramboe' },
         -- csproj = { 'csharpier_ramboe' },
       },
-
       formatters = {
+        sqlfluff_one = {
+          command = 'sqlfluff',
+          args = { 'format', '--config', sqlfluff_config, '--dialect', 'tsql', '-' },
+          -- timeout_ms = 30000,
+        },
         csharpier_ramboe = {
           command = 'csharpier',
           args = {
@@ -34,8 +37,6 @@ return {
         },
       },
     }
-
-    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
     vim.api.nvim_create_autocmd('BufWritePre', {
       pattern = '*',
@@ -50,7 +51,6 @@ return {
         require('conform').format { bufnr = args.buf }
       end,
     })
-
     -- require('conform').formatters.sql = {
     --   prepend_args = { 'fix', '-x' },
     -- }

@@ -1,6 +1,5 @@
 return {
   -- 'olimorris/codecompanion.nvim',
-  -- event = 'InsertEnter',
   -- dependencies = {
   --   'nvim-lua/plenary.nvim',
   --   'nvim-treesitter/nvim-treesitter',
@@ -15,7 +14,22 @@ return {
   --     },
   --   },
   --   adapters = {
-  --
+  --     mistral = function()
+  --       return require('codecompanion.adapters').extend('ollama', {
+  --         name = 'mistral', -- Give this adapter a different name to differentiate it from the default ollama adapter
+  --         schema = {
+  --           model = {
+  --             default = 'mistral',
+  --           },
+  --           num_ctx = {
+  --             default = 16384,
+  --           },
+  --           num_predict = {
+  --             default = -1,
+  --           },
+  --         },
+  --       })
+  --     end,
   --     openai = function()
   --       return require('codecompanion.adapters').extend('openai', {
   --         env = {
@@ -23,29 +37,25 @@ return {
   --         },
   --       })
   --     end,
-  --
-  --     gemini = function()
-  --       return require('codecompanion.adapters').extend('gemini', {
-  --         env = {
-  --           api_key = 'cmd:echo $GEMINI_API_KEY',
-  --         },
-  --       })
-  --     end,
   --   },
   -- },
+  -- -- config = true,
   -- -- keys = {
   -- --   {
   -- --     '<leader>cc',
-  -- --     ':CodeCompanionChat Toggle <CR>',
-  -- --     desc = '[GPT] Launch ChatGPT Chat',
-  -- --     mode = { 'n' },
+  -- --     function()
+  -- --       vim.cmd [[ CodeCompanionChat Toggle ]]
+  -- --     end,
+  -- --     desc = '[GPT] Edit with instruction',
+  -- --     mode = { 'v', 'n' },
   -- --   },
   -- --   {
   -- --     '<leader>cc',
-  -- --     ':CodeCompanionActions <CR>',
-  -- --     desc = '[GPT] Launch ChatGPT Chat',
-  -- --     mode = { 'v', 'x' },
-  -- --   },
+  -- --     function()
+  -- --       vim.cmd [[CodeCompanionActions]]
+  -- --     end,
+  -- --     desc = '[GPT] Edit with instruction',
+  -- --     mode = { 'v' },
   -- -- },
-  -- config = true,
+  -- -- },
 }

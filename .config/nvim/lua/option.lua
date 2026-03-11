@@ -1,23 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt_local.errorformat = '%f(%l\\,%c):%t%*[\\^\\ ]%m'
-
--- lua
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = { 'json' },
---   callback = function()
---     vim.opt_local.formatexpr = "v:lua.require'formatter'.format()"
---   end,
--- })
-
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = { 'html' },
---   callback = function()
---     vim.opt_local.formatexpr = "v:lua.require'formatter'.format()"
---   end,
--- })
---
 local function trim_trailing_whitespaces()
   if
     vim.bo.modifiable == true
@@ -50,22 +33,22 @@ end
 
 -- Super cool, works DiffviewFiles perfect.... I am proud of myself
 local group_1 = vim.api.nvim_create_augroup('hide-numbers', { clear = true })
-
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
     if
       vim.bo.buftype == 'terminal'
       or vim.bo.filetype == 'markdown'
       or vim.bo.filetype == ''
-      or vim.bo.filetype == 'help'
       or vim.bo.filetype == 'codecompanion'
       or vim.bo.filetype == 'gitcommit'
       or vim.bo.filetype == 'chatgpt-input'
       or vim.bo.filetype == 'oil'
       or vim.bo.filetype == 'neo-tree'
       or vim.bo.filetype == 'Avante'
-      or vim.bo.filetype == 'AvanteInput'
+      or vim.bo.filetype == 'trouble'
       or vim.bo.filetype == 'AvanteSelectedFiles'
+      or vim.bo.filetype == 'AvanteInput'
+      or vim.bo.filetype == 'undotree'
     then
       vim.wo.number = false
       vim.wo.relativenumber = false
@@ -81,7 +64,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
       or vim.bo.filetype == 'DiffviewFiles'
       or vim.bo.filetype == 'git'
       or vim.bo.filetype == 'fugitiveblame'
-      or vim.bo.filetype == 'dapui_scopes'
       or vim.bo.filetype == 'OverseerList'
     then
       vim.wo.number = false
@@ -103,8 +85,7 @@ vim.api.nvim_create_autocmd('TermOpen', { callback = term_config, group = group_
 
 local group_2 = vim.api.nvim_create_augroup('auto-save', { clear = true })
 
-vim.api.nvim_create_autocmd('FocusLost', { callback = trim_trailing_whitespaces, group = group_2 })
-vim.api.nvim_create_autocmd('BufWritePre', { callback = trim_trailing_whitespaces, group = group_2 })
+-- vim.api.nvim_create_autocmd({ 'FocusLost', 'BufWrite' }, { callback = trim_trailing_whitespaces, group = group_2 })
 
 -- Highlight on yank
 vim.cmd [[
@@ -131,12 +112,11 @@ vim.cmd [[
         autocmd FileType gitcommit setlocal complete+=kspell
     augroup END
 
+
   autocmd BufNewFile,BufRead *.cshtml set filetype=html.cshtml.razor
   autocmd BufNewFile,BufRead *.razor set filetype=html.cshtml.razor
+
   autocmd BufNewFile,BufRead *.pcss set filetype=css
-
- set errorformat=%f(%l\\,%c):%t%*[^\ ]%m
-
 
 ]]
 
@@ -153,6 +133,7 @@ vim.cmd [[
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
+vim.o.diffopt = 'internal,filler,closeoff,linematch:60'
 vim.opt.breakindent = true
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
@@ -184,9 +165,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.opt.undofile = true
 vim.opt.incsearch = true
-
 vim.o.showmode = false
-
 vim.o.laststatus = 3
 vim.o.showcmd = true
 vim.opt.termguicolors = true
@@ -197,6 +176,23 @@ vim.opt.signcolumn = 'yes'
 vim.opt.hlsearch = true
 vim.opt.cursorline = true
 vim.opt.clipboard = 'unnamedplus'
+
+if vim.fn.has 'wsl' == 1 then
+  vim.g.clipboard = {
+    name = 'WslClipboard',
+    copy = {
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
+    paste = {
+      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+  }
+end
+
+-- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- vim.opt.isfname:append("@-@")
 -- vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
@@ -210,19 +206,19 @@ vim.opt.updatetime = 50
 vim.opt.shortmess:append 'c'
 -- vim.opt.colorcolumn = "80"
 
--- Diagnostic Config
--- See :help vim.diagnostic.Opts
-vim.g.have_nerd_font = true
+-- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+-- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+
 vim.diagnostic.config {
   severity_sort = true,
   float = { border = 'rounded', source = 'if_many' },
   underline = { severity = vim.diagnostic.severity.ERROR },
-  signs = vim.g.have_nerd_font and {
+  signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = '',
       [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '',
     },
   } or {},
   virtual_text = {
@@ -239,6 +235,13 @@ vim.diagnostic.config {
     end,
   },
 }
+
+vim.api.nvim_create_autocmd('ModeChanged', {
+  group = vim.api.nvim_create_augroup('diagnostic_redraw', {}),
+  callback = function()
+    pcall(vim.diagnostic.show)
+  end,
+})
 
 vim.lsp.enable {
   'lua_ls',
@@ -259,12 +262,7 @@ vim.lsp.enable {
   'nixd',
   'ts_ls',
   'yamlls',
-  'sqls',
+  'sql',
+  'marksman',
   'angularls',
-  'docker_compose_language_service',
-  'docker_language_server',
-  -- 'omnisharp',
 }
--- init.lua
-vim.g.dotnet_errors_only = true
-vim.g.dotnet_show_project_file = false

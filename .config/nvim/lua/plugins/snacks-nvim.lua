@@ -1,3 +1,5 @@
+--iii
+--terminal//
 -- lazy.nvim
 return {
   'folke/snacks.nvim',
@@ -10,6 +12,22 @@ return {
       layout = {
         preset = 'telescope',
         cycle = true,
+      },
+
+      actions = {
+        sidekick_send = function(...)
+          return require('sidekick.cli.picker.snacks').send(...)
+        end,
+      },
+      win = {
+        input = {
+          keys = {
+            ['<a-a>'] = {
+              'sidekick_send',
+              mode = { 'n', 'i' },
+            },
+          },
+        },
       },
     },
 
@@ -480,26 +498,23 @@ return {
     {
       '<c-/>',
       function()
-        print(vim.bo.filetype)
-        if string.find(vim.bo.filetype, 'chatpgt') then
-          vim.cmd 'fc!'
-        else
-          Snacks.terminal()
-        end
+        Snacks.terminal()
+      end,
+      desc = 'Toggle Terminal',
+    },
+
+    {
+      '<leader>t',
+      function()
+        Snacks.terminal()
       end,
       desc = 'Toggle Terminal',
     },
     {
       '<c-_>',
       function()
-        print(vim.bo.filetype)
-        if string.find(vim.bo.filetype, 'chatpgt') then
-          vim.cmd 'fc!'
-        else
-          Snacks.terminal()
-        end
+        Snacks.terminal()
       end,
-      mode = { 't', 'n', 'v' },
       desc = 'which_key_ignore',
     },
     {

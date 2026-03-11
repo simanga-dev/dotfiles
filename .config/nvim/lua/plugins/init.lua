@@ -2,19 +2,20 @@ return {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-repeat',
   'tpope/vim-endwise',
+  'mbbill/undotree',
   'tpope/vim-eunuch',
-  'rhysd/committia.vim',
-  'monkoose/matchparen.nvim',
   'tpope/vim-capslock',
   'tpope/vim-dotenv',
   'andymass/vim-matchup',
+  'kovetskiy/sxhkd-vim',
   'b0o/schemastore.nvim',
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
+  'norcalli/nvim-colorizer.lua',
   'preservim/vim-pencil',
   'amadeus/vim-convert-color-to',
   'wsdjeg/calendar.nvim',
-  'brenoprata10/nvim-highlight-colors',
+  -- Amp Plugin
   {
     'sourcegraph/amp.nvim',
     branch = 'main',
@@ -22,7 +23,34 @@ return {
     opts = { auto_start = true, log_level = 'info' },
   },
 
-  { 'ellisonleao/dotenv.nvim', opts = {} },
+  {
+    'Willem-J-an/adopure.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      -- "sindrets/diffview.nvim" -- Optionally required to open PR in diffview
+    },
+    config = function()
+      vim.g.adopure = {}
+    end,
+  },
+
+  {
+    'yorickpeterse/nvim-tree-pairs',
+    opts = {},
+  },
+  'brenoprata10/nvim-highlight-colors',
+  'nvim-lua/lsp_extensions.nvim',
+  'Hoffs/omnisharp-extended-lsp.nvim',
+  {
+    'ibhagwan/fzf-lua',
+    -- optional for icon support
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      -- calling `setup` is optional for customization
+      require('fzf-lua').setup {}
+    end,
+  },
 
   {
     'folke/tokyonight.nvim',
@@ -36,11 +64,6 @@ return {
   },
 
   { 'rebelot/kanagawa.nvim', lazy = false },
-  {
-    'gennaro-tedesco/nvim-jqx',
-    event = { 'BufReadPost' },
-    ft = { 'json', 'yaml' },
-  },
-
-  { 'mistricky/codesnap.nvim', tag = 'v2.0.0' },
+  'MunifTanjim/nui.nvim',
+  'stevearc/dressing.nvim',
 }
