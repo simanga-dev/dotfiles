@@ -1,7 +1,7 @@
 return {
   -- 'yetone/avante.nvim',
   -- -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  -- -- ?? must add this setting! ! !
+  -- -- ⚠️ must add this setting! ! !
   -- build = vim.fn.has 'win32' ~= 0 and 'powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false' or 'make',
   -- event = 'VeryLazy',
   -- version = false, -- Never set this value to "*"! Never!
@@ -13,12 +13,14 @@ return {
   --   provider = 'copilot',
   --   providers = {
   --     gemini = {
-  --       model = 'gemini-2.0-flash',
+  --       model = 'gemini-2.5-pro',
   --       timeout = 30000,
-  --       extra_request_body = {
-  --         temperature = 0.75,
-  --         max_tokens = 8192,
-  --       },
+  --     },
+  --     openai = {
+  --       endpoint = 'https://api.openai.com/v1',
+  --       model = 'gpt-4o', -- adjust as needed (e.g. gpt-3.5-turbo, gpt-4)
+  --       timeout = 30000,
+  --       max_tokens = 8192,
   --     },
   --     claude = {
   --       endpoint = 'https://api.anthropic.com',
@@ -48,39 +50,21 @@ return {
   --         temperature = 0.75,
   --         max_tokens = 32768,
   --       },
-  --       -- optional but recommended by OpenRouter
   --       extra_request_headers = {
   --         ['HTTP-Referer'] = 'h3khoza@gmail.com',
   --         ['X-Title'] = 'Neovim',
   --       },
   --     },
-  --     openrouter_gpt5 = {
+  --     openrouter_openai = {
   --       __inherited_from = 'openai',
   --       endpoint = 'https://openrouter.ai/api/v1',
-  --       model = 'qwen/qwen3-coder',
+  --       model = 'openai/gpt-5',
   --       api_key_name = 'OPENROUTER_API_KEY',
   --       timeout = 30000,
   --       extra_request_body = {
   --         temperature = 0.75,
   --         max_tokens = 32768,
   --       },
-  --       -- optional but recommended by OpenRouter
-  --       extra_request_headers = {
-  --         ['HTTP-Referer'] = 'h3khoza@gmail.com',
-  --         ['X-Title'] = 'Neovim',
-  --       },
-  --     },
-  --     openrouter_deepseek = {
-  --       __inherited_from = 'openai',
-  --       endpoint = 'https://openrouter.ai/api/v1',
-  --       model = 'deepseek/deepseek-chat-v3.1',
-  --       api_key_name = 'OPENROUTER_API_KEY',
-  --       timeout = 30000,
-  --       extra_request_body = {
-  --         temperature = 0.75,
-  --         max_tokens = 32768,
-  --       },
-  --       -- optional but recommended by OpenRouter
   --       extra_request_headers = {
   --         ['HTTP-Referer'] = 'h3khoza@gmail.com',
   --         ['X-Title'] = 'Neovim',
@@ -93,7 +77,7 @@ return {
   --   'MunifTanjim/nui.nvim',
   --   --- The below dependencies are optional,
   --   'echasnovski/mini.pick', -- for file_selector provider mini.pick
-  --   -- 'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
+  --   'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
   --   'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
   --   'ibhagwan/fzf-lua', -- for file_selector provider fzf
   --   'stevearc/dressing.nvim', -- for input provider dressing

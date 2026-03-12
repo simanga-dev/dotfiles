@@ -5,9 +5,7 @@ return {
     '/home/simanga/Workspace/my-notes/db_ui/.sqls.yml',
   },
   on_attach = function(client, bufnr)
-    -- require('sqls').on_attach(client, bufnr)
-    --
-    vim.lsp.config('sqls', {})
+    require('sqls').on_attach(client, bufnr)
     vim.keymap.set('n', '<leader>dB', ':SqlsSwitchDatabase<CR>')
   end,
 }

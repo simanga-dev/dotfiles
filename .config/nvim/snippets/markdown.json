@@ -284,5 +284,23 @@
       "${0}"
     ],
     "description": "Insert table with 5 rows and 3 columns. First row is heading."
+  },
+  "karakeep add": {
+    "prefix": "karaadd",
+    "body": ["```bash", "karakeep bookmarks add --link ${0} ", "```"]
+  },
+
+  "bash": {
+    "prefix": "bash",
+    "body": ["```bash", "${0}", "```"]
+  },
+
+  "tickets": {
+    "prefix": "tickets",
+    "body": [
+      "```bash",
+      "az boards query --wiql \"SELECT [System.Id], [System.Title], [System.State] FROM WorkItems WHERE [System.AssignedTo] = @Me AND [System.State] <> 'Done'\" -o json | jq -r '[\"ID\",\"Title\",\"State\"], (.[] | [.fields.\"System.Id\", .fields.\"System.Title\", .fields.\"System.State\"]) | @csv' | csview",
+      "```"
+    ]
   }
 }
