@@ -299,7 +299,35 @@
     "prefix": "tickets",
     "body": [
       "```bash",
-      "az boards query --wiql \"SELECT [System.Id], [System.Title], [System.State] FROM WorkItems WHERE [System.AssignedTo] = @Me AND [System.State] <> 'Done'\" -o json | jq -r '[\"ID\",\"Title\",\"State\"], (.[] | [.fields.\"System.Id\", .fields.\"System.Title\", .fields.\"System.State\"]) | @csv' | csview",
+      "az boards query \\\\",
+      "  --wiql \"SELECT [System.Id], [System.Title], [System.State] FROM WorkItems WHERE [System.AssignedTo] = @Me AND [System.State] <> 'Done'\" \\\\",
+      "  -o json \\\\",
+      "  | jq -r '[\"ID\",\"Title\",\"State\"], (.[] | [(\"[\" + (.fields.\"System.Id\" | tostring) + \"](\" + (.url | split(\"/\") | .[:4] | join(\"/\")) + \"/_workitems/edit/\" + (.fields.\"System.Id\" | tostring) + \")\"), .fields.\"System.Title\", .fields.\"System.State\"]) | @csv' \\\\",
+      "  | mlr --c2m cat",
+      "```"
+    ]
+  },
+
+  "pr": {
+    "prefix": "pr",
+    "body": [
+      "```bash",
+      "az repos pr list --project \"republic of south africa\" \\\\",
+      "  --repository rsa-q4-frontend --status active --output json \\\\",
+      "  | jq -r '[\"ID\",\"Created\",\"Creator\",\"Title\"],(.[] | [(\"[\" + (.pullRequestId | tostring) + \"](\" + .repository.webUrl + \"/pullrequest/\" + (.pullRequestId | tostring) + \")\"),.creationDate[:10],.createdBy.uniqueName,.title]) | @csv' \\\\",
+      "  | mlr --c2m cat",
+      "```"
+    ]
+  },
+
+  "all-pr": {
+    "prefix": "all-pr",
+    "body": [
+      "```bash",
+      "az repos pr list --project \"republic of south africa\" \\\\",
+      "  --status active --output json \\\\",
+      "  | jq -r '[\"ID\",\"Created\",\"Creator\",\"Title\"],(.[] | [(\"[\" + (.pullRequestId | tostring) + \"](\" + .repository.webUrl + \"/pullrequest/\" + (.pullRequestId | tostring) + \")\"),.creationDate[:10],.createdBy.uniqueName,.title]) | @csv' \\\\",
+      "  | mlr --c2m cat",
       "```"
     ]
   }

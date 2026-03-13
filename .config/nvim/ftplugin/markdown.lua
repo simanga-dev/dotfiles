@@ -1,5 +1,5 @@
-local output_marker_start = '```output'
-local output_marker_end = '```'
+local output_marker_start = '<!-- output-start -->'
+local output_marker_end = '<!-- output-end -->'
 
 vim.keymap.set('n', '<leader>rr', function()
   -- Only run if cursor is inside a ```bash or ```sh fenced block
@@ -11,7 +11,7 @@ vim.keymap.set('n', '<leader>rr', function()
     if l then
       fence_start = i
       lang = l
-    elseif line:match '^```$' and fence_start then
+    elseif line:match '^```%s*$' and fence_start then
       fence_end = i
       if cursor_line >= fence_start and cursor_line <= fence_end then
         break

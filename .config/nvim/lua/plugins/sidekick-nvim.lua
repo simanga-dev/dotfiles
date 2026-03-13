@@ -14,6 +14,7 @@ return {
       },
       prompts = {
         resume_update = 'Update the resume in the @main.tex file to align perfectly with the job description provided in @job-description.md . Make sure to highlight relevant skills, experiences, and qualifications that directly match the requirements of the job. Tailor the resume to showcase how your background and expertise make you an ideal candidate for the position. Be sure to emphasize any specific achievements or accomplishments demonstrate your ability to excel in this role.',
+        pr = ' Create a pull request from this branch to the Q4Dev branch using this template. Add the following as required reviewers: bonisile.mbambo@expresspros.com and siphamandla.ngwenya@expresspros.com. Add the following as optional reviewers: kobus.schlebusch@expresspros.com, wesley.madziva@expresspros.com, bongani.maluleke@expresspros.com, and sibusiso.cebekhulu@expresspros.com. ',
       },
     },
   },

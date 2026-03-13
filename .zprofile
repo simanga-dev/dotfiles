@@ -1,6 +1,5 @@
 # start hyprland when login
 
-clipse --listen
 
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     wl-paste --watch cliphist store &
