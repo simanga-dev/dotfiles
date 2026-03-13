@@ -90,4 +90,4 @@
 .config/tigervnc/
 .config/zed/
 .local/share/NuGet
-.local/*
+# .local/*

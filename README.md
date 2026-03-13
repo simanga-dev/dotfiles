@@ -1,65 +1,53 @@
-# Dofiles Configuration for Arch Linux
+# Dotfiles for Arch Linux
 
+Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/), featuring [HyDE](https://github.com/HyDE-Project/HyDE) (Hyprland Desktop Environment) as the desktop environment.
 
+## What's Included
 
-## Font confiration
-_
-
-This directory contains the dotfiles for my system
-
-
-### Window Manager configuration
-#### Requirement
-    - [slstatus](https://git.suckless.org/slstatus)
-    - [DWM](https://github.com/h3ndry/dwm/tree/master)
-    - [rofi](https://archlinux.org/packages/extra/x86_64/rofi/)
+- **Window Manager:** [Hyprland](https://hyprland.org/) via HyDE
+- **Terminal:** [Alacritty](https://alacritty.org/)
+- **Shell:** [Zsh](https://www.zsh.org/)
+- **Editor:** [Neovim](https://neovim.io/)
+- **Multiplexer:** [Tmux](https://github.com/tmux/tmux)
+- **File Manager:** [nnn](https://github.com/jarun/nnn)
+- **PDF Viewer:** [Zathura](https://pwmt.org/projects/zathura/)
+- **System Monitor:** [btop](https://github.com/aristocratos/btop)
+- **Keyboard Remapping:** [KMonad](https://github.com/kmonad/kmonad)
+- **Launcher:** [Rofi](https://github.com/davatorium/rofi)
 
 ## Requirements
 
-Ensure you have the following installed on your system
+Ensure you have the following installed on your system:
 
-### Git
-
-```
-pacman -S git
-```
-
-### Stow
-
-```
-pacman -S stow
+```bash
+pacman -S git stow
 ```
 
 ## Installation
 
-First, check out the dotfiles repo in your $HOME directory using git
+Clone the dotfiles repo into your `$HOME` directory:
 
-- [ ]  love is in the ai
-
-
-
-```
-$ git clone git@github.com/dreamsofautonomy/dotfiles.git
-$ cd dotfiles
+```bash
+git clone git@github.com:simanga-dev/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ```
 
-then use GNU stow to create symlinks
+Then use GNU Stow to create symlinks:
 
-```
-$ stow .
-```
-### NOTE: Remember this
-
-_create this directory `/etc/profile.d/open-ai.sh` he_
-
-```
-export CM_LAUNCHER=rofi
-
+```bash
+stow .
 ```
 
+## Notes
 
-just so that I don't keep on googling the same thing
+Set Zsh as the default shell:
 
-```
+```bash
 chsh -s $(which zsh)
+```
+
+Create `/etc/profile.d/env.sh` for environment variables:
+
+```bash
+export CM_LAUNCHER=rofi
 ```

@@ -299,8 +299,13 @@
     "prefix": "tickets",
     "body": [
       "```bash",
-      "az boards query --wiql \"SELECT [System.Id], [System.Title], [System.State] FROM WorkItems WHERE [System.AssignedTo] = @Me AND [System.State] <> 'Done'\" -o json | jq -r '[\"ID\",\"Title\",\"State\"], (.[] | [.fields.\"System.Id\", .fields.\"System.Title\", .fields.\"System.State\"]) | @csv' | csview",
+      "az boards query \\\\",
+      "  --wiql \"SELECT [System.Id], [System.Title], [System.State] FROM WorkItems WHERE [System.AssignedTo] = @Me AND [System.State] <> 'Done'\" \\\\",
+      "  -o json \\\\",
+      "  | jq -r '[\"ID\",\"Title\",\"State\"], (.[] | [.fields.\"System.Id\", .fields.\"System.Title\", .fields.\"System.State\"]) | @csv' \\\\",
+      "  | csview",
       "```"
-    ]
+    ],
+    "description": "Query Azure DevOps work items assigned to me and display as CSV"
   }
 }

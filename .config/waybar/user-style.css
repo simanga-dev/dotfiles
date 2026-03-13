@@ -1,0 +1,17 @@
+/* User custom styles */
+
+/* Disable all animations and transitions */
+#workspaces button,
+#workspaces button.active,
+#workspaces button:hover,
+#taskbar button,
+#taskbar button.active,
+#taskbar button:hover {
+    animation: none;
+    transition: none;
+}
+
+tooltip,
+menu {
+    animation: none;
+}
