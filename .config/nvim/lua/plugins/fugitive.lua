@@ -3,7 +3,7 @@ return {
   dependencies = {
     'shumphrey/fugitive-gitlab.vim',
     'tpope/vim-rhubarb',
-    'j-hui/fidget.nvim',
+    { 'j-hui/fidget.nvim', opts = { notification = { override_vim_notify = true, window = { winblend = 0 } } } },
   },
   event = 'VeryLazy',
   keys = {
@@ -13,13 +13,13 @@ return {
         local Job = require 'plenary.job'
         local fidget = require 'fidget'
 
-        fidget.notify 'starting git add --update'
+        fidget.notify('starting git add --all', nil, { ttl = 10 })
         Job:new({
           command = 'git',
           args = { 'add', '--all' },
           on_exit = function()
             vim.schedule(function()
-              fidget.notify 'git add --update completed'
+              fidget.notify('git add --all completed', nil, { ttl = 10 })
             end)
           end,
         }):start()
@@ -32,13 +32,13 @@ return {
         local Job = require 'plenary.job'
         local fidget = require 'fidget'
 
-        fidget.notify 'starting git add --update'
+        fidget.notify('starting git add --update', nil, { ttl = 10 })
         Job:new({
           command = 'git',
           args = { 'add', '--update' },
           on_exit = function()
             vim.schedule(function()
-              fidget.notify 'git add --update completed'
+              fidget.notify('git add --update completed', nil, { ttl = 10 })
             end)
           end,
         }):start()
@@ -108,14 +108,14 @@ return {
         local Job = require 'plenary.job'
         local fidget = require 'fidget'
 
-        fidget.notify 'preparing to pull to remote'
+        fidget.notify('preparing to pull from remote', nil, { ttl = 10 })
         Job:new({
           command = 'git',
           args = { 'branch', '--show-current' },
           on_exit = function(job, code)
             vim.schedule(function()
               if code ~= 0 then
-                fidget.notify('Error retrieving branch: ' .. table.concat(job:stderr_result(), '\n'))
+                fidget.notify('Error retrieving branch: ' .. table.concat(job:stderr_result(), '\n'), nil, { ttl = 10 })
                 return
               end
               local branch = job:result()[1]
@@ -126,10 +126,10 @@ return {
                   vim.schedule(function()
                     if pull_code ~= 0 then
                       local error_output = table.concat(pull_job:stderr_result(), '\n')
-                      fidget.notify('Error pulling branch ' .. branch .. ':\n' .. error_output)
+                      fidget.notify('Error pulling branch ' .. branch .. ':\n' .. error_output, nil, { ttl = 10 })
                     else
                       local success_output = table.concat(pull_job:result(), '\n')
-                      fidget.notify('Successfully pulled to ' .. branch .. '\nOutput:\n' .. success_output)
+                      fidget.notify('Successfully pulled to ' .. branch .. '\nOutput:\n' .. success_output, nil, { ttl = 10 })
                     end
                   end)
                 end,
@@ -147,14 +147,14 @@ return {
         local Job = require 'plenary.job'
         local fidget = require 'fidget'
 
-        fidget.notify 'preparing to push to remote'
+        fidget.notify('preparing to push to remote', nil, { ttl = 10 })
         Job:new({
           command = 'git',
           args = { 'branch', '--show-current' },
           on_exit = function(job, code)
             vim.schedule(function()
               if code ~= 0 then
-                fidget.notify('Error retrieving branch: ' .. table.concat(job:stderr_result(), '\n'))
+                fidget.notify('Error retrieving branch: ' .. table.concat(job:stderr_result(), '\n'), nil, { ttl = 10 })
                 return
               end
               local branch = job:result()[1]
@@ -166,10 +166,10 @@ return {
                   vim.schedule(function()
                     if push_code ~= 0 then
                       local error_output = table.concat(push_job:stderr_result(), '\n')
-                      fidget.notify('Error pushing branch ' .. branch .. ':\n' .. error_output)
+                      fidget.notify('Error pushing branch ' .. branch .. ':\n' .. error_output, nil, { ttl = 10 })
                     else
                       local success_output = table.concat(push_job:result(), '\n')
-                      fidget.notify('Successfully pushed to ' .. branch .. '\nOutput:\n' .. success_output)
+                      fidget.notify('Successfully pushed to ' .. branch .. '\nOutput:\n' .. success_output, nil, { ttl = 10 })
                     end
                   end)
                 end,
