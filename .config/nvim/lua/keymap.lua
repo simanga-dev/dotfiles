@@ -43,7 +43,40 @@ vim.keymap.set('n', '<leader>w', ':w <CR>')
 -- My greates remap yet
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 
-vim.keymap.set('n', '<C-c>', ':r !lumen draft<CR>')
+vim.keymap.set('n', '<C-c>', function()
+  local row = vim.api.nvim_win_get_cursor(0)[1] - 1
+  local output = {}
+  local frames = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
+  local i = 0
+  local timer = vim.uv.new_timer()
+  timer:start(
+    0,
+    100,
+    vim.schedule_wrap(function()
+      i = i % #frames + 1
+      vim.api.nvim_echo({ { frames[i] .. ' lumen drafting...', 'Comment' } }, false, {})
+    end)
+  )
+  vim.fn.jobstart({ 'lumen', 'draft' }, {
+    stdout_buffered = true,
+    on_stdout = function(_, data)
+      for _, line in ipairs(data) do
+        if line ~= '' then
+          table.insert(output, line)
+        end
+      end
+    end,
+    on_exit = function()
+      vim.schedule(function()
+        timer:stop()
+        timer:close()
+        vim.api.nvim_buf_set_lines(0, row, row, false, output)
+        vim.api.nvim_echo({ { '' } }, false, {})
+        vim.notify('lumen draft inserted', vim.log.levels.INFO)
+      end)
+    end,
+  })
+end)
 
 -- Supper Mapping to substitue// Degeration mapping
 vim.keymap.set('n', '<leader>S', ':%s/\\<<C-R><C-W>\\>/<C-R>0/g<CR>')
@@ -116,9 +149,6 @@ vim.keymap.set('v', '<leader>cl', ':CodeCompanion  ')
 --   end
 --   vim.fn.setpos('.', pos)
 -- end)
-
-
-
 
 -- vim.keymap.set('n', '}', function()
 --   vim.opt.hlsearch = false
