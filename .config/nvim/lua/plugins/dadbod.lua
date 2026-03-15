@@ -14,6 +14,7 @@ return {
     {
       '<leader>db',
       function()
+        require('utils.sidebar').close_others 'dadbod'
         vim.cmd [[ DBUIToggle ]]
       end,
       desc = 'Launch Dadbod UI',
@@ -27,6 +28,7 @@ return {
     vim.g.db_ui_save_location = '~/Workspace/my-notes/db_ui'
     vim.g.db_ui_execute_on_save = 0
     vim.g.db_ui_win_position = 'right'
+    vim.g.db_ui_winwidth = 80
     vim.g.db_ui_use_nerd_fonts = 1
     vim.g.db_ui_dbout_list_sort = 'desc'
 

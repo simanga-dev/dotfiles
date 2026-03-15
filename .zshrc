@@ -129,3 +129,6 @@ export NVM_DIR="$HOME/.config/nvm"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Added by get-aspire-cli.sh
+export PATH="$HOME/.aspire/bin:$PATH"
