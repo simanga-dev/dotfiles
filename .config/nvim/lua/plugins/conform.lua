@@ -12,7 +12,7 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'black', 'isort' },
-        sql = { 'sqlfluff_one' },
+        sql = { 'sleek', lsp_format = 'fallback' },
         html = { 'prettierd', 'prettier' },
         json = { 'prettierd', 'prettier', stop_after_first = true },
         javascript = { 'prettierd', 'prettier', stop_after_first = true, lsp_format = 'fallback' },
@@ -22,9 +22,9 @@ return {
         -- csproj = { 'csharpier_ramboe' },
       },
       formatters = {
-        sqlfluff_one = {
-          command = 'sqlfluff',
-          args = { 'format', '--config', sqlfluff_config, '--dialect', 'tsql', '-' },
+        sql_formatter = {
+          command = 'sql-formatter',
+          args = { '-l', 'transactsql' },
           -- timeout_ms = 30000,
         },
         csharpier_ramboe = {

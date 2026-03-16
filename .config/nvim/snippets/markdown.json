@@ -290,6 +290,11 @@
     "body": ["```bash", "karakeep bookmarks add --link ${0} ", "```"]
   },
 
+  "karakee": {
+    "prefix": "karanote",
+    "body": ["```bash", "karakeep bookmarks add --note ${0} ", "```"]
+  },
+
   "bash": {
     "prefix": "bash",
     "body": ["```bash", "${0}", "```"]
