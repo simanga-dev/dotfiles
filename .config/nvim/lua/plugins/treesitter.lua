@@ -1,42 +1,41 @@
-local function set_generate_args()
-  local install = require 'nvim-treesitter.install'
-
-  if vim.treesitter.language_version then
-    install.ts_generate_args = { 'generate', '--abi', tostring(vim.treesitter.language_version) }
-  else
-    install.ts_generate_args = { 'generate' }
-  end
-end
-
 return {
   'nvim-treesitter/nvim-treesitter',
-  branch = 'main',
+  dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+  -- commit = '8ada8faf2fd5a74cc73090ec856fa88f34cd364b',
   build = ':TSUpdate',
-  lazy = false,
-  init = set_generate_args,
   config = function()
-    set_generate_args()
-    require('nvim-treesitter').setup()
-
-    local group = vim.api.nvim_create_augroup('dotfiles-treesitter', { clear = true })
-    vim.api.nvim_create_autocmd('FileType', {
-      group = group,
-      callback = function(args)
-        if vim.bo[args.buf].buftype ~= '' then
-          return
-        end
-
-        local ok = pcall(vim.treesitter.start, args.buf)
-        if not ok then
-          return
-        end
-
-        vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-      end,
-    })
-
-    vim.keymap.set('n', 'gn', 'van', { remap = true, desc = 'Expand treesitter selection' })
-    vim.keymap.set('x', 'gn', 'an', { remap = true, desc = 'Expand treesitter selection' })
-    vim.keymap.set('x', 'gN', 'in', { remap = true, desc = 'Shrink treesitter selection' })
+    require('nvim-treesitter.configs').setup {
+      ensure_installed = 'all', -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+      highlight = {
+        enable = true, -- false will disable the whole extension
+        additional_vim_regex_highlighting = false,
+      },
+      indent = {
+        enable = true,
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = 'gn', -- set to `false` to disable one of the mappings
+          node_incremental = 'gn',
+          scope_incremental = 'false',
+          node_decremental = 'gN',
+        },
+      },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {},
+          -- You can choose the select mode (default is charwise 'v')
+          selection_modes = {},
+          -- If you set this to `true` (default is `false`) then any textobject is
+          -- extended to include preceding xor succeeding whitespace. Succeeding
+          -- whitespace has priority in order to act similarly to eg the built-in
+          -- `ap`.
+          include_surrounding_whitespace = true,
+        },
+      },
+    }
   end,
 }

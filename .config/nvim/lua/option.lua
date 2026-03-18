@@ -39,16 +39,10 @@ vim.api.nvim_create_autocmd('BufEnter', {
       vim.bo.buftype == 'terminal'
       or vim.bo.filetype == 'markdown'
       or vim.bo.filetype == ''
-      or vim.bo.filetype == 'codecompanion'
       or vim.bo.filetype == 'gitcommit'
       or vim.bo.filetype == 'chatgpt-input'
       or vim.bo.filetype == 'oil'
       or vim.bo.filetype == 'neo-tree'
-      or vim.bo.filetype == 'Avante'
-      or vim.bo.filetype == 'trouble'
-      or vim.bo.filetype == 'AvanteSelectedFiles'
-      or vim.bo.filetype == 'AvanteInput'
-      or vim.bo.filetype == 'undotree'
     then
       vim.wo.number = false
       vim.wo.relativenumber = false
@@ -85,7 +79,7 @@ vim.api.nvim_create_autocmd('TermOpen', { callback = term_config, group = group_
 
 local group_2 = vim.api.nvim_create_augroup('auto-save', { clear = true })
 
--- vim.api.nvim_create_autocmd({ 'FocusLost', 'BufWrite' }, { callback = trim_trailing_whitespaces, group = group_2 })
+vim.api.nvim_create_autocmd('FocusLost', { callback = trim_trailing_whitespaces, group = group_2 })
 
 -- Highlight on yank
 vim.cmd [[
@@ -133,7 +127,6 @@ vim.cmd [[
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
-vim.o.diffopt = 'internal,filler,closeoff,linematch:60'
 vim.opt.breakindent = true
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
@@ -165,8 +158,8 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.opt.undofile = true
 vim.opt.incsearch = true
-vim.o.showmode = false
-vim.o.laststatus = 3
+-- vim.o.showmode = false
+vim.o.laststatus = 0
 vim.o.showcmd = true
 vim.opt.termguicolors = true
 vim.o.pumheight = 8
@@ -176,23 +169,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.hlsearch = true
 vim.opt.cursorline = true
 vim.opt.clipboard = 'unnamedplus'
-
-if vim.fn.has 'wsl' == 1 then
-  vim.g.clipboard = {
-    name = 'WslClipboard',
-    copy = {
-      ['+'] = 'clip.exe',
-      ['*'] = 'clip.exe',
-    },
-    paste = {
-      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    },
-    cache_enabled = 0,
-  }
-end
-
--- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- vim.opt.isfname:append("@-@")
 -- vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
@@ -206,63 +182,13 @@ vim.opt.updatetime = 50
 vim.opt.shortmess:append 'c'
 -- vim.opt.colorcolumn = "80"
 
--- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
--- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
+  float = { source = 'always', border = 'rounded' },
+  signs = false,
   severity_sort = true,
-  float = { border = 'rounded', source = 'if_many' },
-  underline = { severity = vim.diagnostic.severity.ERROR },
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = '',
-      [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '',
-    },
-  } or {},
-  virtual_text = {
-    source = 'if_many',
-    spacing = 2,
-    format = function(diagnostic)
-      local diagnostic_message = {
-        [vim.diagnostic.severity.ERROR] = diagnostic.message,
-        [vim.diagnostic.severity.WARN] = diagnostic.message,
-        [vim.diagnostic.severity.INFO] = diagnostic.message,
-        [vim.diagnostic.severity.HINT] = diagnostic.message,
-      }
-      return diagnostic_message[diagnostic.severity]
-    end,
-  },
 }
-
-vim.api.nvim_create_autocmd('ModeChanged', {
-  group = vim.api.nvim_create_augroup('diagnostic_redraw', {}),
-  callback = function()
-    pcall(vim.diagnostic.show)
-  end,
-})
-
-vim.lsp.enable {
-  'lua_ls',
-  'gopls',
-  'terraformls',
-  'astro',
-  'pyright',
-  'ruff',
-  'ansiblels',
-  'jsonnet_ls',
-  'tailwindcss',
-  'marksman',
-  'ltex',
-  'rust_analyzer',
-  'templ',
-  'htmx',
-  'jsonlls',
-  'nixd',
-  'ts_ls',
-  'yamlls',
-  'sql',
-  'marksman',
-  'angularls',
-}
+-- vim.notify = require('fidget.notification').notify

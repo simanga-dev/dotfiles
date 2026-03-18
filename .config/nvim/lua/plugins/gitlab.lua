@@ -1,62 +1,62 @@
 return {
-  -- 'harrisoncramer/gitlab.nvim',
-  -- dependencies = {
-  --   'MunifTanjim/nui.nvim',
-  --   'nvim-lua/plenary.nvim',
-  --   'sindrets/diffview.nvim',
-  --   'stevearc/dressing.nvim', -- Recommended but not required. Better UI for pickers.
-  --   'nvim-tree/nvim-web-devicons', -- Recommended but not required. Icons in discussion tree.
-  -- },
-  -- opts = {},
-  -- keys = {
-  --   -- {
-  --   --   '<leader>glmc',
-  --   --   function()
-  --   --     require('gitlab').create_mr()
-  --   --   end,
-  --   --   desc = '[GL] Gitlab merge Create',
-  --   -- },
-  --   -- {
-  --   --   '<leader>glaa',
-  --   --   function()
-  --   --     require('gitlab').add_assignee()
-  --   --   end,
-  --   --   desc = '[GL] Gitlab add assigneer for review ',
-  --   -- },
-  --   -- {
-  --   --   '<leader>glrc',
-  --   --   function()
-  --   --     require('gitlab').create_comment()
-  --   --   end,
-  --   --   desc = '[GL] Gitlab review comment',
-  --   -- },
-  --   -- {
-  --   --   '<leader>glrC',
-  --   --   function()
-  --   --     require('gitlab').create_multiline_comment()
-  --   --   end,
-  --   --   desc = '[GL] Gitlab review comment',
-  --   --   mode = { 'v' },
-  --   -- },
-  --   -- {
-  --   --   '<leader>glro',
-  --   --   function()
-  --   --     require('gitlab').open_in_browser()
-  --   --   end,
-  --   --   desc = '[GL] Gitlab review Open in the browser',
-  --   -- },
-  --   -- {
-  --   --   '<leader>glmr',
-  --   --   function()
-  --   --     require('gitlab').review()
-  --   --   end,
-  --   --   desc = 'Open review on the browser',
-  --   -- },
-  -- },
-  -- enabled = true,
-  -- build = function()
-  --   require('gitlab.server').build(true)
-  -- end, -- Builds the Go binary
+  'harrisoncramer/gitlab.nvim',
+  dependencies = {
+    'MunifTanjim/nui.nvim',
+    'nvim-lua/plenary.nvim',
+    'sindrets/diffview.nvim',
+    'stevearc/dressing.nvim', -- Recommended but not required. Better UI for pickers.
+    'nvim-tree/nvim-web-devicons', -- Recommended but not required. Icons in discussion tree.
+  },
+  opts = {},
+  keys = {
+    -- {
+    --   '<leader>glmc',
+    --   function()
+    --     require('gitlab').create_mr()
+    --   end,
+    --   desc = '[GL] Gitlab merge Create',
+    -- },
+    -- {
+    --   '<leader>glaa',
+    --   function()
+    --     require('gitlab').add_assignee()
+    --   end,
+    --   desc = '[GL] Gitlab add assigneer for review ',
+    -- },
+    -- {
+    --   '<leader>glrc',
+    --   function()
+    --     require('gitlab').create_comment()
+    --   end,
+    --   desc = '[GL] Gitlab review comment',
+    -- },
+    -- {
+    --   '<leader>glrC',
+    --   function()
+    --     require('gitlab').create_multiline_comment()
+    --   end,
+    --   desc = '[GL] Gitlab review comment',
+    --   mode = { 'v' },
+    -- },
+    -- {
+    --   '<leader>glro',
+    --   function()
+    --     require('gitlab').open_in_browser()
+    --   end,
+    --   desc = '[GL] Gitlab review Open in the browser',
+    -- },
+    -- {
+    --   '<leader>glmr',
+    --   function()
+    --     require('gitlab').review()
+    --   end,
+    --   desc = 'Open review on the browser',
+    -- },
+  },
+  enabled = true,
+  build = function()
+    require('gitlab.server').build(true)
+  end, -- Builds the Go binary
 }
 -- config = function()
 --   require('gitlab').setup()

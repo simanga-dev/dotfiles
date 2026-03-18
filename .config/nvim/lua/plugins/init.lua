@@ -2,8 +2,9 @@ return {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-repeat',
   'tpope/vim-endwise',
-  'mbbill/undotree',
   'tpope/vim-eunuch',
+  'rhysd/committia.vim',
+  'monkoose/matchparen.nvim',
   'tpope/vim-capslock',
   'tpope/vim-dotenv',
   'andymass/vim-matchup',
@@ -11,30 +12,11 @@ return {
   'b0o/schemastore.nvim',
   'nvim-lua/plenary.nvim',
   'neovim/nvim-lspconfig',
+  -- 'jamespeapen/Nvim-R',
+  'svampkorg/moody.nvim',
   'norcalli/nvim-colorizer.lua',
   'preservim/vim-pencil',
   'amadeus/vim-convert-color-to',
-  'wsdjeg/calendar.nvim',
-  -- Amp Plugin
-  {
-    'sourcegraph/amp.nvim',
-    branch = 'main',
-    lazy = false,
-    opts = { auto_start = true, log_level = 'info' },
-  },
-
-  {
-    'Willem-J-an/adopure.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      -- "sindrets/diffview.nvim" -- Optionally required to open PR in diffview
-    },
-    config = function()
-      vim.g.adopure = {}
-    end,
-  },
-
   {
     'yorickpeterse/nvim-tree-pairs',
     opts = {},
@@ -53,17 +35,21 @@ return {
   },
 
   {
-    'folke/tokyonight.nvim',
-    lazy = false,
+    'tiagovla/tokyodark.nvim',
     priority = 1000,
     opts = {},
     config = function(_, opts)
-      require('tokyonight').setup(opts) -- calling setup is optional
-      vim.cmd [[colorscheme tokyonight-night  ]]
+      require('tokyodark').setup(opts) -- calling setup is optional
+      vim.cmd [[colorscheme tokyodark]]
     end,
   },
 
   { 'rebelot/kanagawa.nvim', lazy = false },
   'MunifTanjim/nui.nvim',
   'stevearc/dressing.nvim',
+  {
+    'gennaro-tedesco/nvim-jqx',
+    event = { 'BufReadPost' },
+    ft = { 'json', 'yaml' },
+  },
 }

@@ -213,30 +213,6 @@ open a new one so that choco path is set, run in cmd as **admin**:
 choco install -y neovim git ripgrep wget fd unzip gzip mingw make
 ```
 
-
-```bash
-ls
- 
- ``` 
-
-AGENTS.md
-GEMINI.md
-LICENSE.md
-README.md
-doc
-filetype.lua
-ftplugin
-init.lua
-lazy-lock.json
-lazy-lovk.json
-lsp
-lua
-snippets
-untitled-30.sql
-
 Then continue with the [Install Kickstart](#Install-Kickstart) step.
 
 
-ls
-
-replace this one 

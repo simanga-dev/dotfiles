@@ -64,10 +64,19 @@ return {
         layouts = {
           {
             elements = {
-              { id = 'scopes', size = 1.0 }, -- 100% of this panel is scopes
+              { id = 'stacks', size = 0.30 },
+              { id = 'breakpoints', size = 0.20 },
+              { id = 'scopes', size = 0.50 },
             },
-            size = 15, -- height in lines (adjust to taste)
-            position = 'bottom', -- "left", "right", "top", "bottom"
+            position = 'left',
+            size = 40,
+          },
+          {
+            elements = {
+              { id = 'repl', size = 1 },
+            },
+            position = 'bottom',
+            size = 10,
           },
         },
       },
@@ -124,7 +133,7 @@ return {
       desc = 'Continue',
     },
     {
-      '<leader>ds',
+      '<F10>',
       function()
         require('dap').step_over()
       end,
@@ -147,7 +156,6 @@ return {
   },
   config = function()
     require('nvim-dap-virtual-text').setup {}
-
     local dap = require 'dap'
     local dapui = require 'dapui'
 
@@ -192,30 +200,21 @@ return {
       },
     }
 
-    local mason_path = vim.fn.stdpath 'data' .. '/mason/packages/netcoredbg/netcoredbg'
-
-    local netcoredbg_adapter = {
-      type = 'executable',
-      command = mason_path,
-      args = { '--interpreter=vscode' },
-    }
-
-    dap.adapters.netcoredbg = netcoredbg_adapter -- needed for normal debugging
-    dap.adapters.coreclr = netcoredbg_adapter -- needed for unit test debugging
-
     dap.configurations.cs = {
       {
         type = 'coreclr',
         name = 'launch - netcoredbg',
         request = 'launch',
         program = function()
-          if vim.fn.getcwd() == '/home/simanga/Workspace/quest-system' then
-            return vim.fn.getcwd() .. '/src/Host.Api/bin/Debug/net9.0/Host.Api.dll'
-          else
-            return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net9.0/', 'file')
-          end
+          return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net8.0/linux-x64/', 'file')
         end,
       },
+    }
+
+    dap.adapters.coreclr = {
+      type = 'executable',
+      command = '/home/simanga/.local/share/nvim/mason/bin/netcoredbg',
+      args = { '--interpreter=vscode' },
     }
 
     dap.adapters.nlua = function(callback, config)
