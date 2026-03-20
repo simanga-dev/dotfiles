@@ -12,7 +12,7 @@ return {
       desc = '[T] Harpoon Add',
     },
     {
-      '<leader>hm',
+      '<C-e>',
       function()
         local harpoon = require 'harpoon'
         harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -20,30 +20,45 @@ return {
       desc = '[T] Harpoon Menu',
     },
     {
-      '<leader>h1',
+      '<A-h>',
       function()
         require('harpoon'):list():select(1)
       end,
       desc = '[T] Harpoon GoTo 1',
     },
     {
-      '<leader>h2',
+      '<A-j>',
       function()
         require('harpoon'):list():select(2)
       end,
       desc = '[T] Harpoon GoTo 2',
     },
     {
-      '<leader>h3',
+      '<A-k>',
       function()
         require('harpoon'):list():select(3)
       end,
       desc = '[T] Harpoon GoTo 3',
     },
     {
-      '<leader>h4',
+      '<A-l>',
       function()
-        require('harpoon'):list():select(3)
+        require('harpoon'):list():select(4)
+      end,
+      desc = '[T] Harpoon GoTo 2',
+    },
+
+    {
+      '<leadereader>>',
+      function()
+        require('harpoon'):list():prev()
+      end,
+      desc = '[T] Harpoon GoTo 3',
+    },
+    {
+      '<leader><',
+      function()
+        require('harpoon'):list():prev()
       end,
       desc = '[T] Harpoon GoTo 2',
     },

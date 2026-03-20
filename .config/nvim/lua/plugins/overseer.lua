@@ -1,15 +1,10 @@
 return {
   'stevearc/overseer.nvim',
   opts = {
-    strategy = {
-      'terminal',
-      auto_scroll = true,
-    },
-    height = 15,
     task_list = {
-      max_height = { 40, 0.5 },
-      height = 15,
-      direction = 'bottom',
+      direction = 'right',
+      min_width = 80,
+      max_width = 80,
     },
   },
   keys = {
@@ -23,6 +18,7 @@ return {
     {
       '<leader>ot',
       function()
+        require('utils.sidebar').close_others 'overseer'
         vim.cmd [[OverseerToggle]]
       end,
       desc = '[OT] Oversee Toggle',

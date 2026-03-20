@@ -1,6 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+  -- dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
   -- commit = '8ada8faf2fd5a74cc73090ec856fa88f34cd364b',
   build = ':TSUpdate',
   config = function()
@@ -20,20 +20,6 @@ return {
           node_incremental = 'gn',
           scope_incremental = 'false',
           node_decremental = 'gN',
-        },
-      },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {},
-          -- You can choose the select mode (default is charwise 'v')
-          selection_modes = {},
-          -- If you set this to `true` (default is `false`) then any textobject is
-          -- extended to include preceding xor succeeding whitespace. Succeeding
-          -- whitespace has priority in order to act similarly to eg the built-in
-          -- `ap`.
-          include_surrounding_whitespace = true,
         },
       },
     }

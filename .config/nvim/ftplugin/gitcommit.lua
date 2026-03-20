@@ -4,7 +4,6 @@ vim.keymap.set('n', '<leader>rr', function()
   local frames = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
   local i = 0
   local timer = vim.uv.new_timer()
-
   timer:start(
     0,
     100,
@@ -13,9 +12,17 @@ vim.keymap.set('n', '<leader>rr', function()
       vim.api.nvim_echo({ { frames[i] .. ' lumen drafting...', 'Comment' } }, false, {})
     end)
   )
-
   vim.fn.jobstart({ 'lumen', 'draft' }, {
     stdout_buffered = true,
+    stderr_buffered = true,
+    on_stderr = function(_, data)
+      local err = table.concat(data, '\n')
+      if err ~= '' then
+        vim.schedule(function()
+          vim.notify('lumen error: ' .. err, vim.log.levels.ERROR)
+        end)
+      end
+    end,
     on_stdout = function(_, data)
       for _, line in ipairs(data) do
         if line ~= '' then
@@ -33,4 +40,4 @@ vim.keymap.set('n', '<leader>rr', function()
       end)
     end,
   })
-end, { buffer = true, desc = 'Insert lumen draft at cursor' })
+end)
