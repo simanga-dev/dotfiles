@@ -24,10 +24,21 @@ local function close_dadbod()
   end
 end
 
+local function close_rest()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    local ft = vim.bo[buf].filetype
+    if ft == 'httpResult' then
+      vim.api.nvim_win_close(win, true)
+    end
+  end
+end
+
 local closers = {
   overseer = close_overseer,
   sidekick = close_sidekick,
   dadbod = close_dadbod,
+  rest = close_rest,
 }
 
 function M.close_others(except)
