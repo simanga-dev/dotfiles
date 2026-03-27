@@ -3,8 +3,10 @@
 	name = Simanga Khoza
 [merge]
 	tool = nvimdiff
+	conflictStyle = zdiff3
 [core]
 	editor = nvim
+	pager = delta
 [push]
 	default = current
 	autoSetupRemote = true
@@ -20,3 +22,8 @@
 	required = true
 [safe]
 	directory = /mnt/project
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	dark = true

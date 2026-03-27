@@ -60,7 +60,7 @@
 # export EDITOR=nvim
 export EDITOR=nvim
 bindkey -v
-export KEYTIMEOUT=1
+# export KEYTIMEOUT=5
 
 function expand-alias() {
 	zle _expand_alias
@@ -153,8 +153,6 @@ eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
 autoload -Uz compinit && compinit
-
-source ~/.config/zsh/aliases.sh
 
 # bun completions
 [ -s "/home/simanga/.bun/_bun" ] && source "/home/simanga/.bun/_bun"
