@@ -26,8 +26,8 @@ vim.keymap.set('n', '<leader>rr', function()
     vim.notify('Cursor is not inside a fenced code block', vim.log.levels.WARN)
     return
   end
-  if lang ~= 'bash' and lang ~= 'sh' then
-    vim.notify('Only ```bash or ```sh blocks can be executed', vim.log.levels.WARN)
+  if lang ~= 'bash' and lang ~= 'sh' and lang ~= 'zsh' then
+    vim.notify('Only ```bash, ```sh, or ```zsh blocks can be executed', vim.log.levels.WARN)
     return
   end
 
@@ -37,6 +37,9 @@ vim.keymap.set('n', '<leader>rr', function()
 
   local bufnr = vim.api.nvim_get_current_buf()
   local result = {}
+
+  -- Determine shell
+  local shell_cmd = lang == 'zsh' and 'zsh' or 'bash'
 
   -- Find an existing ```output block after the code fence's closing ```
   -- Returns (start, end) as 1-indexed line numbers including the blank separator,
@@ -78,12 +81,13 @@ vim.keymap.set('n', '<leader>rr', function()
       table.insert(output_block, output_marker_end)
 
       local existing_start, existing_end = find_output_block()
+      -- Insert blank line at start
+      table.insert(output_block, 1, '')
       if existing_start and existing_end then
-        vim.api.nvim_buf_set_lines(bufnr, existing_start - 1, existing_end, false, { '', unpack(output_block) })
+        vim.api.nvim_buf_set_lines(bufnr, existing_start - 1, existing_end, false, output_block)
       else
         local insert_at = fence_end
-        vim.api.nvim_buf_set_lines(bufnr, insert_at, insert_at, false, { '' })
-        vim.api.nvim_buf_set_lines(bufnr, insert_at + 1, insert_at + 1, false, output_block)
+        vim.api.nvim_buf_set_lines(bufnr, insert_at, insert_at, false, output_block)
       end
     end)
   end
@@ -97,7 +101,7 @@ vim.keymap.set('n', '<leader>rr', function()
   -- Place a running indicator immediately
   vim.api.nvim_buf_set_lines(bufnr, fence_end, fence_end, false, { '', output_marker_start, '⏳ running...', output_marker_end })
 
-  vim.fn.jobstart({ 'bash', '-c', code }, {
+  vim.fn.jobstart({ shell_cmd, '-c', code }, {
     stdout_buffered = true,
     stderr_buffered = true,
     on_stdout = function(_, data)
