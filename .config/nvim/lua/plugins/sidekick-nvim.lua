@@ -3,11 +3,11 @@ return {
   opts = {
     -- add any options here
     cli = {
-      tools = {
-        amp = {
-          cmd = { 'amp', '--ide' },
-        },
-      },
+      -- tools = {
+      --   amp = {
+      --     cmd = { 'amp', '--ide' },
+      --   },
+      -- },
       mux = {
         backend = 'zellij',
         enabled = true,
