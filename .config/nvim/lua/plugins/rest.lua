@@ -15,11 +15,11 @@ return {
   },
   build = function()
     -- Ensure hererocks is used for building
-    require('rest-nvim').setup({
+    require('rest-nvim').setup {
       rocks = {
         enabled = true,
         hererocks = true,
       },
-    })
+    }
   end,
 }
