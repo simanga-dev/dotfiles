@@ -2,10 +2,44 @@ return {
   'nvim-treesitter/nvim-treesitter',
   -- dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
   -- commit = '8ada8faf2fd5a74cc73090ec856fa88f34cd364b',
+  branch = 'main',
   build = ':TSUpdate',
+  init = function()
+    local ensureInstalled = {
+      'lua',
+      'python',
+      'javascript',
+      'typescript',
+      'tsx',
+      'html',
+      'css',
+      'json',
+      'yaml',
+      'markdown',
+      'markdown_inline',
+      'vim',
+      'vimdoc',
+      'query',
+      'bash',
+      'regex',
+      'c',
+      'cpp',
+      'go',
+      'rust',
+      'sql',
+      'http',
+    }
+    local alreadyInstalled = require('nvim-treesitter.config').get_installed()
+    local parsersToInstall = vim
+      .iter(ensureInstalled)
+      :filter(function(parser)
+        return not vim.tbl_contains(alreadyInstalled, parser)
+      end)
+      :totable()
+    require('nvim-treesitter').install(parsersToInstall)
+  end,
   config = function()
-    require('nvim-treesitter.configs').setup {
-      ensure_installed = 'all', -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    require('nvim-treesitter').setup {
       highlight = {
         enable = true, -- false will disable the whole extension
         additional_vim_regex_highlighting = false,
