@@ -1,8 +1,22 @@
 return {
   'rest-nvim/rest.nvim',
+  build = false, -- skip upstream luarocks build that expects system lua5.1
   ft = { 'http' }, -- Only load for .http files
   dependencies = { 'vhyrro/luarocks.nvim' },
   config = function()
+    -- Make sure local luarocks tree is on the search path (xml2lua, mimetypes)
+    local home = vim.env.HOME
+    package.path = table.concat({
+      package.path,
+      home .. '/.luarocks/share/lua/5.1/?.lua',
+      home .. '/.luarocks/share/lua/5.1/?/init.lua',
+    }, ';')
+    package.cpath = table.concat({
+      package.cpath,
+      home .. '/.luarocks/lib/lua/5.1/?.so',
+      home .. '/.luarocks/lib/lua/5.1/?/init.so',
+    }, ';')
+
     require('rest-nvim').setup {
       -- Add a keybinding to the result buffer to jump to the request line
       result_split_horizontal = false,
