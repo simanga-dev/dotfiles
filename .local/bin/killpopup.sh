@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for proc in nnn rmpc bluetui fzf btop wiremix nchat; do
+for proc in nnn rmpc bluetui fzf btop yazi wiremix nchat; do
 	killall "$proc" 2>/dev/null || true
 done
 

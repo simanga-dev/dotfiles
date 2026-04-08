@@ -20,8 +20,8 @@ if ! hyprctl activewindow 2>/dev/null | grep -q "special:special"; then
 	hyprctl dispatch togglespecialworkspace special
 fi
 
-
 # Ensure tmux has had time to register the attached client to prevent crash
 sleep 0.2
 # Target the special session and use a nested tmux session to prevent yazi from crashing the parent tmux when trying to display image previews
-tmux display-popup -w 80% -h 70% -t special -E "tmux new-session yazi \; set status off"
+# tmux display-popup -w 80% -h 70% -t special -E "tmux new-session yazi \; set status off"
+tmux display-popup -w 80% -h 70% -E "nnn -c"

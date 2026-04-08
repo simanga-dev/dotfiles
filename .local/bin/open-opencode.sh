@@ -22,4 +22,4 @@ if ! hyprctl activewindow 2>/dev/null | grep -q "special:special"; then
 fi
 
 
-tmux display-popup -E "/home/simanga/.opencode/bin/opencode attach http://localhost:4096 --continue"
+tmux display-popup -w 80% -h 70%  "/home/simanga/.bun/bin/pi"

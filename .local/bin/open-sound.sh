@@ -18,4 +18,4 @@ if ! hyprctl activewindow 2>/dev/null | grep -q "special:special"; then
 fi
 
 
-tmux display-popup -E "wiremix"
+tmux display-popup -w 80% -h 70% -E "wiremix"

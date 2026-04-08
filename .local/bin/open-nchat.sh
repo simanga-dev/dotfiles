@@ -18,4 +18,4 @@ if ! hyprctl activewindow 2>/dev/null | grep -q "special:special"; then
 	hyprctl dispatch togglespecialworkspace special
 fi
 
-tmux display-popup -E "nchat"
+tmux display-popup -w 80% -h 70% -E "nchat"
