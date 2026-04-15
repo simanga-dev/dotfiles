@@ -200,6 +200,24 @@ return {
       args = { '--interpreter=vscode' },
     }
 
+    local function glf_root()
+      local marker = vim.api.nvim_buf_get_name(0)
+      if marker == '' then
+        marker = vim.fn.getcwd()
+      end
+
+      local sln = vim.fs.find('WebGLF.sln', {
+        upward = true,
+        path = marker,
+      })[1]
+
+      if not sln then
+        return nil
+      end
+
+      return vim.fs.dirname(sln)
+    end
+
     dap.adapters.netcoredbg = netcoredbg_adapter -- needed for normal debugging
     dap.adapters.coreclr = netcoredbg_adapter -- needed for unit test debugging
 
@@ -208,12 +226,31 @@ return {
         type = 'coreclr',
         name = 'launch - netcoredbg',
         request = 'launch',
-        program = function()
-          if vim.fn.getcwd() == '/home/simanga/Workspace/quest-system' then
-            return vim.fn.getcwd() .. '/src/Host.Api/bin/Debug/net9.0/Host.Api.dll'
-          else
-            return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net9.0/', 'file')
+        env = function()
+          if not glf_root() then
+            return nil
           end
+
+          return {
+            ASPNETCORE_ENVIRONMENT = 'Development',
+            ASPNETCORE_URLS = 'http://localhost:51272',
+          }
+        end,
+        program = function()
+          local root = glf_root()
+          if root then
+            return root .. '/src/WebGLF.Next/bin/Debug/net8.0/WebGLF.Next.dll'
+          end
+
+          return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net9.0/', 'file')
+        end,
+        cwd = function()
+          local root = glf_root()
+          if root then
+            return root .. '/src/WebGLF.Next'
+          end
+
+          return vim.fn.getcwd()
         end,
       },
     }

@@ -23,6 +23,7 @@ return {
       'bash',
       'regex',
       'c',
+      'c_sharp',
       'cpp',
       'go',
       'rust',
