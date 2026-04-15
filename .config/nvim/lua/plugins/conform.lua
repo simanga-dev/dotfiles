@@ -15,7 +15,7 @@ return {
         sql = { 'sleek' },
         html = { 'prettierd', 'prettier' },
         json = { 'prettierd', 'prettier', stop_after_first = true },
-        javascript = { 'prettierd', 'prettier', stop_after_first = true, lsp_format = 'fallback' },
+        -- javascript = { 'prettierd', 'prettier', stop_after_first = true, lsp_format = 'fallback' },
         typescript = { 'prettierd', 'prettier', lsp_format = 'fallback' },
         typescriptreact = { 'prettierd', 'prettier', lsp_format = 'fallback' },
         -- cs = { 'csharpier_ramboe' },

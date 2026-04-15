@@ -28,6 +28,7 @@ return {
       'rust',
       'sql',
       'http',
+      'hyprlang',
     }
     local alreadyInstalled = require('nvim-treesitter.config').get_installed()
     local parsersToInstall = vim
